@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Growth AI | PátioVivo™ — Mais vendas e estoque girando para lojas de seminovos</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #B71C1C;
+      --red-dark: #7F0000;
+      --red-light: #D32F2F;
+      --black: #0A0A0A;
+      --gray-900: #111111;
+      --gray-800: #1A1A1A;
+      --gray-700: #2A2A2A;
+      --gray-500: #555555;
+      --gray-300: #AAAAAA;
+      --gray-100: #F5F5F5;
+      --white: #FFFFFF;
+      --gold: #F9A825;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1 { font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 900; line-height: 1.1; }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.2; }
+    h3 { font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 700; }
+    p  { font-size: clamp(1rem, 2.5vw, 1.1rem); }
+
+    .accent  { color: var(--red-light); }
+    .gold    { color: var(--gold); }
+    .muted   { color: var(--gray-300); }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    .section-pad    { padding: 72px 0; }
+    .section-pad-sm { padding: 48px 0; }
+
+    /* NAV BADGE */
+    .nav-badge {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* EYEBROW TAG */
+    .eyebrow {
+      display: inline-block;
+      background: rgba(183,28,28,0.14);
+      border-left: 3px solid var(--red);
+      color: var(--red-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(160deg, var(--gray-900) 0%, var(--black) 65%);
+      border-bottom: 3px solid var(--red);
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -150px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(183,28,28,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-brand {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 700;
+      color: var(--gray-300);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 { margin-bottom: 24px; }
+    .hero-sub {
+      font-size: clamp(1.05rem, 2.8vw, 1.22rem);
+      color: var(--gray-300);
+      max-width: 660px;
+      margin-bottom: 28px;
+    }
+    .hero-anchor {
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 36px;
+      display: block;
+    }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-300);
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid var(--gray-700);
+      padding: 15px 22px;
+      border-radius: 8px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--red-light); color: var(--white); }
+
+    /* ─── PROBLEMA ─── */
+    .sec-problema { background: var(--gray-900); }
+    .persona-quotes {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .persona-quote {
+      background: var(--gray-800);
+      border-left: 3px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 20px;
+      font-size: 1rem;
+      color: var(--gray-300);
+      font-style: italic;
+    }
+    .ciclo-box {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-top: 3px solid var(--red);
+      border-radius: 10px;
+      padding: 28px;
+      margin: 32px 0;
+    }
+    .ciclo-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--red-light);
+      margin-bottom: 16px;
+    }
+    .ciclo-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .ciclo-step {
+      background: rgba(183,28,28,0.12);
+      border: 1px solid rgba(183,28,28,0.3);
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      color: var(--white);
+    }
+    .ciclo-arrow {
+      color: var(--red-light);
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+    .problema-anchor {
+      background: var(--red-dark);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-top: 32px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* ─── AUTORIDADE ─── */
+    .sec-autoridade { background: var(--black); }
+    .autoridade-intro {
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+    .diagnostico-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+    .diag-card {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-top: 3px solid var(--red);
+      border-radius: 10px;
+      padding: 24px 20px;
+    }
+    .diag-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--red-light);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .diag-card h3 { margin-bottom: 10px; }
+    .diag-card p { font-size: 0.9rem; color: var(--gray-300); line-height: 1.6; }
+    .autoridade-statement {
+      background: var(--gray-800);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 24px 28px;
+    }
+    .autoridade-statement p {
+      font-size: 1rem;
+      color: var(--gray-300);
+      line-height: 1.7;
+    }
+
+    /* ─── PILARES ─── */
+    .sec-pilares { background: var(--gray-900); }
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .pilar-card {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-top: 3px solid var(--red);
+      border-radius: 10px;
+      padding: 28px 22px;
+    }
+    .pilar-num {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--red-light);
+      margin-bottom: 8px;
+    }
+    .pilar-card h3 { margin-bottom: 12px; }
+    .pilar-card p { font-size: 0.9rem; color: var(--gray-300); margin-bottom: 14px; }
+    .pilar-benefit {
+      background: rgba(249,168,37,0.08);
+      border-left: 2px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: var(--gold);
+    }
+
+    /* ─── COMO FUNCIONA ─── */
+    .sec-como { background: var(--black); }
+    .steps { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+    .step  { display: flex; gap: 22px; align-items: flex-start; position: relative; }
+    .step:not(:last-child) { padding-bottom: 40px; }
+    .step-num {
+      flex: 0 0 54px;
+      width: 54px; height: 54px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900;
+      position: relative; z-index: 1;
+    }
+    .step:not(:last-child) .step-num::after {
+      content: '';
+      position: absolute;
+      top: 54px; left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: var(--gray-700);
+    }
+    .step-body { padding-top: 8px; }
+    .step-tag {
+      display: inline-block;
+      background: rgba(183,28,28,0.14);
+      color: var(--red-light);
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      padding: 3px 10px; border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .step-body h3 { margin-bottom: 8px; }
+    .step-body p  { color: var(--gray-300); font-size: 0.95rem; }
+
+    /* ─── ENTREGÁVEIS ─── */
+    .sec-entregaveis { background: var(--gray-900); }
+    .entregaveis-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .e-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .e-num {
+      flex: 0 0 28px;
+      width: 28px; height: 28px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 900;
+    }
+    .e-item p { font-size: 0.88rem; color: var(--gray-300); }
+
+    /* ─── RETENÇÃO ─── */
+    .sec-retencao { background: var(--black); }
+    .ret-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .ret-card {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-radius: 10px;
+      padding: 24px 20px;
+      position: relative;
+    }
+    .ret-card.featured {
+      border-color: var(--red);
+      border-top: 3px solid var(--red);
+    }
+    .ret-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--red-light);
+      margin-bottom: 10px;
+    }
+    .ret-badge.featured-badge {
+      background: var(--red);
+      color: var(--white);
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+    .ret-card h3 { margin-bottom: 10px; }
+    .ret-price {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .ret-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .ret-card ul li {
+      font-size: 0.85rem;
+      color: var(--gray-300);
+      padding-left: 18px;
+      position: relative;
+    }
+    .ret-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--red-light);
+      font-size: 0.8rem;
+    }
+
+    /* ─── GARANTIA ─── */
+    .sec-garantia { background: var(--gray-900); }
+    .garantia-box {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 36px 32px;
+      max-width: 700px;
+      margin: 36px auto 0;
+    }
+    .garantia-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .garantia-icon { font-size: 2rem; }
+    .garantia-box h3 { font-size: 1.3rem; }
+    .garantia-body { color: var(--gray-300); font-size: 0.95rem; line-height: 1.7; }
+    .garantia-conditions {
+      margin-top: 22px;
+      background: var(--gray-900);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .garantia-conditions h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+    .garantia-conditions ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .garantia-conditions ul li {
+      font-size: 0.86rem;
+      color: var(--gray-300);
+      padding-left: 18px;
+      position: relative;
+    }
+    .garantia-conditions ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .garantia-note {
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      font-style: italic;
+    }
+
+    /* ─── KPIs ─── */
+    .sec-kpis { background: var(--black); }
+    .kpis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .kpi-card {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .kpi-label { font-size: 0.8rem; color: var(--gray-300); margin-bottom: 6px; }
+    .kpi-value { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .kpi-note { font-size: 0.72rem; color: var(--gray-500); font-style: italic; }
+
+    /* ─── INVESTIMENTO ─── */
+    .sec-investimento { background: var(--gray-900); }
+    .custo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .custo-card {
+      background: rgba(183,28,28,0.1);
+      border: 1px solid rgba(183,28,28,0.25);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .custo-card .custo-label { font-size: 0.8rem; color: var(--gray-300); margin-bottom: 6px; }
+    .custo-card .custo-valor { font-size: 1.1rem; font-weight: 800; color: var(--red-light); }
+    .preco-reveal {
+      background: var(--gray-800);
+      border: 1px solid var(--gray-700);
+      border-top: 3px solid var(--red);
+      border-radius: 12px;
+      padding: 36px 32px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .preco-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--gray-500);
+      margin-bottom: 8px;
+    }
+    .preco-valor {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .preco-detalhe {
+      font-size: 0.9rem;
+      color: var(--gray-300);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .preco-ancora {
+      display: inline-block;
+      background: rgba(249,168,37,0.1);
+      border: 1px solid rgba(249,168,37,0.3);
+      border-radius: 8px;
+      padding: 14px 22px;
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-style: italic;
+      max-width: 560px;
+    }
+
+    /* ─── FAQ ─── */
+    .sec-faq { background: var(--black); }
+    .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 36px; }
+    .faq-item {
+      border-bottom: 1px solid var(--gray-700);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--gray-700); }
+    .faq-q {
+      padding: 20px 0;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .faq-toggle { color: var(--red-light); font-size: 1.2rem; flex-shrink: 0; }
+    .faq-a {
+      padding-bottom: 20px;
+      color: var(--gray-300);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ─── CTA FINAL ─── */
+    .sec-cta { background: var(--red-dark); padding: 80px 0; text-align: center; }
+    .sec-cta h2 { margin-bottom: 16px; }
+    .sec-cta p { color: rgba(255,255,255,0.82); font-size: 1.1rem; max-width: 580px; margin: 0 auto 32px; }
+    .cta-trust { margin-top: 20px; font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--black);
+      padding: 32px 0;
+      text-align: center;
+      border-top: 1px solid var(--gray-800);
+    }
+    .footer p { color: var(--gray-500); font-size: 0.82rem; }
+    .footer strong { color: var(--gray-300); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    @keyframes wa-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.55), 0 6px 24px rgba(37,211,102,0.45); }
+      70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0), 0 6px 24px rgba(37,211,102,0.45); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 6px 24px rgba(37,211,102,0.45); }
+    }
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      height: 58px;
+      padding: 0 22px 0 16px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      animation: wa-pulse 2s ease-out infinite;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .wa-float-icon { font-size: 1.7rem; line-height: 1; }
+    .wa-float-label { font-size: 0.92rem; font-weight: 800; letter-spacing: 0.01em; }
+    .wa-float:hover { background: #1ebe5d; transform: scale(1.04); }
+    @media (max-width: 480px) {
+      .wa-float { padding: 0 14px 0 12px; }
+      .wa-float-label { display: none; }
+      .wa-float { width: 58px; justify-content: center; }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .ciclo-steps { flex-direction: column; }
+      .ciclo-arrow { transform: rotate(90deg); }
+      .garantia-box { padding: 24px 18px; }
+      .preco-reveal { padding: 24px 18px; }
+      .sec-cta { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV BADGE -->
+<div class="nav-badge">
+  Auto Growth AI | PátioVivo™ &nbsp;—&nbsp; Mais vendas e estoque girando para lojas de seminovos e usados
+</div>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-brand">Auto Growth AI | PátioVivo™</div>
+    <div class="eyebrow">Para lojas independentes de seminovos e usados</div>
+    <h1>Sua loja vendendo mais, respondendo rápido e com o estoque girando — sem depender de você para tudo.</h1>
+    <p class="hero-sub">A gente entra na sua operação, monta a estrutura e faz funcionar. Você não aprende sistema nenhum. Você vê resultado.</p>
+    <span class="hero-anchor">"Quanto dinheiro você está perdendo entre o estoque parado e os leads que não viram venda?"</span>
+    <div class="hero-cta">
+      <a href="https://wa.me/5500000000000?text=Quero+o+diagn%C3%B3stico+gratuito" class="btn-primary" target="_blank" rel="noopener">
+        &#128172; Quero um diagnóstico gratuito
+      </a>
+      <a href="#como-funciona" class="btn-ghost">Como funciona ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PROBLEMA
+══════════════════════════════════════════════ -->
+<section class="sec-problema section-pad">
+  <div class="container">
+    <div class="eyebrow">O problema que toda loja enfrenta</div>
+    <h2>Você se reconhece em alguma dessas situações?</h2>
+
+    <div class="persona-quotes" style="margin-top: 28px;">
+      <div class="persona-quote">"Tenho carro bom parado no pátio."</div>
+      <div class="persona-quote">"O lead chega, mas não sei quantos estão sendo trabalhados de verdade."</div>
+      <div class="persona-quote">"Minha equipe demora para responder."</div>
+      <div class="persona-quote">"Não quero mais lead. Quero vender os carros que estão parados."</div>
+      <div class="persona-quote">"Preciso girar estoque sem destruir minha margem."</div>
+      <div class="persona-quote">"Não quero colocar mais uma ferramenta para a equipe aprender."</div>
+    </div>
+
+    <div class="ciclo-box">
+      <div class="ciclo-title">O ciclo que drena caixa todo mês</div>
+      <div class="ciclo-steps">
+        <div class="ciclo-step">Carro parado</div>
+        <div class="ciclo-arrow">→</div>
+        <div class="ciclo-step">Pressiona o caixa</div>
+        <div class="ciclo-arrow">→</div>
+        <div class="ciclo-step">Menos dinheiro para comprar</div>
+        <div class="ciclo-arrow">→</div>
+        <div class="ciclo-step">Leads perdidos</div>
+        <div class="ciclo-arrow">→</div>
+        <div class="ciclo-step">Vendas menores</div>
+        <div class="ciclo-arrow">→</div>
+        <div class="ciclo-step">Investe mais em anúncio para compensar</div>
+        <div class="ciclo-arrow">→</div>
+        <div class="ciclo-step" style="border-color: rgba(183,28,28,0.7); color: var(--red-light);">Ciclo começa de novo</div>
+      </div>
+    </div>
+
+    <p style="color: var(--gray-300); font-size: 1rem; line-height: 1.7;">
+      Cada carro parado há mais de 45 dias custa em média <strong style="color:var(--white)">R$&nbsp;900 a R$&nbsp;1.200 por mês</strong> — capital preso, seguro, depreciação e espaço de pátio. Com 8 carros nessa situação, são <strong style="color:var(--white)">R$&nbsp;7.200 a R$&nbsp;9.600 saindo todo mês</strong> sem aparecer em nenhum relatório.
+    </p>
+    <p style="color: var(--gray-300); font-size: 1rem; line-height: 1.7; margin-top: 16px;">
+      Ao mesmo tempo, os leads que chegam tarde da noite, no fim de semana ou fora do horário não recebem resposta rápida. Esses contatos vão ao concorrente — com o mesmo carro ainda no seu pátio.
+    </p>
+
+    <div class="problema-anchor">
+      A pergunta que todo lojista deveria se fazer antes de colocar mais dinheiro em anúncio: <em>"Quanto estou perdendo entre o estoque que não gira e os leads que não viram venda?"</em>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     AUTORIDADE
+══════════════════════════════════════════════ -->
+<section class="sec-autoridade section-pad">
+  <div class="container">
+    <div class="eyebrow">O que mapeamos em lojas de seminovos</div>
+    <h2>Três padrões que se repetem em toda loja independente</h2>
+    <p class="muted autoridade-intro" style="margin-top: 14px;">São as mesmas causas, independente do tamanho da loja ou da praça. E todas custam dinheiro de forma invisível.</p>
+
+    <div class="diagnostico-grid">
+      <div class="diag-card">
+        <div class="diag-num">23×</div>
+        <h3>Resposta rápida converte mais</h3>
+        <p>A diferença de conversão entre responder em menos de 1 minuto e responder depois de 24 horas é de até 23 vezes. A maioria das lojas independentes está no segundo grupo — sem saber qual o impacto disso nas vendas.</p>
+      </div>
+      <div class="diag-card">
+        <div class="diag-num">80%</div>
+        <h3>Tempo do vendedor vai para quem não vai comprar</h3>
+        <p>Sem uma forma de saber quem está pronto para comprar agora, o vendedor trata todo lead do mesmo jeito. O resultado: 80% do esforço vai para quem está só pesquisando. Quem ia fechar essa semana esperou demais e foi ao concorrente.</p>
+      </div>
+      <div class="diag-card">
+        <div class="diag-num">45+</div>
+        <h3>Dias parado e a causa continua desconhecida</h3>
+        <p>A maioria dos lojistas sabe que tem carros parados. Mas não sabe por quê — se é preço fora do mercado, canal errado ou baixa demanda para aquele modelo na praça. Sem essa resposta, a decisão de baixar preço ou trocar de canal é sempre no escuro.</p>
+      </div>
+    </div>
+
+    <div class="autoridade-statement">
+      <p><strong style="color: var(--white);">O PátioVivo™ foi construído para resolver esses três pontos ao mesmo tempo.</strong> Não como ferramenta que a equipe usa — como infraestrutura que a gente monta e opera na sua loja. Você não toca em sistema nenhum. Você vê o que mudou no relatório mensal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     OS 3 PILARES
+══════════════════════════════════════════════ -->
+<section class="sec-pilares section-pad">
+  <div class="container">
+    <div class="eyebrow">PátioVivo™ — Como funciona a solução</div>
+    <h2>Três frentes trabalhando ao mesmo tempo</h2>
+    <p class="muted" style="margin-top: 14px; max-width: 640px;">Não é uma ferramenta. É uma estrutura completa que age nos três problemas que mais custam para uma loja de seminovos.</p>
+
+    <div class="pilares-grid">
+      <div class="pilar-card">
+        <div class="pilar-num">Frente 01</div>
+        <h3 class="accent">Demand Intelligence</h3>
+        <p>Antes de comprar um carro para o estoque, você sabe o que está girando na sua praça, quais modelos têm saída rápida e quais você deve evitar. Fim da compra por intuição.</p>
+        <div class="pilar-benefit">Menos carro parado. Compra com dado. Estoque que gira.</div>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-num">Frente 02</div>
+        <h3 class="accent">Lead Conversion Engine</h3>
+        <p>O lead chega — de madrugada, de sábado, a qualquer hora — e recebe resposta em até 5 minutos. A equipe acorda com os contatos já separados: quem vai comprar essa semana fica no topo.</p>
+        <div class="pilar-benefit">Mais lead virado em venda. Vendedor focado em quem vai fechar.</div>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-num">Frente 03</div>
+        <h3 class="accent">Stock Velocity System</h3>
+        <p>Cada carro com mais de 45 dias no pátio aparece com diagnóstico: por que está parado e o que fazer — reduzir preço, mudar de canal ou trocar por outro modelo. Nada de chutar.</p>
+        <div class="pilar-benefit">Estoque girando mais rápido. Menos dinheiro preso. Margem preservada.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     COMO FUNCIONA
+══════════════════════════════════════════════ -->
+<section class="sec-como section-pad" id="como-funciona">
+  <div class="container">
+    <div class="eyebrow">Modelo de entrega</div>
+    <h2>30 dias para sua operação estar rodando</h2>
+    <p class="muted" style="margin-top: 14px; max-width: 640px;">Um processo em três etapas. Ao final do mês, a estrutura está funcionando — e você migra para o plano de acompanhamento que melhor se encaixa.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <span class="step-tag">Semana 1</span>
+          <h3>A gente entende como sua loja funciona hoje</h3>
+          <p>Mapeamos como os leads chegam, quanto tempo a equipe leva para responder, quantos leads se perdem, quais carros estão parados e há quanto tempo, e como vocês decidem o que comprar para o estoque. Registramos tudo isso antes de mudar qualquer coisa — para ter o antes e o depois com dados reais.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <span class="step-tag">Semanas 2–3</span>
+          <h3>Montamos e ativamos a estrutura</h3>
+          <p>Integramos todos os canais de entrada em um só lugar, configuramos a resposta rápida para leads (até 5 minutos, sem ninguém precisar ficar monitorando), organizamos o funil de vendas, separamos os leads por quem está pronto para comprar agora, montamos os acompanhamentos automáticos para quem não respondeu e ativamos os relatórios de estoque e de vendas.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <span class="step-tag">Semana 4</span>
+          <h3>Treinamento, ajustes finais e entrega</h3>
+          <p>Treinamos a equipe para ler os relatórios e seguir o processo novo. Fazemos os ajustes finais com base nos dados reais dos primeiros dias. Você recebe a estrutura funcionando e migra para o plano de acompanhamento — DIY, DWY ou DFY.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ENTREGÁVEIS DOS 30 DIAS
+══════════════════════════════════════════════ -->
+<section class="sec-entregaveis section-pad">
+  <div class="container">
+    <div class="eyebrow">O que está incluído</div>
+    <h2>Tudo que a gente monta na sua loja nos 30 dias</h2>
+    <p class="muted" style="margin-top: 14px; max-width: 640px;">Cada item abaixo é entregue e testado antes da virada para o plano de acompanhamento.</p>
+
+    <div class="entregaveis-list">
+      <div class="e-item">
+        <div class="e-num">1</div>
+        <p>Diagnóstico completo da operação — onde estão os vazamentos e quanto estão custando</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">2</div>
+        <p>Funil de vendas organizado do jeito que a sua loja funciona</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">3</div>
+        <p>Todos os canais de entrada integrados — WhatsApp, OLX, Webmotors, Instagram e outros</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">4</div>
+        <p>Resposta ao lead em até 5 minutos — sem depender de ninguém monitorando</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">5</div>
+        <p>Separação dos leads por quem está pronto para comprar agora — vendedor foca em quem vai fechar</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">6</div>
+        <p>Acompanhamento dos leads que não responderam — de forma estruturada e sem depender de memória</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">7</div>
+        <p>Painel de performance: leads → visitas → vendas → faturamento</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">8</div>
+        <p>Relatório de estoque com diagnóstico de cada carro parado e ação recomendada</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">9</div>
+        <p>Treinamento da equipe — como ler os dados e seguir o processo</p>
+      </div>
+      <div class="e-item">
+        <div class="e-num">10</div>
+        <p>30 dias de acompanhamento intensivo com ajustes contínuos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     RETENÇÃO
+══════════════════════════════════════════════ -->
+<section class="sec-retencao section-pad">
+  <div class="container">
+    <div class="eyebrow">Depois dos 30 dias</div>
+    <h2>Escolha como quer continuar</h2>
+    <p class="muted" style="margin-top: 14px; max-width: 640px;">Depois da implantação, você migra para o modelo de acompanhamento que melhor se encaixa na sua loja. O valor mensal é definido durante o diagnóstico — conforme o tamanho da operação.</p>
+
+    <div class="ret-grid">
+      <div class="ret-card">
+        <div class="ret-badge">DIY</div>
+        <h3>Você opera, a gente mantém</h3>
+        <p class="ret-price">Para lojas com equipe que quer operar sozinha</p>
+        <ul>
+          <li>A estrutura continua funcionando</li>
+          <li>Suporte técnico disponível</li>
+          <li>Atualizações e correções quando necessário</li>
+          <li>Acesso a todos os relatórios</li>
+        </ul>
+      </div>
+
+      <div class="ret-card featured">
+        <div class="ret-badge featured-badge">DWY — Mais escolhido</div>
+        <h3>A gente analisa, você decide</h3>
+        <p class="ret-price">Para lojas que querem evolução orientada a dados</p>
+        <ul>
+          <li>Reuniões periódicas de revisão de performance</li>
+          <li>Análise do funil com recomendações práticas</li>
+          <li>Ajustes nos processos com base nos dados reais</li>
+          <li>Recomendações de estoque, precificação e canais</li>
+          <li>Relatório mensal com análise e próximos passos</li>
+        </ul>
+      </div>
+
+      <div class="ret-card">
+        <div class="ret-badge">DFY</div>
+        <h3>A gente cuida de tudo</h3>
+        <p class="ret-price">Para lojas que querem gestão ativa mês a mês</p>
+        <ul>
+          <li>Gestão ativa da operação e dos processos</li>
+          <li>Monitoramento contínuo do funil de vendas</li>
+          <li>Recuperação ativa de leads que esfriaram</li>
+          <li>Ações para acelerar o giro de carros específicos</li>
+          <li>Relatório detalhado de performance todo mês</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GARANTIA
+══════════════════════════════════════════════ -->
+<section class="sec-garantia section-pad">
+  <div class="container" style="text-align: center;">
+    <div class="eyebrow">Nosso compromisso</div>
+    <h2>Se não evoluir em 30 dias, continuamos sem cobrar</h2>
+
+    <div class="garantia-box">
+      <div class="garantia-title">
+        <span class="garantia-icon">&#128247;</span>
+        <h3>O que acontece se os resultados não aparecerem</h3>
+      </div>
+      <div class="garantia-body">
+        <p>Se ao final dos 30 dias os indicadores que registramos no início não mostrarem evolução dentro do que foi acordado, a Auto Growth AI continua trabalhando <strong style="color:var(--white)">sem cobrar mais nada</strong> — sem prazo definido, até os resultados aparecerem.</p>
+        <p style="margin-top: 12px;">Não devolvemos o dinheiro da implantação — diagnóstico, estrutura montada, integração e treinamento já foram entregues e têm valor por si só. O que garantimos é que não paramos até funcionar.</p>
+      </div>
+
+      <div class="garantia-conditions">
+        <h4>Para a garantia valer, a loja precisa</h4>
+        <ul>
+          <li>Dar acesso aos sistemas e ferramentas necessários</li>
+          <li>Compartilhar os dados da operação para diagnóstico e ajustes</li>
+          <li>Participar dos treinamentos com a equipe</li>
+          <li>Seguir os processos comerciais acordados</li>
+          <li>Manter a geração de leads nos canais ativos</li>
+          <li>Ter o registro do ponto de partida feito antes da implantação</li>
+        </ul>
+      </div>
+
+      <p class="garantia-note">A gente assume responsabilidade pela estrutura e pelos processos. A loja assume responsabilidade pela execução das vendas no dia a dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     KPIs MONITORADOS
+══════════════════════════════════════════════ -->
+<section class="sec-kpis section-pad">
+  <div class="container">
+    <div class="eyebrow">O que acompanhamos</div>
+    <h2>Números que importam — medidos desde o primeiro dia</h2>
+    <p class="muted" style="margin-top: 14px; max-width: 640px;">As metas são definidas com base em como a sua loja está hoje. Não tem promessa de número antes de entender a operação.</p>
+
+    <div class="kpis-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Tempo de resposta ao lead</div>
+        <div class="kpi-value">≤ 5 minutos</div>
+        <div class="kpi-note">Meta da infraestrutura desde o dia 1</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Lead recebido → contato feito</div>
+        <div class="kpi-value">Definido no diagnóstico</div>
+        <div class="kpi-note">Comparado com como estava antes</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Lead qualificado → visita agendada</div>
+        <div class="kpi-value">Definido no diagnóstico</div>
+        <div class="kpi-note">Referência: ≥ 70% de show-up (a validar)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Visita → venda fechada</div>
+        <div class="kpi-value">Definido no diagnóstico</div>
+        <div class="kpi-note">Referência: ≥ 20% de conversão (a validar)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Tempo médio de carro no pátio</div>
+        <div class="kpi-value">Definido no diagnóstico</div>
+        <div class="kpi-note">Antes vs. depois dos 30 dias</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Carros com mais de 45 dias parados</div>
+        <div class="kpi-value">Definido no diagnóstico</div>
+        <div class="kpi-note">Evolução mapeada mês a mês</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     INVESTIMENTO
+══════════════════════════════════════════════ -->
+<section class="sec-investimento section-pad">
+  <div class="container">
+    <div class="eyebrow">Investimento</div>
+    <h2>Antes de ver o número — veja o que sua loja está perdendo hoje</h2>
+    <p class="muted" style="margin-top: 14px; max-width: 660px;">O investimento certo a comparar não é com o preço de outro software. É com o custo atual da operação que não está funcionando.</p>
+
+    <div class="custo-grid">
+      <div class="custo-card">
+        <div class="custo-label">8 carros parados há mais de 45 dias</div>
+        <div class="custo-valor">R$ 7.200–9.600/mês</div>
+      </div>
+      <div class="custo-card">
+        <div class="custo-label">3 leads com alta intenção perdidos por semana (margem média de R$ 3.000/venda)</div>
+        <div class="custo-valor">R$ 9.000–12.000/mês</div>
+      </div>
+      <div class="custo-card">
+        <div class="custo-label">Custo acumulado nos próximos 3 meses sem mudar nada</div>
+        <div class="custo-valor">R$ 48.000–64.000</div>
+      </div>
+    </div>
+
+    <div class="preco-reveal">
+      <div class="preco-label">Implantação Auto Growth AI | PátioVivo™</div>
+      <div class="preco-valor">R$ 30.000</div>
+      <div class="preco-detalhe">
+        Uma vez. 30 dias de implantação completa e acompanhamento intensivo.<br>
+        Ao final, você migra para o plano de acompanhamento mensal — DIY, DWY ou DFY.
+      </div>
+      <div class="preco-ancora">
+        "Se a implantação resolver o custo de 1 mês de estoque parado e de leads perdidos, ela se paga na primeira semana de resultado."
+      </div>
+      <div style="margin-top: 28px;">
+        <a href="https://wa.me/5500000000000?text=Quero+o+diagn%C3%B3stico+gratuito" class="btn-primary" target="_blank" rel="noopener">
+          &#128172; Falar com a Auto Growth AI
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════════ -->
+<section class="sec-faq section-pad">
+  <div class="container">
+    <div class="eyebrow">Dúvidas frequentes</div>
+    <h2>As perguntas que a gente mais recebe</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span>Preciso trocar meu sistema ou CRM atual?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          Não. O PátioVivo™ não substitui nenhum sistema que você já usa. A gente entra por cima — como uma camada de inteligência. O seu CRM organiza dados. A gente transforma esses dados em respostas: quem vai comprar essa semana, por que o carro X está parado e o que comprar no próximo lote. São perguntas que nenhum CRM responde sozinho.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span>Minha equipe vai ter que aprender um sistema novo?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          O treinamento já está incluído na implantação. A equipe aprende a ler os relatórios e a seguir o processo — não a operar tecnologia. A estrutura roda por baixo. O vendedor continua focado em atender e fechar. O objetivo é simplificar, não complicar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span>E se os resultados não aparecerem nos 30 dias?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          A gente continua trabalhando sem cobrar mais nada — sem prazo definido — até os resultados aparecerem. A condição é que a loja siga os processos acordados, dê acesso aos dados e mantenha os canais de entrada ativos. O que registramos antes da implantação é o ponto de comparação — sem esse registro, não tem como medir evolução.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span>Já tentei automação antes e não funcionou. Por que seria diferente?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          Na maioria das ferramentas, a loja precisa configurar, treinar e monitorar tudo. Quando não usa, o sistema para. Aqui é diferente: quem monta e opera é a Auto Growth AI — não a sua equipe. Você não toca em nada. E como tudo começa com um diagnóstico que registra como você está hoje, o antes e o depois ficam visíveis com dados reais — não com promessa.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span>Meu vendedor já faz o atendimento. Por que mudar?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          Que horas ele fechou ontem? Os leads que chegaram depois das 18h — quem respondeu? Ele sabe me dizer quais 3 leads no funil têm maior chance de fechar essa semana — com dado, não com feeling? Se a resposta for "não" para qualquer uma dessas, há espaço real para melhorar.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════════════ -->
+<section class="sec-cta">
+  <div class="container">
+    <div class="eyebrow" style="color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); border-left-color: rgba(255,255,255,0.5);">Próximo passo</div>
+    <h2>Comece com um diagnóstico gratuito</h2>
+    <p>30 minutos. A gente mapeia onde sua loja está perdendo lead e quanto o estoque parado está custando — antes de qualquer decisão de contratar.</p>
+    <a href="https://wa.me/5500000000000?text=Quero+o+diagn%C3%B3stico+gratuito" class="btn-primary" target="_blank" rel="noopener" style="display: inline-flex; font-size: 1.05rem; padding: 18px 36px;">
+      &#128172; Quero o diagnóstico gratuito
+    </a>
+    <p class="cta-trust">Sem custo. Sem compromisso. Se o diagnóstico mostrar que você não precisa de nada, a gente fala isso também.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <p><strong>Auto Growth AI | PátioVivo™</strong> — Mais vendas e estoque girando para lojas independentes de seminovos e usados</p>
+    <p style="margin-top: 8px;">Giro &middot; Performance &middot; Conversão &middot; Inteligência &middot; Faturamento</p>
+    <p style="margin-top: 8px;">&copy; 2026 Auto Growth AI. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5500000000000?text=Quero+o+diagn%C3%B3stico+gratuito" class="wa-float" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+  <span class="wa-float-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.027 7.8L0 32l8.432-2.008A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.77-1.852l-.485-.29-5.006 1.193 1.224-4.87-.317-.5A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.631-.199-.897.199-.266.398-1.031 1.294-1.264 1.56-.233.266-.465.299-.863.1-.398-.2-1.681-.62-3.203-1.977-1.184-1.056-1.983-2.36-2.216-2.758-.233-.398-.025-.613.175-.811.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.067-.498-.033-.697-.1-.2-.897-2.162-1.23-2.959-.323-.777-.651-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.064.498-.365.398-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.266 2.815 4.299 6.821 6.029.953.412 1.697.658 2.277.843.957.305 1.828.262 2.516.159.768-.114 2.354-.962 2.686-1.89.333-.928.333-1.724.233-1.89-.1-.166-.365-.266-.763-.465z"/>
+    </svg>
+  </span>
+  <span class="wa-float-label">Diagnóstico gratuito</span>
+</a>
+
+<script>
+  // FAQ accordion simples
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    var a = q.nextElementSibling;
+    var toggle = q.querySelector('.faq-toggle');
+    a.style.display = 'none';
+    q.addEventListener('click', function() {
+      var open = a.style.display === 'block';
+      document.querySelectorAll('.faq-a').forEach(function(el) { el.style.display = 'none'; });
+      document.querySelectorAll('.faq-toggle').forEach(function(el) { el.textContent = '+'; });
+      if (!open) {
+        a.style.display = 'block';
+        toggle.textContent = '−';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

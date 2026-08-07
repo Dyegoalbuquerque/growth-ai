@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(gos-mission-control)",
+      "WebSearch",
+      "WebFetch(domain:revendamais.com.br)",
+      "WebFetch(domain:infocar.com.br)",
+      "WebFetch(domain:blog.bndv.com.br)",
+      "WebFetch(domain:autoconf.com.br)",
+      "WebFetch(domain:fenauto.org.br)",
+      "Skill(gos-gtm-architect)",
+      "WebFetch(domain:plataformaweb.com.br)",
+      "WebFetch(domain:simplesveiculo.com.br)",
+      "WebFetch(domain:bndv.com.br)",
+      "WebFetch(domain:autoadm.com.br)",
+      "WebFetch(domain:growthautomotivo.com.br)",
+      "Bash(Get-ChildItem -Recurse \"C:\\\\Workspace\\\\auto-growth-ai\\\\ofertas\\\\lojas-seminovos-usados\")",
+      "Bash(Select-Object FullName, LastWriteTime)",
+      "Bash(Sort-Object LastWriteTime)",
+      "Bash(Select-String -Path \"C:\\\\Workspace\\\\auto-growth-ai\\\\ofertas\\\\lojas-seminovos-usados\\\\01-oferta.md\" -Pattern \"Vehicle matching|Posicionamento|Garantia de resultado\")",
+      "Bash(Select-Object LineNumber, Line)"
+    ]
+  }
+}
