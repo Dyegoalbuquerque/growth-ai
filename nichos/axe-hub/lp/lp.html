@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axé Hub — Sua casa cheia. Sem esperar indicação.</title>
+  <meta name="description" content="A plataforma que une gestão do seu terreiro e crescimento espiritual nas redes — para que consulentes certos cheguem até você, todo mês." />
+  <meta property="og:title" content="Axé Hub — Sua casa cheia. Sem esperar indicação." />
+  <meta property="og:description" content="A plataforma de gestão e crescimento para babalorixás e yalorixás com agenda instável." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.axehub.app.br" />
+  <!-- Pixel placeholder: substitua pelo seu pixel Meta ou Google Tag -->
+  <!-- <script>/* gtag ou fbq aqui */</script> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0804'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2Cserif' font-size='16' font-weight='700' fill='%23C9A84C'%3E✦%3C/text%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Tokens ─────────────────────────────── */
+    :root {
+      --bg-base:      #0A0804;
+      --bg-elev:      #16120B;
+      --bg-elev-2:    #211A10;
+      --bg-gold:      #1B1609;
+      --ink-h:        #F7EDCF;
+      --ink-body:     #C4B491;
+      --ink-mute:     #7A6E58;
+      --rule:         #2C2418;
+      --accent:       #C9A84C;
+      --accent-lt:    #E3C46A;
+      --accent-ink:   #0A0804;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--ink-body);
+      font-family: 'Geist', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Noise overlay — textura sutil */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    }
+
+    /* ── Typography ─────────────────────────── */
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--ink-h);
+      line-height: 1.06;
+    }
+    h1 { font-size: clamp(42px, 7.5vw, 84px); font-weight: 600; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(30px, 4.5vw, 56px); font-weight: 600; letter-spacing: -0.015em; }
+    h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 600; }
+    p  { color: var(--ink-body); line-height: 1.7; }
+    em { font-style: italic; }
+
+    .kicker {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    .sec-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-mute);
+      letter-spacing: 0.08em;
+    }
+
+    .gold-bar {
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+    }
+
+    hr.rule { border: none; border-top: 1px solid var(--rule); }
+
+    /* ── Layout ─────────────────────────────── */
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    section { position: relative; z-index: 1; }
+
+    /* ── Buttons ─────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: 'Geist', system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.18s, color 0.18s, transform 0.15s, box-shadow 0.18s;
+    }
+    .btn-gold {
+      background: var(--accent);
+      color: var(--accent-ink);
+      padding: 14px 32px;
+    }
+    .btn-gold:hover {
+      background: var(--accent-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(201,168,76,0.28);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink-h);
+      padding: 13px 28px;
+      border: 1px solid var(--rule);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Cards ───────────────────────────────── */
+    .card {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .card-gold {
+      background: var(--bg-gold);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    /* ── Pilar cards ─────────────────────────── */
+    .pilar { background: var(--bg-elev); border: 1px solid var(--rule); border-radius: 10px; padding: 40px; }
+    .pilar-accent { background: var(--bg-gold); border: 1px solid var(--accent); border-radius: 10px; padding: 40px; }
+
+    /* ── Check list ──────────────────────────── */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--ink-body);
+    }
+    .check-item::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .check-item.muted { color: var(--ink-mute); }
+    .check-item.muted::before { color: var(--ink-mute); content: '—'; }
+
+    /* ── Plans ───────────────────────────────── */
+    .plan {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 40px;
+    }
+    .plan-featured {
+      background: var(--bg-gold);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      padding: 40px;
+      position: relative;
+    }
+
+    /* ── Accordion ───────────────────────────── */
+    details { border-bottom: 1px solid var(--rule); }
+    details summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 22px 0;
+      font-family: 'Geist', system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink-h);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color 0.18s;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: '+';
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details summary:hover { color: var(--accent); }
+    details .ans {
+      padding: 0 0 22px;
+      font-size: 15px;
+      color: var(--ink-body);
+      line-height: 1.7;
+      max-width: 680px;
+    }
+
+    /* ── AXIAL steps ─────────────────────────── */
+    .axial-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .axial-letter {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--bg-elev-2);
+      border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--ink-h);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .axial-letter.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--bg-gold);
+    }
+
+    /* ── Nav ─────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10, 8, 4, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Dot grid hero bg ────────────────────── */
+    .dot-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(201,168,76,0.07) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    /* ── Stats band ──────────────────────────── */
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 6vw, 60px);
+      font-weight: 600;
+      color: var(--ink-h);
+      line-height: 1;
+    }
+
+    /* ── Scroll reveal ───────────────────────── */
+    .rv { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    .rv-d1 { transition-delay: 0.1s; }
+    .rv-d2 { transition-delay: 0.2s; }
+    .rv-d3 { transition-delay: 0.3s; }
+
+    /* ── Responsive overrides ────────────────── */
+    @media (max-width: 767px) {
+      .g-2col { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .g-3col { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .g-pilar { grid-template-columns: 1fr !important; }
+      .g-axial { grid-template-columns: repeat(3, 1fr) !important; row-gap: 28px !important; }
+      .hide-m  { display: none !important; }
+      .plan { padding: 28px 24px !important; }
+      .plan-featured { padding: 28px 24px !important; }
+      .pilar { padding: 28px 20px !important; }
+      .pilar-accent { padding: 28px 20px !important; }
+      .hero-sub { max-width: 100% !important; }
+      .hero-cta-row { flex-direction: column !important; align-items: flex-start !important; }
+      .mock-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (min-width: 768px) {
+      .g-axial { grid-template-columns: repeat(5, 1fr) !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;">
+    <a href="#hero" style="text-decoration:none;display:flex;align-items:center;gap:6px;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink-h);">Axé <span style="color:var(--accent);">Hub</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a href="#como-funciona" class="hide-m" style="font-size:14px;color:var(--ink-mute);text-decoration:none;transition:color 0.18s;" onmouseover="this.style.color='var(--ink-h)'" onmouseout="this.style.color='var(--ink-mute)'">Como funciona</a>
+      <a href="#planos" class="hide-m" style="font-size:14px;color:var(--ink-mute);text-decoration:none;transition:color 0.18s;" onmouseover="this.style.color='var(--ink-h)'" onmouseout="this.style.color='var(--ink-mute)'">Planos</a>
+      <a href="#planos" class="btn btn-gold" style="padding:10px 22px;font-size:14px;">Começar grátis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 1 — HERO
+     [Framework: Hero 5s — responde "o que é / pra mim / confio" em ≤5s]
+══════════════════════════════════════════════════ -->
+<section id="hero" style="padding-top:120px;padding-bottom:72px;overflow:hidden;">
+  <div class="dot-grid"></div>
+  <div class="wrap" style="position:relative;z-index:1;">
+
+    <!-- Kicker -->
+    <div style="margin-bottom:22px;">
+      <span class="kicker">✦ Plataforma para líderes de axé</span>
+    </div>
+
+    <!-- H1 — 6 palavras / 37 chars -->
+    <h1 style="max-width:760px;margin-bottom:26px;">
+      Sua casa cheia.<br>
+      <em style="color:var(--accent);">Sem esperar indicação.</em>
+    </h1>
+
+    <!-- Sub-headline — 12 palavras -->
+    <p class="hero-sub" style="font-size:19px;max-width:520px;margin-bottom:36px;">
+      A plataforma que une gestão do terreiro e crescimento espiritual nas redes — para consulentes certos chegarem até você, todo mês.
+    </p>
+
+    <!-- CTA row -->
+    <div class="hero-cta-row" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:52px;">
+      <a href="#planos" class="btn btn-gold" style="font-size:16px;padding:16px 36px;">Quero minha agenda previsível</a>
+      <a href="#como-funciona" class="btn btn-outline">Ver como funciona</a>
+    </div>
+
+    <!-- Social proof acima da dobra -->
+    <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;padding-top:28px;border-top:1px solid var(--rule);">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="display:flex;">
+          <div style="width:30px;height:30px;border-radius:50%;background:var(--bg-elev-2);border:2px solid var(--bg-base);display:flex;align-items:center;justify-content:center;font-size:12px;margin-right:-7px;z-index:3;">🌿</div>
+          <div style="width:30px;height:30px;border-radius:50%;background:var(--bg-elev-2);border:2px solid var(--bg-base);display:flex;align-items:center;justify-content:center;font-size:12px;margin-right:-7px;z-index:2;">✦</div>
+          <div style="width:30px;height:30px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-base);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--accent-ink);z-index:1;">+</div>
+        </div>
+        <span style="font-size:14px;color:var(--ink-body);">
+          <strong style="color:var(--ink-h);">[FICTÍCIO — substituir] sacerdotes</strong> com agenda previsível
+        </span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="color:var(--accent);letter-spacing:2px;">★★★★★</span>
+        <span class="kicker" style="color:var(--ink-mute);">grátis pra começar</span>
+      </div>
+    </div>
+
+    <!-- Mock painel do produto -->
+    <div style="margin-top:56px;max-width:900px;" class="rv">
+      <div style="background:var(--bg-elev);border:1px solid var(--rule);border-radius:10px;overflow:hidden;">
+        <!-- Barra de browser mockup -->
+        <div style="background:var(--bg-elev-2);padding:10px 16px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:8px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+          <div style="flex:1;background:var(--bg-base);border-radius:4px;padding:5px 12px;margin-left:10px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);">axehub.app.br/painel</span>
+          </div>
+        </div>
+        <!-- Conteúdo do painel -->
+        <div style="padding:28px;">
+          <!-- Metrics row — layout assimétrico -->
+          <div class="mock-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-bottom:20px;">
+            <!-- Card principal — Agenda do mês -->
+            <div style="background:var(--bg-elev-2);border:1px solid var(--accent);border-radius:8px;padding:24px;background:var(--bg-gold);">
+              <div class="kicker" style="margin-bottom:8px;">Agenda do mês</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--accent);line-height:1;margin-bottom:4px;">14</div>
+              <div style="font-size:13px;color:var(--ink-mute);">atendimentos confirmados</div>
+              <div style="margin-top:16px;display:flex;gap:8px;">
+                <div style="height:4px;flex:3;background:var(--accent);border-radius:2px;"></div>
+                <div style="height:4px;flex:7;background:var(--rule);border-radius:2px;"></div>
+              </div>
+              <div style="font-size:12px;color:var(--ink-mute);margin-top:6px;">14 de 20 disponíveis</div>
+            </div>
+            <!-- Card novos consulentes -->
+            <div style="background:var(--bg-elev-2);border:1px solid var(--rule);border-radius:8px;padding:20px;">
+              <div class="kicker" style="margin-bottom:8px;">Novos</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--ink-h);line-height:1;margin-bottom:4px;">8</div>
+              <div style="font-size:12px;color:var(--ink-mute);">consulentes este mês</div>
+              <div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);">↑ +3 vs. mês anterior</div>
+            </div>
+            <!-- Card receita -->
+            <div style="background:var(--bg-elev-2);border:1px solid var(--rule);border-radius:8px;padding:20px;">
+              <div class="kicker" style="margin-bottom:8px;">Receita</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--ink-h);line-height:1;margin-bottom:4px;">R$6.800</div>
+              <div style="font-size:12px;color:var(--ink-mute);">mês estável</div>
+              <div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);">↑ +R$1.200</div>
+            </div>
+          </div>
+          <!-- Próximos atendimentos -->
+          <div style="background:var(--bg-elev-2);border:1px solid var(--rule);border-radius:6px;padding:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <span class="kicker">Próximos atendimentos</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);">Agenda completa →</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:4px;background:var(--bg-base);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                <span style="font-size:13px;color:var(--ink-h);flex:1;">Jogo de búzios — M.S.</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-mute);">Hoje, 14h</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:4px;background:var(--bg-base);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--rule);flex-shrink:0;"></div>
+                <span style="font-size:13px;color:var(--ink-body);flex:1;">Consulta espiritual — R.F.</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-mute);">Amanhã, 10h</span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:14px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);">[FICTÍCIO — substituir por screenshot real do painel]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 2 — PROBLEMA / DOR
+     [Framework: PAS — Problem / Agitate / Solve]
+══════════════════════════════════════════════════ -->
+<section id="problema" style="padding:80px 0;">
+  <div class="wrap">
+
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 01</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <div class="g-2col rv" style="display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start;">
+      <!-- Esquerda -->
+      <div>
+        <span class="kicker" style="display:block;margin-bottom:16px;">O problema</span>
+        <h2 style="margin-bottom:20px;">
+          Você sabe o que fazer.<br>
+          Mas a agenda<br>
+          <em style="color:var(--accent);">não perdoa.</em>
+        </h2>
+        <span class="gold-bar" style="display:block;margin:24px 0;"></span>
+        <p style="font-size:16px;line-height:1.75;max-width:400px;">
+          Seu conhecimento e sua tradição são profundos. O que falta é um sistema que faça as pessoas certas chegarem até você — com ou sem indicação, todo mês.
+        </p>
+      </div>
+
+      <!-- Direita — 3 dores (não cards iguais: layout numerado assimétrico) -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <!-- Dor 1 -->
+        <div class="card" style="padding:28px;border-radius:8px 8px 0 0;border-bottom:none;">
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);padding-top:4px;flex-shrink:0;letter-spacing:0.1em;">01 /</div>
+            <div>
+              <h3 style="margin-bottom:8px;font-size:19px;">Agenda instável, mês após mês</h3>
+              <p style="font-size:15px;">"Tem mês que loto a agenda, tem mês que não vem ninguém." Sem sistema de captação, você recomeça do zero toda vez que o fluxo de indicações seca.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dor 2 -->
+        <div class="card" style="padding:28px;border-radius:0;border-bottom:none;border-top-color:var(--bg-elev);">
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);padding-top:4px;flex-shrink:0;letter-spacing:0.1em;">02 /</div>
+            <div>
+              <h3 style="margin-bottom:8px;font-size:19px;">Instagram cheio de curiosos que nunca agendam</h3>
+              <p style="font-size:15px;">3 a 8 horas por semana respondendo DMs de pessoas que perguntam o valor e somem. Tempo que poderia estar no que você foi chamado a fazer.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dor 3 -->
+        <div class="card" style="padding:28px;border-radius:0 0 8px 8px;border-top-color:var(--bg-elev);">
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);padding-top:4px;flex-shrink:0;letter-spacing:0.1em;">03 /</div>
+            <div>
+              <h3 style="margin-bottom:8px;font-size:19px;">Seu saber não chega em quem realmente precisa</h3>
+              <p style="font-size:15px;">Você tem anos de tradição e autoridade real. Mas sem funil pensado para o axé, essa autoridade não se converte em consulentes que chegam prontos para o atendimento.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 3 — CONSEQUÊNCIA / AGITAÇÃO
+══════════════════════════════════════════════════ -->
+<section id="consequencia" style="padding:80px 0;background:var(--bg-elev);">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 02</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <div style="max-width:760px;margin:0 auto;" class="rv">
+      <span class="kicker" style="display:block;margin-bottom:16px;text-align:center;">O custo da inação</span>
+      <h2 style="text-align:center;margin-bottom:28px;">
+        12 meses sem mudar nada.<br>
+        <em style="color:var(--accent);">O cálculo é simples.</em>
+      </h2>
+      <p style="font-size:17px;text-align:center;max-width:600px;margin:0 auto 44px;">
+        Um líder com potencial de R$8.000/mês operando sem estrutura de captação termina o ano com R$23.500 na mesa — não por falta de conhecimento, mas por falta de sistema.
+      </p>
+
+      <!-- Stats — layout assimétrico -->
+      <div class="g-3col rv" style="display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:16px;text-align:center;">
+        <div style="background:var(--bg-base);border:1px solid var(--rule);border-radius:8px;padding:28px;">
+          <div class="stat-n" style="color:var(--ink-mute);">4</div>
+          <div style="font-size:14px;color:var(--ink-mute);margin-top:6px;">meses fracos por ano</div>
+        </div>
+        <div style="background:var(--bg-gold);border:1px solid var(--accent);border-radius:8px;padding:28px;">
+          <div class="stat-n" style="color:var(--accent);">R$23k</div>
+          <div style="font-size:14px;color:var(--ink-mute);margin-top:6px;">perdidos anualmente sem funil</div>
+        </div>
+        <div style="background:var(--bg-base);border:1px solid var(--rule);border-radius:8px;padding:28px;">
+          <div class="stat-n" style="color:var(--ink-mute);">3–8h</div>
+          <div style="font-size:14px;color:var(--ink-mute);margin-top:6px;">semanais em DMs sem resultado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 4 — SOLUÇÃO / MECANISMO
+     [Framework: FAB — Feature / Advantage / Benefit]
+══════════════════════════════════════════════════ -->
+<section id="como-funciona" style="padding:80px 0;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 03</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <span class="kicker" style="display:block;margin-bottom:16px;">A solução</span>
+    <h2 style="margin-bottom:16px;max-width:640px;">
+      Dois pilares.<br>
+      <em style="color:var(--accent);">Uma plataforma.</em>
+    </h2>
+    <p style="font-size:17px;max-width:560px;margin-bottom:56px;">
+      O Axé Hub foi construído especificamente para líderes de axé — com linguagem, funil e ferramentas que respeitam a tradição e geram resultado mensurável.
+    </p>
+
+    <!-- Dois pilares — grid assimétrico 1.1 / 0.9 -->
+    <div class="g-pilar rv" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px;margin-bottom:48px;">
+
+      <!-- Pilar 1 — Gestão da Casa -->
+      <div class="pilar">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+          <div style="width:36px;height:36px;background:var(--bg-gold);border:1px solid var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--accent);">01</div>
+          <span class="kicker">Pilar 1</span>
+        </div>
+        <h3 style="margin-bottom:14px;">Gestão da Casa</h3>
+        <p style="font-size:15px;margin-bottom:28px;">
+          Tudo para organizar seu terreiro em um lugar só — sem planilha, sem caderno, sem WhatsApp pessoal misturado com consulente.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="check-item">Cadastro completo de consulentes com histórico espiritual</div>
+          <div class="check-item">Agenda integrada com confirmação automática</div>
+          <div class="check-item">Controle de obrigações e datas de retorno</div>
+          <div class="check-item">Resumo de receita por período</div>
+          <div class="check-item">Memória da casa — histórico não se perde quando muda de telefone</div>
+        </div>
+      </div>
+
+      <!-- Pilar 2 — Expansão Espiritual (destaque) -->
+      <div class="pilar-accent">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+          <div style="width:36px;height:36px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--accent-ink);">02</div>
+          <span class="kicker">Pilar 2</span>
+        </div>
+        <h3 style="margin-bottom:14px;">Expansão Espiritual</h3>
+        <p style="font-size:15px;margin-bottom:28px;">
+          O sistema AXIAL™ para crescer nas redes e atrair consulentes que chegam com intenção — sem precisar ficar explicando o valor do seu trabalho.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="check-item">Página de captação personalizada para o seu axé</div>
+          <div class="check-item">Formulário que filtra curiosos antes do primeiro contato</div>
+          <div class="check-item">8 conteúdos de autoridade criados por mês</div>
+          <div class="check-item">Reativação de consulentes inativos — sem parecer spam</div>
+          <div class="check-item">Analytics simples: quantos chegaram, quantos agendaram</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Método AXIAL™ — 5 fases -->
+    <div style="background:var(--bg-elev);border:1px solid var(--rule);border-radius:10px;padding:40px;" class="rv">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span class="kicker" style="display:block;margin-bottom:10px;">Método proprietário</span>
+        <h3 style="font-size:clamp(24px,3.5vw,36px);">Sistema AXIAL™</h3>
+        <p style="font-size:14px;color:var(--ink-mute);margin-top:6px;font-style:italic;">"Do seguidor ao consulente fiel — com funil que respeita o sagrado."</p>
+      </div>
+
+      <div class="g-axial" style="display:grid;gap:8px;position:relative;">
+        <!-- Linha conectora — só desktop -->
+        <div class="hide-m" style="position:absolute;top:27px;left:calc(10%);right:calc(10%);height:1px;background:var(--rule);z-index:0;"></div>
+
+        <div class="axial-step">
+          <div class="axial-letter active">A</div>
+          <div style="font-size:13px;font-weight:600;color:var(--ink-h);margin-bottom:4px;">Autoridade</div>
+          <div style="font-size:12px;color:var(--ink-mute);line-height:1.45;">Conteúdo que demonstra tradição real</div>
+        </div>
+        <div class="axial-step">
+          <div class="axial-letter">X</div>
+          <div style="font-size:13px;font-weight:600;color:var(--ink-h);margin-bottom:4px;">Qualificação</div>
+          <div style="font-size:12px;color:var(--ink-mute);line-height:1.45;">Filtra curiosos, avança quem tem intenção</div>
+        </div>
+        <div class="axial-step">
+          <div class="axial-letter">I</div>
+          <div style="font-size:13px;font-weight:600;color:var(--ink-h);margin-bottom:4px;">Intenção</div>
+          <div style="font-size:12px;color:var(--ink-mute);line-height:1.45;">Mensagem que acolhe antes de convidar</div>
+        </div>
+        <div class="axial-step">
+          <div class="axial-letter">A</div>
+          <div style="font-size:13px;font-weight:600;color:var(--ink-h);margin-bottom:4px;">Agendamento</div>
+          <div style="font-size:12px;color:var(--ink-mute);line-height:1.45;">Confirmação automática, menos no-show</div>
+        </div>
+        <div class="axial-step">
+          <div class="axial-letter">L</div>
+          <div style="font-size:13px;font-weight:600;color:var(--ink-h);margin-bottom:4px;">Lealdade</div>
+          <div style="font-size:12px;color:var(--ink-mute);line-height:1.45;">Reativação nos ciclos do axé</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 5 — PROVA SOCIAL
+══════════════════════════════════════════════════ -->
+<section id="resultados" style="padding:80px 0;background:var(--bg-elev);">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 04</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <div class="g-2col" style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start;">
+      <div>
+        <span class="kicker" style="display:block;margin-bottom:16px;">Resultados reais</span>
+        <h2>O que sacerdotes estão<br><em style="color:var(--accent);">alcançando</em></h2>
+      </div>
+
+      <div class="g-3col rv" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+
+        <!-- Case 1 -->
+        <div class="card" style="padding:28px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--accent);line-height:1;margin-bottom:10px;">+8</div>
+          <div style="font-size:14px;font-weight:600;color:var(--ink-h);margin-bottom:10px;">novos consulentes em 45 dias</div>
+          <p style="font-size:14px;color:var(--ink-mute);line-height:1.6;">"Nunca pensei que uma página pudesse trazer gente que já chega sabendo o valor do meu trabalho."</p>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);">Yalorixá — Salvador, BA</span><br>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(122,110,88,0.6);">[FICTÍCIO — substituir]</span>
+          </div>
+        </div>
+
+        <!-- Case 2 — destaque -->
+        <div class="card-gold" style="padding:28px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--accent);line-height:1;margin-bottom:10px;">R$2.400</div>
+          <div style="font-size:14px;font-weight:600;color:var(--ink-h);margin-bottom:10px;">a mais no mês mais fraco do ano</div>
+          <p style="font-size:14px;color:var(--ink-mute);line-height:1.6;">"Antes, janeiro era sempre vazio. Com a reativação, 6 consulentes antigos voltaram no mesmo mês."</p>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);">Babalorixá — São Paulo, SP</span><br>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(122,110,88,0.6);">[FICTÍCIO — substituir]</span>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="card" style="padding:28px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--accent);line-height:1;margin-bottom:10px;">3h</div>
+          <div style="font-size:14px;font-weight:600;color:var(--ink-h);margin-bottom:10px;">menos por semana em DMs vazias</div>
+          <p style="font-size:14px;color:var(--ink-mute);line-height:1.6;">"O formulário mudou tudo. Só falo agora com quem já decidiu que quer agendar."</p>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);">Yalorixá — Rio de Janeiro, RJ</span><br>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(122,110,88,0.6);">[FICTÍCIO — substituir]</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA #2 -->
+    <div style="text-align:center;margin-top:52px;">
+      <a href="#planos" class="btn btn-gold">Quero esses resultados</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 6 — STACK DE VALOR / PLANOS
+══════════════════════════════════════════════════ -->
+<section id="planos" style="padding:80px 0;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 05</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <span class="kicker" style="display:block;margin-bottom:16px;">Planos</span>
+    <h2 style="margin-bottom:14px;">
+      Comece grátis.<br>
+      <em style="color:var(--accent);">Cresça quando estiver pronto.</em>
+    </h2>
+    <p style="font-size:17px;max-width:480px;margin-bottom:52px;">
+      Sem cartão de crédito no começo. Você experimenta, sente o resultado, e decide na hora que fizer sentido.
+    </p>
+
+    <div class="g-2col rv" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;">
+
+      <!-- Plano Gratuito -->
+      <div class="plan">
+        <span class="kicker" style="display:block;margin-bottom:10px;">Para começar</span>
+        <h3 style="font-size:26px;margin-bottom:10px;">Gratuito</h3>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--ink-h);line-height:1;">R$0</span>
+          <span style="color:var(--ink-mute);font-size:14px;">/mês</span>
+        </div>
+        <p style="font-size:14px;color:var(--ink-mute);margin-bottom:32px;">Para sempre gratuito dentro dos limites. Sem cartão de crédito.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+          <div class="check-item">Cadastro de até 20 consulentes</div>
+          <div class="check-item">Agenda básica (até 30 atendimentos/mês)</div>
+          <div class="check-item">Página de captação simples</div>
+          <div class="check-item">Formulário de qualificação de leads</div>
+          <div class="check-item">3 templates de conteúdo para Instagram</div>
+          <div class="check-item muted">Posts gerados por IA (8/mês)</div>
+          <div class="check-item muted">Sistema de reativação de inativos</div>
+          <div class="check-item muted">Analytics de conversão</div>
+          <div class="check-item muted">Suporte WhatsApp</div>
+        </div>
+
+        <a href="#" class="btn btn-outline" style="display:block;text-align:center;width:100%;">Criar conta grátis</a>
+        <p style="text-align:center;font-size:13px;color:var(--ink-mute);margin-top:10px;">Sem cartão de crédito</p>
+      </div>
+
+      <!-- Expansão Espiritual -->
+      <div class="plan-featured">
+        <div style="position:absolute;top:20px;right:20px;">
+          <span style="background:var(--accent);color:var(--accent-ink);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.1em;">Recomendado</span>
+        </div>
+        <span class="kicker" style="display:block;margin-bottom:10px;">Para crescer</span>
+        <h3 style="font-size:26px;margin-bottom:10px;">Expansão Espiritual</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--accent);line-height:1;">R$197</span>
+          <span style="color:var(--ink-mute);font-size:14px;">/mês</span>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(122,110,88,0.7);">[FICTÍCIO — confirmar preço real]</span>
+        <p style="font-size:14px;color:var(--ink-mute);margin-bottom:32px;margin-top:8px;">Equivale a 1,5 atendimentos por mês. ROI positivo com qualquer novo consulente gerado.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Tudo do plano gratuito</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Consulentes ilimitados</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Agenda completa com confirmação automática</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">8 conteúdos de autoridade criados por IA/mês</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Funil de reativação de consulentes inativos</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Analytics: leads → consulentes → receita</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Suporte WhatsApp (SLA 24h)</div>
+          <div class="check-item" style="color:var(--ink-h);font-weight:500;">Setup assistido incluso no 1º mês</div>
+        </div>
+
+        <a href="#" class="btn btn-gold" style="display:block;text-align:center;width:100%;font-size:15px;padding:15px 20px;">Quero a Expansão Espiritual</a>
+        <p style="text-align:center;font-size:13px;color:var(--ink-mute);margin-top:10px;">Cancele quando quiser · Garantia de 60 dias</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 7 — OBJEÇÕES / FAQ
+══════════════════════════════════════════════════ -->
+<section id="faq" style="padding:80px 0;background:var(--bg-elev);">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 06</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <div class="g-2col" style="display:grid;grid-template-columns:1fr 1.8fr;gap:72px;align-items:start;">
+      <div>
+        <span class="kicker" style="display:block;margin-bottom:16px;">Dúvidas frequentes</span>
+        <h2>Perguntas<br><em style="color:var(--accent);">honestas.</em><br>Respostas<br>diretas.</h2>
+      </div>
+
+      <div class="rv">
+        <details open>
+          <summary>Já tentei marketing digital e não funcionou para mim.</summary>
+          <p class="ans">Faz sentido — a maioria das ferramentas foi feita para vender produto físico ou curso. O Axé Hub foi construído especificamente para o universo do axé: a linguagem do formulário, o calendário de reativação e os modelos de conteúdo respeitam a relação sagrada com o consulente. Não é ferramenta genérica com nome de Orixá colado por cima.</p>
+        </details>
+
+        <details>
+          <summary>Não quero que meu trabalho pareça uma venda.</summary>
+          <p class="ans">Esse é o cuidado mais nobre que você pode ter. O sistema AXIAL™ não usa linguagem de vendas — usa linguagem de acolhimento. Seu consulente não chega porque você "fechou uma venda": ele chega porque a página, o conteúdo e o formulário construíram confiança antes do primeiro contato. A diferença é percebida nas primeiras semanas de uso.</p>
+        </details>
+
+        <details>
+          <summary>Não entendo muito de tecnologia. Vou conseguir usar?</summary>
+          <p class="ans">O plano Expansão Espiritual inclui setup assistido no primeiro mês — a equipe Axé Hub configura tudo com você. O painel foi desenhado para quem usa Instagram e WhatsApp: sem jargão, sem configuração técnica. Se você consegue publicar um Story, você consegue usar o Axé Hub.</p>
+        </details>
+
+        <details>
+          <summary>E se eu pagar e não ver resultado?</summary>
+          <p class="ans">Garantia de 60 dias: se você não receber pelo menos 5 novos consulentes qualificados no primeiro mês de Expansão Espiritual ativa, devolvemos integralmente o valor. Você fica com tudo que foi construído — página, formulário, templates de conteúdo.</p>
+        </details>
+
+        <details>
+          <summary>Funciona para umbanda também, ou só candomblé?</summary>
+          <p class="ans">O sistema foi construído para todo o espectro de axé — candomblé, umbanda e religiões de matriz africana em geral. A linguagem dos formulários e dos conteúdos se adapta à sua tradição específica durante o setup assistido.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 8 — URGÊNCIA / GARANTIA
+══════════════════════════════════════════════════ -->
+<section id="garantia" style="padding:80px 0;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px;">
+      <span class="sec-num">Nº 07</span>
+      <span class="gold-bar"></span>
+    </div>
+
+    <div style="max-width:680px;margin:0 auto;" class="rv">
+      <div class="card-gold" style="padding:48px;text-align:center;border-radius:10px;">
+        <div style="width:64px;height:64px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;color:var(--accent);">✦</div>
+        <span class="kicker" style="display:block;margin-bottom:14px;">Garantia de resultado</span>
+        <h2 style="font-size:clamp(28px,4vw,44px);margin-bottom:20px;">
+          60 dias ou seu<br>
+          <em style="color:var(--accent);">dinheiro de volta.</em>
+        </h2>
+        <p style="font-size:17px;line-height:1.75;max-width:540px;margin:0 auto 32px;">
+          Se em 60 dias o sistema AXIAL™ não entregar pelo menos 5 novos consulentes qualificados por mês, devolvemos integralmente o valor do plano Expansão Espiritual — e você fica com tudo que foi construído.
+        </p>
+        <div style="background:var(--bg-base);border-radius:6px;padding:16px 20px;text-align:left;">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-mute);line-height:1.6;">Condição: ter completado o setup e publicado os conteúdos conforme orientado. Detalhes completos nos Termos de Uso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══════════════════════════════════════════════════
+     BLOCO 9 — CTA FINAL
+     [Framework: AIDA — ação final com P.S. de reforço]
+══════════════════════════════════════════════════ -->
+<section id="cta-final" style="padding:80px 0;background:var(--bg-elev);">
+  <div class="wrap">
+    <div style="max-width:600px;margin:0 auto;text-align:center;" class="rv">
+
+      <span class="kicker" style="display:block;margin-bottom:20px;">✦ Comece hoje</span>
+      <h2 style="font-size:clamp(36px,5.5vw,68px);margin-bottom:24px;">
+        Sua casa cheia.<br>
+        <em style="color:var(--accent);">Sua missão, mais longe.</em>
+      </h2>
+      <p style="font-size:18px;line-height:1.75;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;">
+        O plano gratuito não tem prazo. Você experimenta sem pressa. Quando sentir a agenda crescendo, o plano Expansão Espiritual amplifica tudo — com garantia.
+      </p>
+
+      <a href="#planos" class="btn btn-gold" style="font-size:17px;padding:18px 44px;display:inline-block;margin-bottom:16px;">Quero minha agenda previsível</a>
+      <p style="font-size:14px;color:var(--ink-mute);margin-bottom:48px;">Sem cartão de crédito para começar</p>
+
+      <!-- P.S. -->
+      <div style="padding-top:32px;border-top:1px solid var(--rule);text-align:left;">
+        <p style="font-size:15px;line-height:1.75;color:var(--ink-body);">
+          <strong style="color:var(--ink-h);">P.S.</strong> — Seu conhecimento e sua tradição são o ativo mais valioso. O Axé Hub é o sistema que faz esse ativo chegar em mais pessoas que precisam de você — sem que você precise "se vender" ou abrir mão do que é sagrado.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER — obrigatório (regra LICENSE dvia)
+══════════════════════════════════════════════════ -->
+<footer style="background:var(--bg-base);border-top:1px solid var(--rule);padding:40px 0;">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:32px;margin-bottom:32px;">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--ink-h);margin-bottom:6px;">
+          Axé <span style="color:var(--accent);">Hub</span>
+        </div>
+        <p style="font-size:13px;color:var(--ink-mute);max-width:280px;line-height:1.6;">
+          Plataforma de gestão e crescimento espiritual para babalorixás e yalorixás.
+        </p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;">
+        <a href="#" style="font-size:13px;color:var(--ink-mute);text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Política de Privacidade</a>
+        <a href="#" style="font-size:13px;color:var(--ink-mute);text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Termos de Uso</a>
+        <a href="mailto:contato@axehub.app.br" style="font-size:13px;color:var(--ink-mute);text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">contato@axehub.app.br</a>
+      </div>
+    </div>
+    <div style="padding-top:24px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;">
+      <p style="font-size:12px;color:var(--ink-mute);">© 2026 Axé Hub. Todos os direitos reservados. Em conformidade com a LGPD.</p>
+      <p style="font-size:12px;color:var(--ink-mute);">
+        Desenvolvido com <span style="color:var(--accent);">✦</span> por <a href="https://dvia.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">dvia.com</a> — Growth AI™
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll reveal -->
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
