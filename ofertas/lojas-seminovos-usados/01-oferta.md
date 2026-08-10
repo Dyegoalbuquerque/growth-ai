@@ -67,7 +67,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 
 ---
 
-### DIY — Growth Infrastructure
+### Pátio Independente
 **Para:** Lojas que querem operar a infraestrutura com autonomia, com suporte técnico disponível quando necessário.
 
 **Escopo:**
@@ -82,7 +82,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 
 ---
 
-### DWY — Growth Optimization ← PRINCIPAL
+### Pátio Assistido ← PRINCIPAL
 **Para:** Lojas que querem evolução contínua orientada a dados — com análise estratégica periódica, otimização de processos e recomendações para melhorar a performance comercial.
 
 **Escopo:**
@@ -99,7 +99,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 
 ---
 
-### DFY — Growth Performance
+### Pátio Gerenciado
 **Para:** Lojas que querem gestão ativa e contínua da operação comercial — sem precisar tomar decisões sobre o processo, apenas executar as vendas.
 
 **Escopo:**
@@ -165,17 +165,17 @@ Para que o período adicional de otimização se aplique, a loja precisa cumprir
 | Componente | Valor | Frequência |
 |-----------|-------|------------|
 | Implantação Auto Growth AI | R$ 30.000 | Por cliente |
-| Retenção DWY — Growth Optimization | A definir | Mensal (pós-implantação) |
-| Retenção DFY — Growth Performance | A definir | Mensal (pós-implantação) |
-| Retenção DIY — Growth Infrastructure | A definir | Mensal (pós-implantação) |
+| Pátio Assistido | A definir | Mensal (pós-implantação) |
+| Pátio Gerenciado | A definir | Mensal (pós-implantação) |
+| Pátio Independente | A definir | Mensal (pós-implantação) |
 
 ### Capacidade de carteira (referencial)
 
-Com implantação a R$ 30.000 e retenção estimada entre R$ 3.000–5.000/mês (DWY — a validar):
+Com implantação a R$ 30.000 e retenção estimada entre R$ 3.000–5.000/mês (Pátio Assistido — a validar):
 
 - **1 implantação/mês:** R$ 30.000 de receita de setup
-- **Carteira com 5 clientes em retenção DWY (R$ 4.000 estimado):** R$ 20.000/mês recorrente
-- **Carteira com 10 clientes em retenção DWY:** R$ 40.000/mês recorrente
+- **Carteira com 5 clientes em Pátio Assistido (R$ 4.000 estimado):** R$ 20.000/mês recorrente
+- **Carteira com 10 clientes em Pátio Assistido:** R$ 40.000/mês recorrente
 - **LTV estimado (24 meses por cliente):** R$ 30.000 (setup) + R$ 96.000 (24x R$ 4.000) = R$ 126.000
 
 > **Nota:** Os valores de retenção são estimativas de referência — serão definidos após validar o custo operacional real no primeiro piloto.

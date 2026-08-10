@@ -235,7 +235,7 @@ Você tem 47 leads no WhatsApp. Sabe quais 3 vão comprar essa semana? 👇
 > → Lead scoring, follow-up e recuperação de oportunidades
 > → 90 dias de acompanhamento e otimização
 >
-> Após os 90 dias: migração para retenção (DIY / DWY / DFY)
+> Após os 30 dias: migração para retenção (Pátio Independente / Pátio Assistido / Pátio Gerenciado)
 > Valores de retenção a definir após validação do piloto.
 >
 > Compare com o custo mensal do estoque parado na sua operação — não com software de gestão.

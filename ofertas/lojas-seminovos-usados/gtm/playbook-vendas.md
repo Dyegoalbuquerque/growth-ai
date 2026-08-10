@@ -170,7 +170,7 @@ Decisão ao final: [ ] GO → proposta  [ ] NO-GO → encerrar elegante
 > *"E o follow-up dos leads que não fecharam — tem alguém fazendo de forma sistemática ou é só quem a equipe lembra de ligar?"*
 
 **Sinal GO:** "Para junto comigo" / "Não tenho processo de follow-up" / "É a equipe que lembra"
-**Sinal GO confirmado para DFY:** Dono claramente sobrecarregado, não quer mais ser o gargalo
+**Sinal GO confirmado para Pátio Gerenciado:** Dono claramente sobrecarregado, não quer mais ser o gargalo
 
 ---
 

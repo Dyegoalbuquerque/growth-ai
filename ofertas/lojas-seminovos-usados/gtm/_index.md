@@ -57,9 +57,9 @@ Auto Growth AI constrói e opera a infraestrutura de crescimento com IA para loj
 - Ao final: migração para retenção
 
 **Retenção (3 tiers — valores a definir após validação do piloto):**
-- DIY — Growth Infrastructure: cliente opera; Auto Growth AI mantém a infraestrutura
-- DWY — Growth Optimization (principal): reuniões estratégicas + análise de KPIs + otimização + evolução dos agentes
-- DFY — Growth Performance: gestão contínua + monitoramento ativo + recuperação de oportunidades + campanhas de giro
+- Pátio Independente: cliente opera; Auto Growth AI mantém a infraestrutura
+- Pátio Assistido (principal): reuniões estratégicas + análise de KPIs + otimização + evolução dos agentes
+- Pátio Gerenciado: gestão contínua + monitoramento ativo + recuperação de oportunidades + campanhas de giro
 
 ---
 
@@ -89,16 +89,16 @@ Auto Growth AI constrói e opera a infraestrutura de crescimento com IA para loj
 ## Artefatos de Oferta
 
 ### Landing Page
-- `../lp/index.html` — v4.0. Reescrita completa. Hero com "Auto Growth AI" como marca principal e headline do brief. Seção de problema com frases da persona e ciclo vicioso. Seção dos 3 pilares (Demand Intelligence, Lead Conversion Engine, Stock Velocity System). Como funciona: 3 etapas (Diagnóstico → Implantação → Otimização/Retenção). Escopo dos 90 dias em 10 itens. 3 planos de retenção (DIY/DWY/DFY) sem preço definido. Garantia 90 dias / condicional / período adicional sem reembolso. KPIs com "a definir no baseline". Prova social: "primeiro case em construção". FAQ com 5 objeções do brief. Sem depoimentos placeholder. Sem benchmarks como promessa. Botão WhatsApp flutuante.
+- `../lp/index.html` — v5.0. Linguagem simplificada. Seção de autoridade com dados do setor no lugar de prova social. 3 planos de retenção renomeados (Pátio Independente / Pátio Assistido / Pátio Gerenciado). Implantação de 30 dias. Preço R$ 30.000 revelado com ancoragem após seção de garantia. Seção "sob medida" nos entregáveis. Botão WhatsApp em pílula com ícone SVG oficial e animação de pulso.
 
 ### Ads / Copy
-- `../ads/copy.md` — v4.0. VSL 60s: assinatura "Auto Growth AI | PátioVivo™", sem "automático", case placeholder substituído por dado setorial referenciado como referência de mercado. Slide 6 do carrossel atualizado para "Implantação R$ 30.000 + retenção mensal" com estrutura DIY/DWY/DFY. Post Facebook variação A atualizado com frases da persona. Todas as variações: sem cases, com referência a "primeiro case em construção" onde aplicável.
+- `../ads/copy.md` — v4.0. VSL 60s: assinatura "Auto Growth AI | PátioVivo™", sem "automático", case placeholder substituído por dado setorial referenciado como referência de mercado. Slide 6 do carrossel atualizado para "Implantação R$ 30.000 + retenção mensal" com estrutura Pátio Independente/Pátio Assistido/Pátio Gerenciado. Post Facebook variação A atualizado com frases da persona. Todas as variações: sem cases, com referência a dados do setor onde aplicável.
 
 ### Modelo de Negócio
-- `../modelo-negocio/analise.md` — v4.0. Nome do modelo atualizado para "Auto Growth AI — Infraestrutura de Crescimento com IA". Seção "Status Atual — Fase 1: Validação" adicionada no início. Tabela de tiers substituída por estrutura Implantação R$ 30k + DIY/DWY/DFY. LTV e CAC recalculados com novo pricing (implantação R$ 30k + DWY estimado R$ 3.000–5.000/mês). Simulação de crescimento revisada com modelo de menos clientes e ticket maior. Garantia atualizada para 90 dias / condicional / período adicional. Objeção "R$ 30 mil é muito" adicionada com resposta do brief.
+- `../modelo-negocio/analise.md` — v4.0. Nome do modelo atualizado para "Auto Growth AI — Infraestrutura de Crescimento com IA". Seção "Status Atual — Fase 1: Validação" adicionada no início. Tiers renomeados para Pátio Independente / Pátio Assistido / Pátio Gerenciado. LTV e CAC recalculados com novo pricing (implantação R$ 30k + Pátio Assistido estimado R$ 3.000–5.000/mês). Simulação de crescimento revisada. Garantia condicional com período adicional. Objeção "R$ 30 mil é muito" adicionada com resposta do brief.
 
 ### Oferta Principal
-- `../01-oferta.md` — v4.0. Reescrita completa. Frontmatter: empresa: Auto Growth AI, mecanismo: PátioVivo™. Headline: nome da empresa + promessa central. Posicionamento com 3 pilares. Oferta principal: Implantação R$ 30.000 com escopo completo de 10 itens. 3 planos de retenção DIY/DWY/DFY com escopos detalhados e "valor a definir". Garantia 90 dias / condicional / período adicional / condições listadas. Modelo de receita do operador com novo pricing. Ancoragem vs. custo de capital imobilizado. KPIs com TBDs onde aplicável. Frases da persona incluídas.
+- `../01-oferta.md` — v4.0. Reescrita completa. Frontmatter: empresa: Auto Growth AI, mecanismo: PátioVivo™. Headline: nome da empresa + promessa central. Posicionamento com 3 pilares. Oferta principal: Implantação R$ 30.000 com escopo completo de 10 itens. 3 planos de retenção (Pátio Independente / Pátio Assistido / Pátio Gerenciado) com escopos detalhados e "valor a definir". Garantia condicional / período adicional / condições listadas. Modelo de receita do operador. Ancoragem vs. custo de capital imobilizado. KPIs com TBDs onde aplicável. Frases da persona incluídas.
 
 ### Concorrentes
 - `../concorrentes/mapeamento.md` — não alterado nesta versão (fora do escopo das 7 edições).

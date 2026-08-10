@@ -6,7 +6,7 @@ empresa: Auto Growth AI
 mecanismo: PátioVivo™
 modelo: implantacao + retencao / Infraestrutura de Crescimento com IA
 data: 2026-08-06
-decisao: IMPLANTAÇÃO R$ 30.000 + 90 DIAS INTENSIVOS → MIGRAÇÃO PARA RETENÇÃO (DIY / DWY / DFY)
+decisao: IMPLANTAÇÃO R$ 30.000 + 90 DIAS INTENSIVOS → MIGRAÇÃO PARA RETENÇÃO (Pátio Independente / Pátio Assistido / Pátio Gerenciado)
 ---
 
 # Análise de Modelo de Negócio — Auto Growth AI como Infraestrutura de Crescimento com IA
@@ -101,9 +101,9 @@ O Setup é o investimento inicial de diagnóstico + construção + implementaç�
 | Componente | Valor | Descrição |
 |-----------|-------|-----------|
 | **Implantação Auto Growth AI** | R$ 30.000 | Diagnóstico + mapeamento + estruturação do CRM + integração de canais + infraestrutura de atendimento + qualificação e priorização de leads + automação de follow-up + dashboards + KPIs + treinamento + 90 dias de acompanhamento intensivo |
-| **Retenção DIY — Growth Infrastructure** | A definir | Cliente opera; Auto Growth AI mantém a infraestrutura e presta suporte |
-| **Retenção DWY — Growth Optimization** | A definir (estimativa R$ 3.000–5.000/mês) | Reuniões estratégicas + análise de KPIs + otimização de workflows + evolução contínua dos agentes |
-| **Retenção DFY — Growth Performance** | A definir | Gestão contínua + monitoramento ativo + otimização do funil + recuperação de oportunidades + campanhas de giro |
+| **Pátio Independente** | A definir | Cliente opera; Auto Growth AI mantém a infraestrutura e presta suporte |
+| **Pátio Assistido** | A definir (estimativa R$ 3.000–5.000/mês) | Reuniões estratégicas + análise de KPIs + otimização de workflows + evolução contínua dos agentes |
+| **Pátio Gerenciado** | A definir | Gestão contínua + monitoramento ativo + otimização do funil + recuperação de oportunidades + campanhas de giro |
 
 ---
 
@@ -143,9 +143,9 @@ Os valores de retenção serão definidos após validação do custo operacional
 
 | Plano | Perfil | Estimativa Mensal |
 |-------|--------|------------------|
-| **DIY — Growth Infrastructure** | Loja com autonomia operacional | A definir |
-| **DWY — Growth Optimization** (principal) | Loja que quer evolução orientada a dados | R$ 3.000–5.000 (a validar) |
-| **DFY — Growth Performance** | Loja que quer gestão ativa contínua | A definir |
+| **Pátio Independente** | Loja com autonomia operacional | A definir |
+| **Pátio Assistido** (principal) | Loja que quer evolução orientada a dados | R$ 3.000–5.000 (a validar) |
+| **Pátio Gerenciado** | Loja que quer gestão ativa contínua | A definir |
 
 ---
 
@@ -219,9 +219,9 @@ Quando o operador constrói a infraestrutura daquela loja específica — agente
 
 | Métrica | Valor | Observação |
 |---------|-------|------------|
-| **Receita Ano 1 por cliente (implantação + DWY estimado)** | R$ 78.000 (setup R$ 30.000 + 12x R$ 4.000 estimado) | Valor de retenção a confirmar no piloto |
-| **LTV estimado (24 meses — DWY R$ 4.000/mês)** | ~R$ 126.000 (setup + 24x R$ 4.000) | Estimativa — depende da validação do preço de retenção |
-| **LTV estimado (36 meses — DWY R$ 4.000/mês)** | ~R$ 174.000 | Estimativa de longo prazo |
+| **Receita Ano 1 por cliente (implantação + Pátio Assistido estimado)** | R$ 78.000 (setup R$ 30.000 + 12x R$ 4.000 estimado) | Valor de retenção a confirmar no piloto |
+| **LTV estimado (24 meses — Pátio Assistido R$ 4.000/mês)** | ~R$ 126.000 (setup + 24x R$ 4.000) | Estimativa — depende da validação do preço de retenção |
+| **LTV estimado (36 meses — Pátio Assistido R$ 4.000/mês)** | ~R$ 174.000 | Estimativa de longo prazo |
 | **CAC meta** | R$ 3.000–5.000 | Outbound direto + indicação |
 | **Payback do setup** | Imediato (setup R$ 30.000 cobre CAC com margem ampla) | Implantação R$ 30.000 cobre CAC no ato |
 | **Margem bruta estimada na retenção** | 65–75% | A calibrar após primeiro piloto |
@@ -240,14 +240,14 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 | Marco | Receita |
 |-------|---------|
 | 1º cliente piloto assinado | R$ 30.000 (implantação) |
-| Fim dos 90 dias — migração para retenção DWY | + R$ 4.000/mês estimado |
+| Fim dos 90 dias — migração para retenção Pátio Assistido | + R$ 4.000/mês estimado |
 | Documentação do case | Prova social para Fase 2 |
 
 **Foco:** Provar a transformação. Documentar antes/depois com dados reais. Não escalar antes de ter o case.
 
 ### Fase 2 — Aquisição Previsível (Meses 4-9): 3-5 clientes
 
-| Mês | Clientes Ativos | Receita Setup | MRR Retenção (DWY estimado) |
+| Mês | Clientes Ativos | Receita Setup | MRR Retenção (Pátio Assistido estimado) |
 |-----|----------------|---------------|------------------------------|
 | 4 | 2 | R$ 30.000 | R$ 4.000 |
 | 6 | 3 | R$ 30.000 | R$ 12.000 |
@@ -259,7 +259,7 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 
 | Marco | Valor |
 |-------|-------|
-| 10 clientes em retenção DWY (R$ 4.000) | MRR R$ 40.000/mês |
+| 10 clientes em retenção Pátio Assistido (R$ 4.000) | MRR R$ 40.000/mês |
 | 1 implantação/mês | + R$ 30.000/mês de setup |
 | ARR estabilizado (Ano 2) | R$ 480.000–840.000 |
 
@@ -312,7 +312,7 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 | Velocidade de decisão | Alta (tem clareza da dor) | Média | Lenta |
 | **Score done-for-you** | **9/10** | **7/10** | **3/10** |
 
-**ICP primário:** Médio Porte → Implantação Auto Growth AI R$ 30.000 + retenção DWY
+**ICP primário:** Médio Porte → Implantação Auto Growth AI R$ 30.000 + retenção Pátio Assistido
 **ICP secundário:** Pequeno e Grande Porte → avaliados caso a caso
 **Fora do foco:** <5 veículos, concessionárias, grupos >50 sem estrutura (ciclo de venda muito longo)
 
@@ -361,4 +361,4 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 
 ---
 
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0 | Modelo: Implantação R$ 30.000 + Retenção DIY/DWY/DFY*
+*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0 | Modelo: Implantação R$ 30.000 + Retenção Pátio Independente/Pátio Assistido/Pátio Gerenciado*
