@@ -2,19 +2,19 @@
 slug: lojas-seminovos-usados
 arquivo: oferta
 versao: 4.0
-empresa: Auto Growth AI
-mecanismo: PátioVivo™
+empresa: Auto Giro AI
+mecanismo: Auto Giro AI
 modelo: implantacao + retencao
 status: active
 ---
 
-# Auto Growth AI — Oferta para Lojas de Seminovos e Usados
+# Auto Giro AI — Oferta para Lojas de Seminovos e Usados
 
 ## Proposta de Valor Central
 
-**Auto Growth AI** constrói e opera a infraestrutura comercial com IA para lojas independentes de seminovos e usados — transformando mais leads em vendas, acelerando o giro dos veículos em estoque e reduzindo o capital parado na operação.
+**Auto Giro AI** constrói e opera a infraestrutura comercial com IA para lojas independentes de seminovos e usados — transformando mais leads em vendas, acelerando o giro dos veículos em estoque e reduzindo o capital parado na operação.
 
-O mecanismo proprietário é o **PátioVivo™**: três pilares integrados que cobrem inteligência de demanda, conversão de leads e velocidade de estoque.
+O mecanismo proprietário é o **Auto Giro AI**: três pilares integrados que cobrem inteligência de demanda, conversão de leads e velocidade de estoque.
 
 > **Pergunta central:** "Quanto dinheiro sua operação está perdendo entre o estoque que não gira e os leads que não são convertidos?"
 
@@ -22,11 +22,11 @@ O mecanismo proprietário é o **PátioVivo™**: três pilares integrados que c
 
 ## Posicionamento
 
-**Auto Growth AI** é a empresa. **PátioVivo™** é o mecanismo.
+**Auto Giro AI** é a empresa. **Auto Giro AI** é o mecanismo.
 
 Não substituímos o ERP, CRM ou portais que a loja já usa. Atuamos como infraestrutura de crescimento acima deles — transformando dados dispersos em decisões orientadas a resultado e ações estruturadas.
 
-### Os 3 Pilares do PátioVivo™
+### Os 3 Pilares do Auto Giro AI
 
 | Pilar | O que faz | O que resolve |
 |-------|-----------|---------------|
@@ -38,7 +38,7 @@ Não substituímos o ERP, CRM ou portais que a loja já usa. Atuamos como infrae
 
 ## Oferta Principal
 
-### Implantação Auto Growth AI — R$ 30.000
+### Implantação Auto Giro AI — R$ 30.000
 
 **Modelo:** Investimento único de implantação + 90 dias intensivos de acompanhamento, seguido de migração para retenção.
 
@@ -76,7 +76,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 - Atualizações e correções na infraestrutura
 - Acesso aos dashboards e relatórios configurados
 
-**Responsabilidade operacional:** A loja opera os processos; Auto Growth AI mantém a infraestrutura funcionando.
+**Responsabilidade operacional:** A loja opera os processos; Auto Giro AI mantém a infraestrutura funcionando.
 
 **Valor:** A definir após validação do custo operacional no piloto.
 
@@ -93,7 +93,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 - Recomendações baseadas em dados para compra de estoque, precificação e canais
 - Relatórios de performance com análise e recomendações de ação
 
-**Responsabilidade operacional:** Compartilhada — Auto Growth AI orienta com dados; equipe da loja executa.
+**Responsabilidade operacional:** Compartilhada — Auto Giro AI orienta com dados; equipe da loja executa.
 
 **Valor:** A definir após validação do custo operacional no piloto.
 
@@ -111,7 +111,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 - Diagnóstico contínuo de veículos parados com recomendação de ação
 - Relatórios de performance periódicos com análise detalhada
 
-**Responsabilidade operacional:** Auto Growth AI gerencia o processo; equipe da loja executa as vendas.
+**Responsabilidade operacional:** Auto Giro AI gerencia o processo; equipe da loja executa as vendas.
 
 **Valor:** A definir após validação do custo operacional no piloto.
 
@@ -121,7 +121,7 @@ Após os 90 dias intensivos, a loja migra para um dos três modelos de retençã
 
 **Prazo:** 90 dias (alinhado ao período de implantação).
 
-**O que acontece se os KPIs não evoluírem:** Se ao final dos 90 dias os indicadores definidos no baseline não apresentarem evolução mensurável, Auto Growth AI oferece um **período adicional de otimização sem cobrança adicional** — sem prazo predefinido, até que os resultados sejam alcançados dentro das condições acordadas.
+**O que acontece se os KPIs não evoluírem:** Se ao final dos 90 dias os indicadores definidos no baseline não apresentarem evolução mensurável, Auto Giro AI oferece um **período adicional de otimização sem cobrança adicional** — sem prazo predefinido, até que os resultados sejam alcançados dentro das condições acordadas.
 
 **Não há devolução de dinheiro.** A implantação cobre diagnóstico, construção e ativação de infraestrutura que já foi entregue.
 
@@ -136,7 +136,7 @@ Para que o período adicional de otimização se aplique, a loja precisa cumprir
 5. Manutenção das condições de mídia e geração de leads (a infraestrutura não substitui o investimento em tráfego)
 6. Registro de baseline de KPIs antes do início da implantação
 
-**Princípio:** Auto Growth AI assume responsabilidade pela infraestrutura, pelos processos e pela otimização contínua. A loja assume responsabilidade pela execução das atividades que dependem dela — atendimento presencial, negociação, fechamento e as decisões comerciais do dia a dia.
+**Princípio:** Auto Giro AI assume responsabilidade pela infraestrutura, pelos processos e pela otimização contínua. A loja assume responsabilidade pela execução das atividades que dependem dela — atendimento presencial, negociação, fechamento e as decisões comerciais do dia a dia.
 
 ---
 
@@ -164,7 +164,7 @@ Para que o período adicional de otimização se aplique, a loja precisa cumprir
 
 | Componente | Valor | Frequência |
 |-----------|-------|------------|
-| Implantação Auto Growth AI | R$ 30.000 | Por cliente |
+| Implantação Auto Giro AI | R$ 30.000 | Por cliente |
 | Pátio Assistido | A definir | Mensal (pós-implantação) |
 | Pátio Gerenciado | A definir | Mensal (pós-implantação) |
 | Pátio Independente | A definir | Mensal (pós-implantação) |
@@ -198,7 +198,7 @@ Com implantação a R$ 30.000 e retenção estimada entre R$ 3.000–5.000/mês 
 
 ## Frases da Persona (Linguagem do Lojista)
 
-O cliente que a Auto Growth AI atende se reconhece nestas situações:
+O cliente que a Auto Giro AI atende se reconhece nestas situações:
 
 - "Tenho carro bom parado no pátio."
 - "O lead chega, mas não sei quantos realmente estão sendo trabalhados."
@@ -209,4 +209,4 @@ O cliente que a Auto Growth AI atende se reconhece nestas situações:
 
 ---
 
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0*
+*Agosto 2026 | Auto Giro AI | v4.0*

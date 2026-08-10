@@ -1,13 +1,13 @@
 # Mapeamento de Concorrentes — Lojas de Seminovos e Usados
 **Nicho:** Lojas independentes de carros seminovos e usados  
-**Mecanismo diferenciador:** PátioVivo™  
+**Mecanismo diferenciador:** Auto Giro AI  
 **Data:** Agosto 2026  
 
 ---
 
 ## Visão Geral do Mercado
 
-O mercado de software para revendas de veículos no Brasil é dominado por plataformas de **gestão operacional e ERP** (estoque, NF-e, integradores de portais). A grande lacuna é que **nenhum player posiciona IA como SDR/agente de atendimento primário** — todos tratam CRM como módulo de registro, não como máquina de conversão ativa. Mais importante: **nenhum player oferece lead scoring por intenção de compra nem inteligência de estoque** (por que um carro específico está encalhado) — os dois maiores diferenciais do PátioVivo™ v3.0.
+O mercado de software para revendas de veículos no Brasil é dominado por plataformas de **gestão operacional e ERP** (estoque, NF-e, integradores de portais). A grande lacuna é que **nenhum player posiciona IA como SDR/agente de atendimento primário** — todos tratam CRM como módulo de registro, não como máquina de conversão ativa. Mais importante: **nenhum player oferece lead scoring por intenção de compra nem inteligência de estoque** (por que um carro específico está encalhado) — os dois maiores diferenciais do Auto Giro AI v3.0.
 
 ---
 
@@ -37,7 +37,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Não ataca o problema do lead perdido em <1 min
 - Nenhuma menção a IA generativa ou automação de atendimento
 - Foco em gestão, não em conversão ou inteligência comercial
-- **Exploração PátioVivo™:** "O Revenda Mais gerencia o que já aconteceu. O PátioVivo™ inteligencia o que vai acontecer."
+- **Exploração Auto Giro AI:** "O Revenda Mais gerencia o que já aconteceu. O Auto Giro AI inteligencia o que vai acontecer."
 
 ---
 
@@ -62,7 +62,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Foco em operação B2B entre lojistas, não em conversão B2C
 - CRM como ferramenta de registro, não de ativação
 - Preço opaco
-- **Exploração PátioVivo™:** BNDV ajuda a mover o estoque entre lojistas; PátioVivo™ move o estoque para o consumidor final via atendimento em segundos e inteligência de qual carro vende mais em qual praça.
+- **Exploração Auto Giro AI:** BNDV ajuda a mover o estoque entre lojistas; Auto Giro AI move o estoque para o consumidor final via atendimento em segundos e inteligência de qual carro vende mais em qual praça.
 
 ---
 
@@ -91,7 +91,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem lead scoring por intenção de compra
 - Sem inteligência de estoque (não recomenda o que comprar)
 - Foco em controle financeiro/ERP — não em geração de receita
-- **Exploração PátioVivo™:** PlataformaWeb é para o dono que quer controlar o passado. PátioVivo™ é para quem quer crescer no futuro com inteligência. Por R$ 2.800/mês o lojista tem operação completa, lead scoring e inteligência de estoque — vs apenas ERP.
+- **Exploração Auto Giro AI:** PlataformaWeb é para o dono que quer controlar o passado. Auto Giro AI é para quem quer crescer no futuro com inteligência. Por R$ 2.800/mês o lojista tem operação completa, lead scoring e inteligência de estoque — vs apenas ERP.
 
 ---
 
@@ -122,8 +122,8 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem agente IA de atendimento
 - Sem lead scoring por intenção de compra
 - Sem inteligência de estoque ou recomendação de portfólio de compras
-- Enterprise ao mesmo preço do PátioVivo™ Essencial mensal — oportunidade de "mesmo preço, resultado diferente"
-- **Exploração PátioVivo™:** Simples Veículo resolve o que é obrigatório (RENAVE, NF-e). PátioVivo™ resolve o que é lucrativo (lead certo → carro vendido). Use os dois, ou substitua o ERP básico pelo PátioVivo™.
+- Enterprise ao mesmo preço do Auto Giro AI Essencial mensal — oportunidade de "mesmo preço, resultado diferente"
+- **Exploração Auto Giro AI:** Simples Veículo resolve o que é obrigatório (RENAVE, NF-e). Auto Giro AI resolve o que é lucrativo (lead certo → carro vendido). Use os dois, ou substitua o ERP básico pelo Auto Giro AI.
 
 ---
 
@@ -147,7 +147,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem lead scoring por intenção de compra
 - Sem inteligência de estoque
 - Não endereça o custo do lead perdido
-- **Exploração PátioVivo™:** Auto Adm leva o lead até a porta. PátioVivo™ abre a porta em menos de 60 segundos, sabe qual lead priorizar e por que o carro que o lead quer ainda está no pátio.
+- **Exploração Auto Giro AI:** Auto Adm leva o lead até a porta. Auto Giro AI abre a porta em menos de 60 segundos, sabe qual lead priorizar e por que o carro que o lead quer ainda está no pátio.
 
 ---
 
@@ -172,7 +172,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem inteligência de estoque ou recomendação de portfólio
 - Lojista opera o marketing sozinho
 - Não resolve o problema de velocidade de resposta nem de priorização
-- **Exploração PátioVivo™:** DealerSites traz o lead até o site. PátioVivo™ garante que esse lead seja respondido em <60 segundos, pontuado por intenção de compra e acompanhado até fechar. São complementares — mas sem o PátioVivo™, o investimento em site vira custo sem conversão.
+- **Exploração Auto Giro AI:** DealerSites traz o lead até o site. Auto Giro AI garante que esse lead seja respondido em <60 segundos, pontuado por intenção de compra e acompanhado até fechar. São complementares — mas sem o Auto Giro AI, o investimento em site vira custo sem conversão.
 
 ---
 
@@ -197,7 +197,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem inteligência de estoque (diagnóstico de por que encalhou)
 - Sem recomendação de portfólio (quais modelos comprar para o mercado local)
 - Lojista opera a ferramenta sozinho
-- **Exploração PátioVivo™:** AutoAvaliar ajuda a precificar bem no momento da compra. PátioVivo™ vai além: além de precificação, identifica por que cada carro está encalhado (não é só preço — é canal, demanda, anúncio) e recomenda o portfólio ideal para a praça. São complementares para decisão de compra, mas PátioVivo™ cobre toda a inteligência comercial, não só a avaliação.
+- **Exploração Auto Giro AI:** AutoAvaliar ajuda a precificar bem no momento da compra. Auto Giro AI vai além: além de precificação, identifica por que cada carro está encalhado (não é só preço — é canal, demanda, anúncio) e recomenda o portfólio ideal para a praça. São complementares para decisão de compra, mas Auto Giro AI cobre toda a inteligência comercial, não só a avaliação.
 
 ---
 
@@ -221,7 +221,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem lead scoring por intenção de compra
 - Sem inteligência de estoque (não diagnostica encalhados nem orienta compras)
 - Lojista precisa operar a plataforma
-- **Exploração PátioVivo™:** DealerSpace organiza a operação. PátioVivo™ inteligencia a operação. O lojista que usa DealerSpace ainda toma decisões no escuro sobre quais leads priorizar e o que comprar. PátioVivo™ resolve exatamente esse gap — e o operador faz tudo por ele.
+- **Exploração Auto Giro AI:** DealerSpace organiza a operação. Auto Giro AI inteligencia a operação. O lojista que usa DealerSpace ainda toma decisões no escuro sobre quais leads priorizar e o que comprar. Auto Giro AI resolve exatamente esse gap — e o operador faz tudo por ele.
 
 ---
 
@@ -246,7 +246,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem inteligência de estoque (diagnóstico de encalhados + recomendação de portfólio)
 - Lojista opera a plataforma — modelo SaaS
 - Preço opaco
-- **Exploração PátioVivo™:** AutoForce é plataforma digital horizontal. PátioVivo™ é inteligência comercial vertical para multimarcas independentes — especializada no problema de quem vende 5-50 carros por mês, não concessionárias. E o operador faz tudo: o lojista só fecha.
+- **Exploração Auto Giro AI:** AutoForce é plataforma digital horizontal. Auto Giro AI é inteligência comercial vertical para multimarcas independentes — especializada no problema de quem vende 5-50 carros por mês, não concessionárias. E o operador faz tudo: o lojista só fecha.
 
 ---
 
@@ -260,7 +260,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 **Preço:** Plano individual R$ 119,90 (até vender). B2B lojistas: sob consulta.
 
 **Gaps:** Gera tráfego, não converte — o lead chega e espera atendimento humano.  
-**Exploração PátioVivo™:** "O iCarros te dá o lead. O PátioVivo™ te garante que ele não fuja enquanto espera — e te diz se esse lead tem alta ou baixa intenção de compra."
+**Exploração Auto Giro AI:** "O iCarros te dá o lead. O Auto Giro AI te garante que ele não fuja enquanto espera — e te diz se esse lead tem alta ou baixa intenção de compra."
 
 ---
 
@@ -272,7 +272,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 **Preço:** Planos lojistas sob consulta.
 
 **Gaps:** Portal de tráfego, não de gestão ou conversão. Sem ferramentas de atendimento automatizado ou inteligência de estoque.  
-**Exploração PátioVivo™:** Complementar — o PátioVivo™ captura os leads gerados pelo Webmotors, pontua por intenção de compra e converte antes da concorrência.
+**Exploração Auto Giro AI:** Complementar — o Auto Giro AI captura os leads gerados pelo Webmotors, pontua por intenção de compra e converte antes da concorrência.
 
 ---
 
@@ -303,7 +303,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem lead scoring por intenção de compra automotiva
 - Sem inteligência de estoque
 - Exige implementador/partner para funcionar bem
-- **Exploração PátioVivo™:** Kommo é uma caixa de ferramentas. PátioVivo™ é a solução pronta para o lojista de seminovos, entregue e funcionando em 48 horas, com lead scoring e inteligência de estoque inclusos — sem precisar aprender CRM.
+- **Exploração Auto Giro AI:** Kommo é uma caixa de ferramentas. Auto Giro AI é a solução pronta para o lojista de seminovos, entregue e funcionando em 48 horas, com lead scoring e inteligência de estoque inclusos — sem precisar aprender CRM.
 
 ---
 
@@ -316,7 +316,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 **Preço:** Não divulgado. Foco em reunião consultiva.
 
 **Pontos fortes:**
-- **Concorrente mais próximo ao PátioVivo™** em conceito de atendimento
+- **Concorrente mais próximo ao Auto Giro AI** em conceito de atendimento
 - Especialização em automotivo
 - Foco em conversão (não em gestão)
 
@@ -329,7 +329,7 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 - Sem garantia de resultado explícita
 - Sem método/framework documentado
 - Preço opaco
-- **Exploração PátioVivo™:** Mesmo espaço de atendimento IA, mas PátioVivo™ vai muito além: método P.A.T.I.O. documentado com lead scoring + inteligência de estoque + recomendação de portfólio. Garantia de 60 dias com critério claro. 100% focado em multimarcas independentes.
+- **Exploração Auto Giro AI:** Mesmo espaço de atendimento IA, mas Auto Giro AI vai muito além: método P.A.T.I.O. documentado com lead scoring + inteligência de estoque + recomendação de portfólio. Garantia de 60 dias com critério claro. 100% focado em multimarcas independentes.
 
 ---
 
@@ -348,18 +348,18 @@ O mercado de software para revendas de veículos no Brasil é dominado por plata
 | AutoForce | Parcial | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | Sob consulta |
 | Kommo | ❌ | ❌ | ✅ | Parcial | Parcial | ❌ | ❌ | ❌ | R$ 66/user |
 | Growth Automotivo | ❌ | ❌ | Parcial | ✅ | ✅ | ❌ | ❌ | ❌ | Sob consulta |
-| **PátioVivo™** | **Integrado** | **Integrado** | **✅** | **✅** | **✅** | **✅** | **✅** | **✅** | **Setup R$ 6.000 + R$ 2.800/mês (Padrão)** |
+| **Auto Giro AI** | **Integrado** | **Integrado** | **✅** | **✅** | **✅** | **✅** | **✅** | **✅** | **Setup R$ 6.000 + R$ 2.800/mês (Padrão)** |
 
-*PátioVivo™ é infraestrutura done-for-you — o operador constrói e opera tudo. Não é SaaS.*
+*Auto Giro AI é infraestrutura done-for-you — o operador constrói e opera tudo. Não é SaaS.*
 
-**Leitura da matriz:** PátioVivo™ é o único player com Lead Scoring e Inteligência de Estoque — as duas colunas que nenhum concorrente tem. Essa é a diferença entre vender ferramenta e entregar inteligência comercial.
+**Leitura da matriz:** Auto Giro AI é o único player com Lead Scoring e Inteligência de Estoque — as duas colunas que nenhum concorrente tem. Essa é a diferença entre vender ferramenta e entregar inteligência comercial.
 
 ---
 
-## Gaps Sistêmicos do Mercado (Oportunidades PátioVivo™) — v3.0
+## Gaps Sistêmicos do Mercado (Oportunidades Auto Giro AI) — v3.0
 
 **Gap #1 — Experiência/Resultado: dados organizados sem transformação em ação**
-Os concorrentes não têm produto incompleto — têm promessa não cumprida. Vendem gestão e CRM, entregam dados e dashboards, mas o lojista continua trabalhando no escuro: sem saber quais leads priorizar, por que um carro está parado, ou o que comprar no próximo lote. O gap não é de funcionalidade — é de resultado entregue. PátioVivo™ ocupa exatamente esse espaço: não mais um dashboard, mas decisões e execução automática.
+Os concorrentes não têm produto incompleto — têm promessa não cumprida. Vendem gestão e CRM, entregam dados e dashboards, mas o lojista continua trabalhando no escuro: sem saber quais leads priorizar, por que um carro está parado, ou o que comprar no próximo lote. O gap não é de funcionalidade — é de resultado entregue. Auto Giro AI ocupa exatamente esse espaço: não mais um dashboard, mas decisões e execução automática.
 
 2. **Zero players com agente SDR IA nativo especializado em multimarcas** — o mercado está em gestão/compliance, não em conversão.
 
@@ -369,13 +369,13 @@ Os concorrentes não têm produto incompleto — têm promessa não cumprida. Ve
 
 5. **Nenhum concorrente comunica ROI em velocidade de atendimento** — ninguém fala sobre os 23% vs 1% de conversão em 1 minuto vs 24h.
 
-6. **Preços opacos generalizam** — a maioria não mostra tabela, criando desconfiança. PátioVivo™ pode ser direto e claro.
+6. **Preços opacos generalizam** — a maioria não mostra tabela, criando desconfiança. Auto Giro AI pode ser direto e claro.
 
 7. **Nenhum tem garantia de resultado explícita com critério claro** — mercado sem accountability de entrega. Nenhum concorrente define numericamente o que é "funcionar".
 
-8. **Segmentação vaga** — a maioria diz "para revendas" (inclui grandes concessionárias). PátioVivo™ é 100% para o multimarca independente de 5-50 veículos — segmentação que cria conexão emocional.
+8. **Segmentação vaga** — a maioria diz "para revendas" (inclui grandes concessionárias). Auto Giro AI é 100% para o multimarca independente de 5-50 veículos — segmentação que cria conexão emocional.
 
-9. **Nenhum player oferece done-for-you especializado em multimarcas** — todos os concorrentes vendem ferramentas que o lojista precisa operar. PátioVivo™ opera por ele.
+9. **Nenhum player oferece done-for-you especializado em multimarcas** — todos os concorrentes vendem ferramentas que o lojista precisa operar. Auto Giro AI opera por ele.
 
 10. **Custo do estoque parado não é comunicado por ninguém** — R$ 9.000-12.000/mês em custo implícito para loja com 10 carros parados. Argumento de urgência que o mercado ignora.
 
@@ -383,8 +383,8 @@ Os concorrentes não têm produto incompleto — têm promessa não cumprida. Ve
 Zero concorrentes fazem vehicle-to-client matching: cruzar o perfil de intenção do lead com o estoque disponível para recomendar qual carro específico oferecer para aquele comprador. O vendedor ainda depende da própria memória e experiência para fazer essa conexão — manualmente, imprecisamente.
 
 **Gap #12 — Framing de integração (não substituição)**
-Nenhum concorrente posiciona sua solução como "camada de inteligência acima do que você já usa". Todos tentam substituir o ERP ou CRM existente, gerando resistência e ciclo de venda mais longo. PátioVivo™ se posiciona como complemento — o lojista mantém todos os sistemas atuais e ganha inteligência em cima deles.
+Nenhum concorrente posiciona sua solução como "camada de inteligência acima do que você já usa". Todos tentam substituir o ERP ou CRM existente, gerando resistência e ciclo de venda mais longo. Auto Giro AI se posiciona como complemento — o lojista mantém todos os sistemas atuais e ganha inteligência em cima deles.
 
 ---
 
-*Mapeamento v3.0 — agosto de 2026 | gos-mission-control pipeline | PátioVivo™*
+*Mapeamento v3.0 — agosto de 2026 | gos-mission-control pipeline | Auto Giro AI*

@@ -2,15 +2,15 @@
 slug: lojas-seminovos-usados
 escopo: oferta
 modo: outbound
-empresa: Auto Growth AI
-mecanismo: PátioVivo™
+empresa: Auto Giro AI
+mecanismo: Auto Giro AI
 posicionamento: Infraestrutura de Crescimento com IA — Implantação + Retenção
 versao: 4.0
 data: 2026-08-06
 fase_gtm: "Fase 1 — Validação (objetivo: conquistar primeiro cliente piloto)"
 ---
 
-# Outbound — Auto Growth AI | PátioVivo™
+# Outbound — Auto Giro AI
 
 ## Status GTM: Fase 1 — Validação
 
@@ -69,7 +69,7 @@ Não é crítica — é o padrão do mercado. A maioria das lojas está nessa me
 
 Você lida com isso de alguma forma hoje? Tenho curiosidade genuína sobre como lojas do seu tamanho estão resolvendo.
 
-[nome] — Auto Growth AI | PátioVivo™
+[nome] — Auto Giro AI
 ```
 
 **Variante B — Estoque parado (loja com anúncio antigo sem alteração de preço):**
@@ -84,7 +84,7 @@ A pergunta que faço pra todo lojista: você tem visibilidade de por que esse ca
 
 A diferença entre ter essa resposta e não ter é o que separa quem reduz custo de capital de quem acumula custo sem perceber.
 
-[nome] — Auto Growth AI | PátioVivo™
+[nome] — Auto Giro AI
 ```
 
 **Nota de personalização obrigatória:**
@@ -113,7 +113,7 @@ A pergunta que me faço pra sua loja: você sabe quais dos seus leads atuais tê
 
 Se quiser, posso te mostrar como fazemos esse mapeamento — leva 10 minutos.
 
-[nome] — Auto Growth AI | PátioVivo™
+[nome] — Auto Giro AI
 ```
 
 **Nota:** Focar no custo de oportunidade de atender lead frio antes do lead quente. Não mencionar "sistema" ou "plataforma".
@@ -138,7 +138,7 @@ Não tem compromisso de contratação. Se o diagnóstico mostrar que você não 
 
 Me fala se faz sentido.
 
-[nome] — Auto Growth AI | PátioVivo™
+[nome] — Auto Giro AI
 ```
 
 ---
@@ -165,7 +165,7 @@ Se 3 ou mais respostas forem "não" — há espaço real de melhoria.
 
 Se quiser conversar em outro momento, me chama. Fico por aqui.
 
-[nome] — Auto Growth AI | PátioVivo™
+[nome] — Auto Giro AI
 
 P.S.: Se conhecer algum colega lojista que está nessa situação, fico feliz de fazer o diagnóstico gratuito pra ele também.
 ```
@@ -280,7 +280,7 @@ A maioria dos lojistas com quem converso responde "não" para as três. É exata
 Se fizer sentido, posso compartilhar o modelo de diagnóstico que usamos.
 
 [nome]
-Auto Growth AI | PátioVivo™
+Auto Giro AI
 ```
 
 ---
@@ -321,7 +321,7 @@ Temos abertura para 2 novas lojas nesse perfil este mês.
 Se quiser uma conversa de 20 minutos para ver se faz sentido, fico à disposição. Se não for o momento, sem problema — guardo o contato para quando for.
 
 [nome]
-Auto Growth AI | PátioVivo™
+Auto Giro AI
 ```
 
 ---
@@ -337,4 +337,4 @@ Auto Growth AI | PátioVivo™
 
 ---
 
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0 | Fase 1 — Validação | Posicionamento: Infraestrutura de Crescimento com IA*
+*Agosto 2026 | Auto Giro AI | v4.0 | Fase 1 — Validação | Posicionamento: Infraestrutura de Crescimento com IA*

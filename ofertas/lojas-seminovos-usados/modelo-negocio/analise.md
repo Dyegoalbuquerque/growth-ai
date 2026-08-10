@@ -2,16 +2,16 @@
 slug: lojas-seminovos-usados
 arquivo: analise
 versao: 4.0
-empresa: Auto Growth AI
-mecanismo: PátioVivo™
+empresa: Auto Giro AI
+mecanismo: Auto Giro AI
 modelo: implantacao + retencao / Infraestrutura de Crescimento com IA
 data: 2026-08-06
 decisao: IMPLANTAÇÃO R$ 30.000 + 90 DIAS INTENSIVOS → MIGRAÇÃO PARA RETENÇÃO (Pátio Independente / Pátio Assistido / Pátio Gerenciado)
 ---
 
-# Análise de Modelo de Negócio — Auto Growth AI como Infraestrutura de Crescimento com IA
+# Análise de Modelo de Negócio — Auto Giro AI como Infraestrutura de Crescimento com IA
 **Nicho:** Lojas independentes de carros seminovos e usados
-**Empresa:** Auto Growth AI | **Mecanismo:** PátioVivo™
+**Empresa:** Auto Giro AI | **Mecanismo:** Auto Giro AI
 **Modelo:** Implantação + 90 dias intensivos → retenção em 3 tiers
 **Data:** Agosto 2026
 
@@ -33,7 +33,7 @@ decisao: IMPLANTAÇÃO R$ 30.000 + 90 DIAS INTENSIVOS → MIGRAÇÃO PARA RETEN�
 
 ## Por que o modelo SaaS estava errado
 
-A análise v1.0 enquadrou o PátioVivo™ como SaaS — ferramenta que o lojista assina, acessa e opera. Esse modelo está fundamentalmente equivocado para este ICP:
+A análise v1.0 enquadrou o Auto Giro AI como SaaS — ferramenta que o lojista assina, acessa e opera. Esse modelo está fundamentalmente equivocado para este ICP:
 
 - O "Dono de Pátio" não quer aprender tecnologia. Quer resultado.
 - Nenhum lojista de seminovos vai sentar para "configurar o pipeline" ou "treinar o bot no painel".
@@ -48,7 +48,7 @@ O modelo correto é **done-for-you**: o operador entra, diagnostica, constrói, 
 
 ## 1. Nome do Modelo
 
-**"Auto Growth AI — Infraestrutura de Crescimento com IA"** — posicionamento central v4.0.
+**"Auto Giro AI — Infraestrutura de Crescimento com IA"** — posicionamento central v4.0.
 
 Não é uma assinatura. Não é uma plataforma. É o operador atuando como a **infraestrutura de crescimento com IA da loja** — implantando e operando os três pilares: Demand Intelligence, Lead Conversion Engine e Stock Velocity System.
 
@@ -57,7 +57,7 @@ Não é uma assinatura. Não é uma plataforma. É o operador atuando como a **i
 
 Nomes alternativos testáveis:
 - "Infraestrutura de Crescimento com IA" (posicionamento principal v4.0)
-- "Auto Growth AI | PátioVivo™" (combinação empresa + mecanismo)
+- "Auto Giro AI" (combinação empresa + mecanismo)
 - "Seu processo comercial com IA — implantado e operado por especialistas" (mais direto)
 
 ---
@@ -100,8 +100,8 @@ O Setup é o investimento inicial de diagnóstico + construção + implementaç�
 
 | Componente | Valor | Descrição |
 |-----------|-------|-----------|
-| **Implantação Auto Growth AI** | R$ 30.000 | Diagnóstico + mapeamento + estruturação do CRM + integração de canais + infraestrutura de atendimento + qualificação e priorização de leads + automação de follow-up + dashboards + KPIs + treinamento + 90 dias de acompanhamento intensivo |
-| **Pátio Independente** | A definir | Cliente opera; Auto Growth AI mantém a infraestrutura e presta suporte |
+| **Implantação Auto Giro AI** | R$ 30.000 | Diagnóstico + mapeamento + estruturação do CRM + integração de canais + infraestrutura de atendimento + qualificação e priorização de leads + automação de follow-up + dashboards + KPIs + treinamento + 90 dias de acompanhamento intensivo |
+| **Pátio Independente** | A definir | Cliente opera; Auto Giro AI mantém a infraestrutura e presta suporte |
 | **Pátio Assistido** | A definir (estimativa R$ 3.000–5.000/mês) | Reuniões estratégicas + análise de KPIs + otimização de workflows + evolução contínua dos agentes |
 | **Pátio Gerenciado** | A definir | Gestão contínua + monitoramento ativo + otimização do funil + recuperação de oportunidades + campanhas de giro |
 
@@ -292,7 +292,7 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 ### "Já tenho CRM / Revenda Mais / BNDV"
 
 **Como quebrar:**
-> "Ótimo — e você vai continuar com eles. O PátioVivo™ não substitui nenhum sistema que você já usa. A gente entra por cima, como uma camada de inteligência. O seu CRM organiza dados. A gente pega esses dados e responde: quais leads compram essa semana, por que o Onix 2021 está parado há 45 dias e o que você deveria comprar no próximo lote. São perguntas que nenhum CRM responde."
+> "Ótimo — e você vai continuar com eles. O Auto Giro AI não substitui nenhum sistema que você já usa. A gente entra por cima, como uma camada de inteligência. O seu CRM organiza dados. A gente pega esses dados e responde: quais leads compram essa semana, por que o Onix 2021 está parado há 45 dias e o que você deveria comprar no próximo lote. São perguntas que nenhum CRM responde."
 
 ### "Quanto eu preciso fazer?"
 > "Só três coisas: me receber na call de diagnóstico (1h), confirmar que o sistema pode responder pelo WhatsApp da loja, e ler o relatório mensal de 10 minutos — que mostra seus leads, seus encalhados e o que comprar no próximo lote. O resto é comigo."
@@ -312,7 +312,7 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 | Velocidade de decisão | Alta (tem clareza da dor) | Média | Lenta |
 | **Score done-for-you** | **9/10** | **7/10** | **3/10** |
 
-**ICP primário:** Médio Porte → Implantação Auto Growth AI R$ 30.000 + retenção Pátio Assistido
+**ICP primário:** Médio Porte → Implantação Auto Giro AI R$ 30.000 + retenção Pátio Assistido
 **ICP secundário:** Pequeno e Grande Porte → avaliados caso a caso
 **Fora do foco:** <5 veículos, concessionárias, grupos >50 sem estrutura (ciclo de venda muito longo)
 
@@ -347,7 +347,7 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 
 **Prazo:** 90 dias (alinhado ao período de implantação).
 
-**Condição:** Se os KPIs definidos no baseline não evoluírem dentro dos 90 dias, Auto Growth AI oferece **período adicional de otimização sem cobrança adicional**. Não há devolução de dinheiro.
+**Condição:** Se os KPIs definidos no baseline não evoluírem dentro dos 90 dias, Auto Giro AI oferece **período adicional de otimização sem cobrança adicional**. Não há devolução de dinheiro.
 
 **Condições obrigatórias para validade:**
 1. Acesso aos sistemas e ferramentas
@@ -357,8 +357,8 @@ O novo modelo tem ticket de implantação maior (R$ 30.000) e menos clientes em 
 5. Manutenção das condições de mídia e geração de leads
 6. Registro de baseline de KPIs antes do início da implantação
 
-**Princípio:** Auto Growth AI assume responsabilidade pela infraestrutura, pelos processos e pela otimização. A loja assume responsabilidade pela execução das atividades que dependem dela.
+**Princípio:** Auto Giro AI assume responsabilidade pela infraestrutura, pelos processos e pela otimização. A loja assume responsabilidade pela execução das atividades que dependem dela.
 
 ---
 
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0 | Modelo: Implantação R$ 30.000 + Retenção Pátio Independente/Pátio Assistido/Pátio Gerenciado*
+*Agosto 2026 | Auto Giro AI | v4.0 | Modelo: Implantação R$ 30.000 + Retenção Pátio Independente/Pátio Assistido/Pátio Gerenciado*

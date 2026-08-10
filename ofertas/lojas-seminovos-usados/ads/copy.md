@@ -1,6 +1,6 @@
-# Copy de Ads — Auto Growth AI | PátioVivo™ (v4.0 — Infraestrutura de Crescimento com IA)
+# Copy de Ads — Auto Giro AI (v4.0 — Infraestrutura de Crescimento com IA)
 
-**Empresa:** Auto Growth AI | **Mecanismo:** PátioVivo™
+**Empresa:** Auto Giro AI | **Mecanismo:** Auto Giro AI
 **Nicho:** Lojas independentes de carros seminovos e usados
 **Posicionamento:** Infraestrutura de Crescimento com IA — Demand Intelligence + Lead Conversion Engine + Stock Velocity System
 **ICP Primário:** Médio Porte — 15-25 veículos, 5-10 vendas/mês, 3-8 vendedores
@@ -50,7 +50,7 @@
 >
 > Sem um sistema que pontue a intenção de compra de cada contato com base em comportamento, todo lead parece igual. E lead que parece igual recebe atenção igual — que é o erro mais caro que uma loja comete.
 >
-> É exatamente por isso que existe o Auto Growth AI | PátioVivo™. Não troca o sistema que você já usa. Entra por cima — e responde as perguntas que nenhum sistema responde: qual lead vai comprar, por que aquele carro está parado há 45 dias e o que comprar no próximo lote."
+> É exatamente por isso que existe o Auto Giro AI. Não troca o sistema que você já usa. Entra por cima — e responde as perguntas que nenhum sistema responde: qual lead vai comprar, por que aquele carro está parado há 45 dias e o que comprar no próximo lote."
 
 ---
 
@@ -58,7 +58,7 @@
 
 *[Gesticula com as mãos. Energia mais alta.]*
 
-> "Com o Auto Growth AI | PátioVivo™ você não assina uma ferramenta. Você implanta uma infraestrutura de crescimento que a gente constrói e opera pela sua loja.
+> "Com o Auto Giro AI você não assina uma ferramenta. Você implanta uma infraestrutura de crescimento que a gente constrói e opera pela sua loja.
 >
 > Lead scoring por intenção de compra — seus vendedores focam nos leads com maior probabilidade de fechar. Resposta ao lead em até 5 minutos, sem depender de ação manual da equipe. Diagnóstico de por que cada carro está encalhado. Recomendação orientada a dados do que comprar no próximo lote.
 >
@@ -74,7 +74,7 @@
 >
 > E cada veículo parado acima de 45 dias gera em média R$ 900 a 1.200 por mês em custo implícito que não aparece na DRE.
 >
-> Essas perdas são mensuráveis. E são exatamente o que a Auto Growth AI vai mapear no seu diagnóstico."
+> Essas perdas são mensuráveis. E são exatamente o que a Auto Giro AI vai mapear no seu diagnóstico."
 
 ---
 
@@ -215,7 +215,7 @@ Você tem 47 leads no WhatsApp. Sabe quais 3 vão comprar essa semana? 👇
 > Operação que depende do dono é operação que não escala.
 > É operação que perde vendas nos fins de semana, nas férias, nos feriados.
 >
-> O que muda com a infraestrutura da Auto Growth AI:
+> O que muda com a infraestrutura da Auto Giro AI:
 > → Os processos continuam rodando de forma estruturada — sem depender de ação manual.
 
 **Visual:** Calendário com férias marcadas + pipeline rodando de forma estruturada
@@ -225,7 +225,7 @@ Você tem 47 leads no WhatsApp. Sabe quais 3 vão comprar essa semana? 👇
 ### SLIDE 6B — INVESTIMENTO (para versão de conversão direta)
 
 **Headline:**
-> Implantação Auto Growth AI | PátioVivo™
+> Implantação Auto Giro AI
 > R$ 30.000 + retenção mensal
 
 **Corpo:**
@@ -301,7 +301,7 @@ Se você quer entender onde sua operação está perdendo, posso fazer um diagn�
 
 Comenta "diagnóstico" ou me chama no privado.
 
-*(Auto Growth AI | PátioVivo™ — infraestrutura de crescimento com IA para lojas de seminovos)*
+*(Auto Giro AI — infraestrutura de crescimento com IA para lojas de seminovos)*
 
 ---
 
@@ -331,7 +331,7 @@ A pergunta que faço pra todo lojista: qual foi o carro mais caro que você teve
 Se você não sabe a resposta, é aí que está o problema.
 
 *(Se alguém quiser, posso compartilhar o modelo que usamos pra calcular esse custo — e como fazemos o diagnóstico de por que cada carro encalha. A diferença está em quem é responsável pela análise e pelo processo — a gente opera, não só entrega uma ferramenta.)*
-*(Auto Growth AI | PátioVivo™)*
+*(Auto Giro AI)*
 
 ---
 
@@ -395,9 +395,9 @@ Quando você sabe o motivo real, a ação muda completamente. Você não baixa o
 Pergunta pra quem quiser responder: vocês têm algum processo de diagnóstico de encalhados? Como identificam o problema antes de perder muita margem?
 
 *(Curioso sobre o que funciona no setor. Se alguém quiser, posso compartilhar o framework que usamos para o diagnóstico.)*
-*(Auto Growth AI | PátioVivo™)*
+*(Auto Giro AI)*
 
 ---
 
 **FIM DO ARTEFATO**
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0*
+*Agosto 2026 | Auto Giro AI | v4.0*

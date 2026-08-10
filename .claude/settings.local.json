@@ -18,7 +18,8 @@
       "Bash(Select-Object FullName, LastWriteTime)",
       "Bash(Sort-Object LastWriteTime)",
       "Bash(Select-String -Path \"C:\\\\Workspace\\\\auto-growth-ai\\\\ofertas\\\\lojas-seminovos-usados\\\\01-oferta.md\" -Pattern \"Vehicle matching|Posicionamento|Garantia de resultado\")",
-      "Bash(Select-Object LineNumber, Line)"
+      "Bash(Select-Object LineNumber, Line)",
+      "Skill(gos-handoff)"
     ]
   }
 }

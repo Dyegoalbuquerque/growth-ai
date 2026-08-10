@@ -2,15 +2,15 @@
 slug: lojas-seminovos-usados
 arquivo: playbook-vendas
 versao: 1.0
-empresa: Auto Growth AI
-mecanismo: PátioVivo™
+empresa: Auto Giro AI
+mecanismo: Auto Giro AI
 modelo: implantacao + retencao
 data: 2026-08-06
 fase_gtm: "Fase 1 — Validação (objetivo: conquistar primeiro cliente piloto)"
 ---
 
 # Playbook de Vendas — Call de Diagnóstico (30 min)
-## Auto Growth AI | PátioVivo™
+## Auto Giro AI
 
 ---
 
@@ -67,7 +67,7 @@ Decisão ao final: [ ] GO → proposta  [ ] NO-GO → encerrar elegante
 
 ### Script de Abertura
 
-> *"[Nome], boa [tarde/manhã]. Aqui é o [seu nome], da Auto Growth AI."*
+> *"[Nome], boa [tarde/manhã]. Aqui é o [seu nome], da Auto Giro AI."*
 >
 > *"Antes de começar — a call é de uns 30 minutos, tudo certo por aí?"*
 
@@ -279,7 +279,7 @@ Se o lojista disser qualquer uma dessas frases, você confirmou GO:
 
 ## TRANSIÇÃO PARA PROPOSTA (22–27 min)
 
-**Objetivo:** Apresentar o que a Auto Growth AI faz de forma direta — sem PowerPoint, sem pitch de venda. A proposta flui naturalmente do diagnóstico.
+**Objetivo:** Apresentar o que a Auto Giro AI faz de forma direta — sem PowerPoint, sem pitch de venda. A proposta flui naturalmente do diagnóstico.
 
 ---
 
@@ -287,7 +287,7 @@ Se o lojista disser qualquer uma dessas frases, você confirmou GO:
 
 > *"Deixa eu te contar como a gente resolve isso."*
 
-> *"A Auto Growth AI entra na sua operação como infraestrutura de crescimento com IA — não como mais um sistema pra sua equipe aprender a usar. A gente implanta e opera."*
+> *"A Auto Giro AI entra na sua operação como infraestrutura de crescimento com IA — não como mais um sistema pra sua equipe aprender a usar. A gente implanta e opera."*
 
 > *"O que isso significa na prática: nos primeiros 90 dias, a gente faz o diagnóstico completo da sua operação — registra o baseline, mapeia onde estão os vazamentos — e constrói a infraestrutura personalizada pra loja de vocês. Não é o mesmo produto pra todos."*
 
@@ -326,7 +326,7 @@ Se o lojista disser qualquer uma dessas frases, você confirmou GO:
 > *"Que horas ele fechou ontem? Os leads que chegaram depois das 18h — quem respondeu? E você consegue me dizer quais 3 leads no pipeline têm maior intenção de comprar essa semana — com dado, não com feeling? É exatamente aí que o cliente fecha com o concorrente."*
 
 **"Já tenho CRM / Revenda Mais / BNDV."**
-> *"E você vai continuar com eles — não substituímos nada. O PátioVivo™ entra como camada de inteligência por cima. O CRM organiza dados. A gente pega esses dados e responde: quais leads compram essa semana, por que o [modelo que ele mencionou] está parado há [X] dias e o que você deveria comprar no próximo lote. São perguntas que nenhum CRM responde."*
+> *"E você vai continuar com eles — não substituímos nada. O Auto Giro AI entra como camada de inteligência por cima. O CRM organiza dados. A gente pega esses dados e responde: quais leads compram essa semana, por que o [modelo que ele mencionou] está parado há [X] dias e o que você deveria comprar no próximo lote. São perguntas que nenhum CRM responde."*
 
 **"Quanto eu tenho que fazer?"**
 > *"Três coisas: me receber na call de diagnóstico de 1 hora, confirmar que podemos conectar ao WhatsApp da loja, e ler o relatório mensal de 10 minutos com análise da sua performance e dos seus encalhados. O resto é comigo."*
@@ -407,14 +407,14 @@ Resumindo o que mapeamos da operação de vocês:
 
 Custo implícito mensal estimado com esses vazamentos: R$ [cálculo].
 
-Como eu te falei, o que a Auto Growth AI faz é implantar e operar a infraestrutura que resolve esses três pontos — sem você precisar tocar em nenhuma ferramenta.
+Como eu te falei, o que a Auto Giro AI faz é implantar e operar a infraestrutura que resolve esses três pontos — sem você precisar tocar em nenhuma ferramenta.
 
 A implantação completa é R$ 30.000 (90 dias). Se ao final os KPIs que registramos antes não evoluírem, você recebe um período adicional de otimização sem custo extra.
 
 Se quiser ver a proposta completa com o escopo específico pra vocês, me fala — agendo em até 48h.
 
 [seu nome]
-Auto Growth AI | PátioVivo™
+Auto Giro AI
 ```
 
 ---
@@ -454,4 +454,4 @@ Auto Growth AI | PátioVivo™
 
 ---
 
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v1.0 | Fase 1 — Validação*
+*Agosto 2026 | Auto Giro AI | v1.0 | Fase 1 — Validação*

@@ -2,15 +2,15 @@
 slug: lojas-seminovos-usados
 escopo: oferta
 modo: content
-empresa: Auto Growth AI
-mecanismo: PátioVivo™
+empresa: Auto Giro AI
+mecanismo: Auto Giro AI
 modelo: implantacao + retencao / Infraestrutura de Crescimento com IA
 gerado_em: 2026-08-06
 versao: 4.0
 status: ready
 ---
 
-# GTM Content — Auto Growth AI | PátioVivo™ × Lojas de Seminovos e Usados
+# GTM Content — Auto Giro AI × Lojas de Seminovos e Usados
 
 Framework: LinkedInPro + EmailPro + SubstackPro (mês 1)
 Tom: executivo, direto, dados reais — sem jargão de IA, sem clickbait.
@@ -242,7 +242,7 @@ Você compra veículos baseado em experiência e feeling. Às vezes funciona. À
 
 Quando você resolve as três — atendimento imediato + lead scoring + inteligência de estoque e de compra — a taxa de fechamento sobe e o custo de estoque cai sem aumentar o investimento em tráfego.
 
-É exatamente isso que a infraestrutura da Auto Growth AI | PátioVivo™ resolve — em três pilares: inteligência de demanda, conversão de leads e velocidade de estoque.
+É exatamente isso que a infraestrutura da Auto Giro AI resolve — em três pilares: inteligência de demanda, conversão de leads e velocidade de estoque.
 
 Se quiser ver o framework completo de como funciona, responde "framework" que te mando.
 
@@ -330,7 +330,7 @@ Resultado: veículos com baixa liquidez que encalham por 60-90 dias.
 
 **ATO III — A OUTRA LENTE**
 
-O PátioVivo™ nasceu de uma pergunta simples: **e se a loja tivesse um departamento de inteligência comercial com IA, construído e operado por especialistas, sem precisar contratar, treinar ou depender de tecnologia que o dono não tem tempo de aprender?**
+O Auto Giro AI nasceu de uma pergunta simples: **e se a loja tivesse um departamento de inteligência comercial com IA, construído e operado por especialistas, sem precisar contratar, treinar ou depender de tecnologia que o dono não tem tempo de aprender?**
 
 O sistema funciona em quatro camadas:
 
@@ -381,12 +381,12 @@ Isso é construído com inteligência comercial, não com talento individual.
 
 A pergunta que fica: **o seu pátio está rodando em modo sorte ou em modo inteligência?**
 
-Se quiser entender como o PátioVivo™ funciona na prática, responde aqui ou acessa [link].
+Se quiser entender como o Auto Giro AI funciona na prática, responde aqui ou acessa [link].
 
 ---
 
-**Auto Growth AI | PátioVivo™** — infraestrutura de crescimento com IA para lojas de seminovos e usados. A gente implanta e opera. Você fecha o negócio.
+**Auto Giro AI** — infraestrutura de crescimento com IA para lojas de seminovos e usados. A gente implanta e opera. Você fecha o negócio.
 
 ---
 
-*Agosto 2026 | Auto Growth AI | PátioVivo™ | v4.0*
+*Agosto 2026 | Auto Giro AI | v4.0*
