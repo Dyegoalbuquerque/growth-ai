@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PediEndoCare™ — Acompanhamento Longitudinal em Endocrinologia Pediátrica</title>
+  <meta name="description" content="Programa premium de acompanhamento contínuo em obesidade infantil, baixa estatura e puberdade precoce. O médico decide. A IA cuida entre as consultas." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    :root {
+      /* Brand palette */
+      --blue-50:  #EBF6FF;
+      --blue-100: #D1EAFB;
+      --blue-200: #A3D4F5;
+      --blue-400: #4A9BC7;
+      --blue-500: #3A87B5;
+      --blue-600: #2C6F98;
+
+      --lilac-50:  #F3EFFF;
+      --lilac-100: #E6DEFF;
+      --lilac-200: #C9B8EA;
+      --lilac-400: #9B7DC8;
+      --lilac-500: #7E60B0;
+
+      --white:   #FFFFFF;
+      --grey-50: #F8FAFC;
+      --grey-100:#F0F4F8;
+
+      --text-h:    #0F1F3D;
+      --text-body: #4A5568;
+      --text-muted:#94A3B8;
+      --border:    #DDE8F0;
+
+      /* Spacing */
+      --max-w: 1120px;
+      --px: clamp(20px, 5vw, 60px);
+      --section-py: clamp(64px, 8vw, 112px);
+
+      /* Type */
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+      /* Radius / shadow */
+      --r-sm: 10px;
+      --r-md: 16px;
+      --r-lg: 24px;
+      --shadow-card: 0 2px 24px rgba(15, 31, 61, 0.06);
+      --shadow-hover: 0 8px 40px rgba(74, 155, 199, 0.18);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Typography ───────────────────────────────────────── */
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      color: var(--text-h);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 400; }
+    h2 { font-size: clamp(30px, 4vw, 52px); font-weight: 400; }
+    h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 400; }
+
+    p { line-height: 1.65; }
+
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+    }
+
+    .label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    /* ── Layout helpers ───────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+    }
+
+    .section-py { padding-top: var(--section-py); padding-bottom: var(--section-py); }
+
+    .bg-white    { background: var(--white); }
+    .bg-blue     { background: var(--blue-50); }
+    .bg-lilac    { background: var(--lilac-50); }
+    .bg-gradient { background: linear-gradient(145deg, var(--blue-50) 0%, var(--lilac-50) 100%); }
+    .bg-dark     { background: #0C1628; }
+
+    /* ── Divider ──────────────────────────────────────────── */
+    .divider { height: 1px; background: var(--border); }
+
+    /* ── Scroll fade ──────────────────────────────────────── */
+    .fade {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade.on { opacity: 1; transform: translateY(0); }
+    .fade-d1 { transition-delay: 0.08s; }
+    .fade-d2 { transition-delay: 0.16s; }
+    .fade-d3 { transition-delay: 0.24s; }
+
+    /* ── Buttons ──────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--blue-400);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(74, 155, 199, 0.30);
+    }
+    .btn-primary:hover {
+      background: var(--blue-500);
+      box-shadow: 0 6px 28px rgba(74, 155, 199, 0.40);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--blue-500);
+      border: 1.5px solid var(--blue-200);
+    }
+    .btn-ghost:hover {
+      background: var(--blue-50);
+      border-color: var(--blue-400);
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--blue-600);
+      box-shadow: 0 4px 20px rgba(15,31,61,0.12);
+    }
+    .btn-white:hover {
+      box-shadow: 0 6px 28px rgba(15,31,61,0.18);
+      transform: translateY(-1px);
+    }
+
+    /* ── Cards ────────────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-card);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-glass {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: var(--r-md);
+    }
+
+    /* ── Nav ──────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(221,232,240,0.6);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-h);
+      text-decoration: none;
+    }
+    .nav-logo span {
+      color: var(--blue-400);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-body);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-h); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* ── Hero ─────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, var(--white) 0%, var(--blue-50) 55%, var(--lilac-50) 100%);
+      padding-top: clamp(60px, 8vw, 100px);
+      padding-bottom: clamp(60px, 8vw, 100px);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .pill {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 50px;
+      background: rgba(74,155,199,0.10);
+      color: var(--blue-500);
+      border: 1px solid rgba(74,155,199,0.20);
+    }
+    .pill-lilac {
+      background: rgba(155,125,200,0.10);
+      color: var(--lilac-500);
+      border-color: rgba(155,125,200,0.20);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--blue-500);
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Hero visual — fluxo */
+    .flow-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: var(--shadow-card);
+    }
+    .flow-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 15px;
+    }
+    .icon-blue   { background: var(--blue-100); }
+    .icon-lilac  { background: var(--lilac-100); }
+    .icon-green  { background: #DDFAE8; }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--border);
+      font-size: 18px;
+      padding: 4px 0;
+      line-height: 1;
+    }
+
+    .flow-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .split-box {
+      border-radius: var(--r-sm);
+      padding: 14px;
+      text-align: center;
+    }
+    .split-box-blue  { background: var(--blue-400); }
+    .split-box-lilac { background: var(--lilac-400); }
+    .split-box p {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .split-box small {
+      font-size: 10px;
+      opacity: 0.82;
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* ── Grid helpers ─────────────────────────────────────── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 28px); }
+    .grid-12-5 {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-12-5 { grid-template-columns: 1fr; }
+    }
+
+    /* ── Section header ───────────────────────────────────── */
+    .section-header { margin-bottom: clamp(40px, 5vw, 64px); }
+    .section-header .kicker { margin-bottom: 12px; display: block; }
+    .section-header h2 { margin-bottom: 16px; }
+    .section-header p { max-width: 520px; font-size: 17px; }
+
+    /* ── Pain cards ───────────────────────────────────────── */
+    .pain-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .pain-1 { background: #FFE8E8; color: #C53030; }
+    .pain-2 { background: #FFF3E0; color: #C05621; }
+    .pain-3 { background: #FFF9E0; color: #975A16; }
+
+    /* ── CARE pillars ─────────────────────────────────────── */
+    .care-letter {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .care-letter-blue  { color: var(--blue-400); }
+    .care-letter-lilac { color: var(--lilac-400); }
+
+    /* ── Doctor section ───────────────────────────────────── */
+    .doctor-photo {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3/4;
+      border-radius: var(--r-lg);
+      background: linear-gradient(145deg, var(--blue-100), var(--lilac-100));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .doctor-photo-placeholder {
+      text-align: center;
+      color: var(--blue-400);
+    }
+
+    /* ── Programs ─────────────────────────────────────────── */
+    .program-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: clamp(24px, 3vw, 36px);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+    }
+    .program-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+    .program-card.featured {
+      background: linear-gradient(145deg, var(--blue-50), var(--lilac-50));
+      border-color: var(--blue-300, #7BB8D4);
+      border-width: 2px;
+    }
+    .program-price {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--blue-500);
+      line-height: 1.1;
+      margin-top: auto;
+      padding-top: 24px;
+    }
+    .program-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+    .badge-blue   { background: var(--blue-100); color: var(--blue-500); }
+    .badge-lilac  { background: var(--lilac-100); color: var(--lilac-500); }
+    .badge-green  { background: #DDFAE8; color: #276749; }
+    .badge-best   { background: var(--blue-400); color: var(--white); }
+
+    /* ── Testimonials ─────────────────────────────────────── */
+    .testimonial-quote {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 22px);
+      font-style: italic;
+      color: var(--text-h);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+    .testimonial-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-h);
+    }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--blue-100);
+      color: var(--blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+      line-height: 1;
+      transition: transform 0.2s, background 0.2s;
+    }
+    details[open] .faq-icon {
+      transform: rotate(45deg);
+      background: var(--blue-400);
+      color: var(--white);
+    }
+    .faq-body {
+      padding: 0 0 22px;
+      color: var(--text-body);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 680px;
+    }
+
+    /* ── Cost table ───────────────────────────────────────── */
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .cost-row:last-child { border-bottom: none; }
+    .cost-negative { color: #E53E3E; font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
+
+    /* ── CTA section ──────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(145deg, #0C1628 0%, #1a2d4a 50%, #1e1535 100%);
+    }
+    .triagem-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-lg);
+      padding: clamp(28px, 4vw, 48px);
+    }
+    .input-field {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--r-sm);
+      padding: 14px 16px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-field::placeholder { color: rgba(255,255,255,0.35); }
+    .input-field:focus { border-color: rgba(74,155,199,0.6); }
+    .input-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    select.input-field option { background: #1a2d4a; color: var(--white); }
+
+    /* ── Guarantee ────────────────────────────────────────── */
+    .guarantee-ring {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--blue-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    /* ── Checklist ────────────────────────────────────────── */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-body);
+    }
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--blue-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .check-icon svg { width: 11px; height: 11px; color: var(--blue-500); }
+
+    /* ── Value table ──────────────────────────────────────── */
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-body);
+    }
+    .value-row:last-child { border-bottom: none; }
+    .value-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    footer {
+      background: var(--grey-50);
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding: 56px 0 40px;
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Dot indicator ────────────────────────────────────── */
+    .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .dot-green  { background: #48BB78; }
+    .dot-blue   { background: var(--blue-400); }
+    .dot-lilac  { background: var(--lilac-400); }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .btn { width: 100%; justify-content: center; }
+      .hero-ctas { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">PediEndo<span>Care</span>™</a>
+    <ul class="nav-links">
+      <li><a href="#programas">Programas</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#medico">O médico</a></li>
+      <li><a href="#faq">Perguntas</a></li>
+      <li><a href="#triagem" class="btn btn-primary" style="padding:10px 22px; font-size:14px;">Triagem gratuita</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: texto -->
+      <div>
+        <span class="kicker fade" style="display:block; margin-bottom:20px;">Programa de acompanhamento longitudinal · Endocrinologia Pediátrica</span>
+
+        <h1 class="fade fade-d1">
+          Seu filho<br>
+          acompanhado<br>
+          <em style="color: var(--blue-400);">365 dias.</em>
+        </h1>
+
+        <p class="fade fade-d2" style="font-size:18px; color: var(--text-body); margin: 24px 0 32px; max-width:480px;">
+          Enquanto o modelo convencional oferece quatro consultas por ano, o PediEndoCare™ garante monitoramento contínuo — com o médico especialista tomando cada decisão e a IA cuidando de tudo entre as consultas.
+        </p>
+
+        <div class="hero-pills fade fade-d2">
+          <span class="pill">Obesidade Infantil</span>
+          <span class="pill">Baixa Estatura</span>
+          <span class="pill pill-lilac">Puberdade Precoce</span>
+        </div>
+
+        <div class="hero-ctas fade fade-d3" style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#triagem" class="btn btn-primary">Fazer triagem gratuita</a>
+          <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
+        </div>
+
+        <div class="hero-stats fade fade-d3">
+          <div>
+            <span class="stat-num">1:48.000</span>
+            <span class="stat-label">endocrinologistas pediátricos<br>por criança no Brasil (CFM)</span>
+          </div>
+          <div style="width:1px; background:var(--border);"></div>
+          <div>
+            <span class="stat-num">68%</span>
+            <span class="stat-label">dos pais sem saber<br>o que fazer entre consultas</span>
+          </div>
+          <div style="width:1px; background:var(--border); display:flex;"></div>
+          <div>
+            <span class="stat-num">2,3 anos</span>
+            <span class="stat-label">atraso médio no diagnóstico<br>de baixa estatura (SBEM)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: fluxo visual -->
+      <div class="hero-visual fade fade-d2">
+        <div style="background:rgba(255,255,255,0.7); backdrop-filter:blur(20px); border:1px solid rgba(221,232,240,0.8); border-radius:var(--r-lg); padding:28px; box-shadow: 0 8px 48px rgba(74,155,199,0.12);">
+
+          <p class="kicker" style="margin-bottom:20px;">Método C.A.R.E.</p>
+
+          <div style="display:flex; flex-direction:column; gap:6px;">
+
+            <div class="flow-card">
+              <div class="flow-icon icon-blue">👨‍👩‍👧</div>
+              <div>
+                <p style="font-weight:600; font-size:13px; color:var(--text-h); margin-bottom:2px;">Família</p>
+                <p style="font-size:12px; color:var(--text-muted);">Triagem gratuita · escolha a especialidade</p>
+              </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-card">
+              <div class="flow-icon icon-blue">🤖</div>
+              <div>
+                <p style="font-weight:600; font-size:13px; color:var(--text-h); margin-bottom:2px;">Triagem por IA</p>
+                <p style="font-size:12px; color:var(--text-muted);">Coleta histórico · organiza dados iniciais</p>
+              </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-card">
+              <div class="flow-icon icon-lilac">⭐</div>
+              <div>
+                <p style="font-weight:600; font-size:13px; color:var(--text-h); margin-bottom:2px;">Programa Premium</p>
+                <p style="font-size:12px; color:var(--text-muted);">Plano anual de acompanhamento</p>
+              </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-split">
+              <div class="split-box split-box-blue" style="color:white;">
+                <p>IA</p>
+                <small>Registros · Curvas · Lembretes · Alertas</small>
+              </div>
+              <div class="split-box split-box-lilac" style="color:white;">
+                <p>Médico</p>
+                <small>Avaliação · Decisão · Conduta clínica</small>
+              </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-card" style="background:linear-gradient(90deg,var(--blue-50),var(--lilac-50));">
+              <div class="flow-icon icon-green">📋</div>
+              <div>
+                <p style="font-weight:600; font-size:13px; color:var(--text-h); margin-bottom:2px;">Relatório + Renovação</p>
+                <p style="font-size:12px; color:var(--text-muted);">Evolução documentada · Programa anual</p>
+              </div>
+            </div>
+
+          </div>
+
+          <p style="font-family:var(--font-mono); font-size:10px; color:var(--text-muted); margin-top:16px; text-align:center;">A IA organiza. O médico decide. Sempre.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 1 — PROBLEMA
+══════════════════════════════════════ -->
+<section class="bg-white section-py">
+  <div class="container">
+
+    <div class="section-header fade">
+      <span class="kicker">O problema</span>
+      <h2>Consultas a cada 3 meses.<br>Seu filho muda todo dia.</h2>
+      <p>O modelo tradicional de endocrinologia pediátrica deixa famílias sozinhas por meses — sem referência, sem suporte, sem saber se o filho está na trajetória certa.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card fade" style="padding: clamp(24px,3vw,36px);">
+        <span class="pain-num pain-1">01 — Crítico</span>
+        <h3 style="margin-bottom:12px;">A janela que fecha<br>e não volta</h3>
+        <p style="font-size:15px;">Deficiência de GH e puberdade precoce têm janelas terapêuticas de meses. Diagnóstico com 2 anos de atraso significa centímetros de estatura final que ninguém devolve. O relógio corre entre uma consulta e outra.</p>
+        <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted); margin-top:16px;">SBEM, 2021 — atraso médio de 2,3 anos</p>
+      </div>
+
+      <div class="card fade fade-d1" style="padding: clamp(24px,3vw,36px);">
+        <span class="pain-num pain-2">02 — Recorrente</span>
+        <h3 style="margin-bottom:12px;">O vazio entre<br>as consultas</h3>
+        <p style="font-size:15px;">Após a consulta, a família fica meses sem direção. Dúvidas, intercorrências, dados que deveriam chegar ao médico — nada é coletado, nada é organizado. Você não sabe se "está indo bem".</p>
+        <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted); margin-top:16px;">DataFolha/SBEM, 2023 — 68% sem suporte</p>
+      </div>
+
+      <div class="card fade fade-d2" style="padding: clamp(24px,3vw,36px);">
+        <span class="pain-num pain-3">03 — Silencioso</span>
+        <h3 style="margin-bottom:12px;">A ansiedade<br>sem ancoragem</h3>
+        <p style="font-size:15px;">Sem relatório de evolução, qualquer variação dispara uma espiral. Google às 2h da manhã. Terceira opinião médica. Exames repetidos. Tudo isso tem custo — financeiro e emocional.</p>
+        <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted); margin-top:16px;">Journal Ped. Psychology, 2024 — ansiedade 2,3×</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 2 — CONSEQUÊNCIA
+══════════════════════════════════════ -->
+<section class="bg-dark section-py">
+  <div class="container">
+
+    <div class="grid-12-5">
+
+      <div class="fade">
+        <span class="kicker" style="color:var(--blue-200); margin-bottom:16px; display:block;">O custo real de esperar</span>
+        <h2 style="color:white; margin-bottom:24px;">
+          Esperar <em style="color:var(--blue-200);">sem dados</em><br>
+          tem um preço.
+        </h2>
+        <p style="color:rgba(255,255,255,0.65); font-size:17px; line-height:1.65; margin-bottom:16px;">
+          Obesidade infantil não tratada na janela certa eleva o risco de diabetes tipo 2 — custo de saúde adulta estimado em até <strong style="color:white;">R$ 250.000</strong> por indivíduo.
+        </p>
+        <p style="color:rgba(255,255,255,0.65); font-size:17px; line-height:1.65;">
+          Diagnóstico tardio de baixa estatura é biologicamente irreversível após o fechamento das epífises. O modelo convencional não enxerga os outros 90 dias do trimestre.
+        </p>
+      </div>
+
+      <div class="fade fade-d1">
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); border-radius:var(--r-md); padding:28px;">
+          <p class="kicker" style="color:var(--blue-200); margin-bottom:20px;">Custo disperso no modelo convencional</p>
+
+          <div class="cost-row">
+            <span style="color:rgba(255,255,255,0.7);">4 consultas no plano de saúde</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:rgba(255,255,255,0.5);">R$ 0</span>
+          </div>
+          <div class="cost-row" style="border-color:rgba(255,255,255,0.08);">
+            <span style="color:rgba(255,255,255,0.7);">Consultas de urgência não planejadas</span>
+            <span class="cost-negative">R$ 3–8k</span>
+          </div>
+          <div class="cost-row" style="border-color:rgba(255,255,255,0.08);">
+            <span style="color:rgba(255,255,255,0.7);">Exames repetidos sem rastreamento</span>
+            <span class="cost-negative">R$ 1–3k</span>
+          </div>
+          <div class="cost-row" style="border-color:rgba(255,255,255,0.08);">
+            <span style="color:rgba(255,255,255,0.7);">2ª e 3ª opiniões médicas</span>
+            <span class="cost-negative">R$ 1–4k</span>
+          </div>
+          <div class="cost-row" style="border-color:rgba(255,255,255,0.08);">
+            <span style="color:rgba(255,255,255,0.7);">Deslocamentos para especialistas</span>
+            <span class="cost-negative">R$ 3–15k</span>
+          </div>
+          <div class="cost-row" style="border-color:rgba(255,255,255,0.08); padding-top:16px;">
+            <span style="color:white; font-weight:600;">Total extra por ano</span>
+            <span style="font-family:var(--font-mono); font-size:15px; font-weight:500; color:#FC8181;">R$ 8–30k</span>
+          </div>
+
+          <p style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.3); margin-top:16px;">Sem contar o custo emocional e o risco de janela terapêutica perdida.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 3 — SOLUÇÃO / CARE
+══════════════════════════════════════ -->
+<section class="bg-blue section-py" id="como-funciona">
+  <div class="container">
+
+    <div class="section-header fade">
+      <span class="kicker">A solução</span>
+      <h2>O método <span style="color:var(--blue-400);">C.A.R.E.</span></h2>
+      <p>O PediEndoCare™ é o primeiro programa de acompanhamento longitudinal em endocrinologia pediátrica com IA integrada. O médico toma cada decisão clínica. A tecnologia garante que nada se perca no meio do caminho.</p>
+    </div>
+
+    <div class="grid-2" style="gap:clamp(16px,2.5vw,24px);">
+
+      <div class="card fade" style="padding:clamp(28px,3.5vw,44px);">
+        <div class="care-letter care-letter-blue">C.</div>
+        <h3 style="margin-bottom:12px;">Consulta especializada</h3>
+        <p style="font-size:15px;">O endocrinologista pediátrico avalia, diagnostica e define o protocolo clínico com base no histórico completo. Nenhuma decisão clínica é tomada por algoritmo.</p>
+      </div>
+
+      <div class="card fade fade-d1" style="padding:clamp(28px,3.5vw,44px);">
+        <div class="care-letter care-letter-lilac">A.</div>
+        <h3 style="margin-bottom:12px;">Acompanhamento por IA</h3>
+        <p style="font-size:15px;">Entre as consultas, a IA coleta registros, envia lembretes, monitora as curvas e organiza os dados — alertando o médico se algo sai da trajetória esperada.</p>
+      </div>
+
+      <div class="card fade fade-d1" style="padding:clamp(28px,3.5vw,44px);">
+        <div class="care-letter care-letter-blue">R.</div>
+        <h3 style="margin-bottom:12px;">Relatório médico integrado</h3>
+        <p style="font-size:15px;">Antes de cada consulta, o médico recebe um briefing completo gerado pela IA. A família recebe relatório mensal com semáforo de evolução em linguagem acessível.</p>
+      </div>
+
+      <div class="card fade fade-d2" style="padding:clamp(28px,3.5vw,44px);">
+        <div class="care-letter care-letter-lilac">E.</div>
+        <h3 style="margin-bottom:12px;">Evolução longitudinal</h3>
+        <p style="font-size:15px;">Em 12–24 meses, o programa documenta a trajetória completa — curvas, marcos, ajustes, resultados. O desenvolvimento da criança vira uma narrativa contínua, não episódios isolados.</p>
+      </div>
+
+    </div>
+
+    <div class="fade" style="margin-top:40px; text-align:center;">
+      <p style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted); background:var(--white); display:inline-block; padding:10px 20px; border-radius:50px; border:1px solid var(--border);">
+        A IA não diagnostica e não prescreve. Papel exclusivamente operacional entre as consultas.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 4 — O MÉDICO
+══════════════════════════════════════ -->
+<section class="bg-white section-py" id="medico">
+  <div class="container">
+
+    <div class="grid-12-5">
+
+      <div class="fade">
+        <span class="kicker" style="margin-bottom:16px; display:block;">O médico por trás do programa</span>
+        <h2 style="margin-bottom:20px;">Um especialista dedicado<br>ao desenvolvimento<br>do seu filho.</h2>
+        <p style="font-size:17px; margin-bottom:24px;">
+          O PediEndoCare™ não é uma clínica com dezenas de médicos. É um programa construído em torno de um único endocrinologista pediátrico — que conhece cada família, cada caso, cada curva.
+        </p>
+        <p style="font-size:17px; margin-bottom:36px;">
+          A IA existe para ampliar a capacidade de acompanhamento desse médico — não para substituí-lo. Você fala com a mesma pessoa do início ao fim do programa.
+        </p>
+
+        <!-- Credenciais placeholder -->
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="check-item">
+            <div class="check-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span><strong>Endocrinologista Pediátrico</strong> — [CRM / Titulação]</span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span>Especialização em <strong>[Área de foco]</strong></span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span>Membro da <strong>SBEM</strong> — Sociedade Brasileira de Endocrinologia</span>
+          </div>
+          <div class="check-item">
+            <div class="check-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span><strong>[N] anos</strong> de experiência em endocrinologia pediátrica</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Foto placeholder -->
+      <div class="fade fade-d1" style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+        <div class="doctor-photo">
+          <div class="doctor-photo-placeholder">
+            <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="opacity:0.4; margin-bottom:12px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <p style="font-family:var(--font-mono); font-size:11px; opacity:0.5;">[Foto do médico]</p>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <p style="font-family:var(--font-display); font-size:22px; color:var(--text-h); margin-bottom:4px;">Dr. [Nome Completo]</p>
+          <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted); letter-spacing:0.08em;">ENDOCRINOLOGISTA PEDIÁTRICO</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 5 — PROGRAMAS
+══════════════════════════════════════ -->
+<section class="bg-lilac section-py" id="programas">
+  <div class="container">
+
+    <div class="section-header fade">
+      <span class="kicker">Os programas</span>
+      <h2>Três especialidades.<br>Um padrão de cuidado.</h2>
+      <p>Cada programa é desenhado para a janela terapêutica específica da condição — com o nível de suporte adequado para cada fase do desenvolvimento.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <!-- Obesidade Infantil -->
+      <div class="program-card fade">
+        <span class="program-badge badge-blue">Obesidade Infantil</span>
+        <h3 style="margin-bottom:12px; font-size:22px;">Programa de Acompanhamento da Obesidade</h3>
+        <p style="font-size:14px; color:var(--text-body); flex:1;">
+          Monitoramento contínuo de hábitos, IMC, adesão ao protocolo e evolução clínica. A IA registra o dia a dia; o médico ajusta a conduta quando necessário.
+        </p>
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid var(--border);">
+          <p class="label" style="margin-bottom:4px;">Duração</p>
+          <p style="font-weight:600; font-size:15px; color:var(--text-h); margin-bottom:12px;">12 meses</p>
+          <p class="label" style="margin-bottom:6px;">Investimento</p>
+          <div class="program-price" style="font-size:30px; padding-top:0;">R$ 12–30 mil</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">Parcelado em até 12×</p>
+        </div>
+      </div>
+
+      <!-- Baixa Estatura — destaque -->
+      <div class="program-card featured fade fade-d1">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0;">
+          <span class="program-badge badge-best">Baixa Estatura</span>
+          <span style="font-family:var(--font-mono); font-size:10px; color:var(--blue-500); background:var(--blue-100); padding:3px 10px; border-radius:50px;">Mais completo</span>
+        </div>
+        <h3 style="margin-bottom:12px; font-size:22px;">Programa de Acompanhamento do Crescimento</h3>
+        <p style="font-size:14px; color:var(--text-body); flex:1;">
+          Monitoramento de curvas de crescimento, alertas de desvio, organização de exames e acompanhamento longitudinal. Para casos com janela terapêutica ativa — cada semestre conta.
+        </p>
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid var(--blue-200);">
+          <p class="label" style="margin-bottom:4px;">Duração</p>
+          <p style="font-weight:600; font-size:15px; color:var(--text-h); margin-bottom:12px;">12–24 meses</p>
+          <p class="label" style="margin-bottom:6px;">Investimento</p>
+          <div class="program-price" style="font-size:30px; padding-top:0;">R$ 10–35 mil</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">Parcelado em até 24×</p>
+        </div>
+      </div>
+
+      <!-- Puberdade Precoce -->
+      <div class="program-card fade fade-d2">
+        <span class="program-badge badge-lilac">Puberdade Precoce</span>
+        <h3 style="margin-bottom:12px; font-size:22px;">Programa de Acompanhamento da Puberdade</h3>
+        <p style="font-size:14px; color:var(--text-body); flex:1;">
+          Calendário de sinais puberais, educação familiar continuada, organização de dados clínicos e relatórios mensais. Para quando a família precisa saber o que observar — todos os dias.
+        </p>
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid var(--border);">
+          <p class="label" style="margin-bottom:4px;">Duração</p>
+          <p style="font-weight:600; font-size:15px; color:var(--text-h); margin-bottom:12px;">12 meses</p>
+          <p class="label" style="margin-bottom:6px;">Investimento</p>
+          <div class="program-price" style="font-size:30px; padding-top:0;">R$ 8–20 mil</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">Parcelado em até 12×</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fade" style="margin-top:40px; text-align:center;">
+      <p style="color:var(--text-body); margin-bottom:16px;">Não sabe qual programa é para o seu filho?</p>
+      <a href="#triagem" class="btn btn-primary">Triagem gratuita — descubra em 5 minutos</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 6 — DEPOIMENTOS
+══════════════════════════════════════ -->
+<section class="bg-white section-py">
+  <div class="container">
+
+    <div class="section-header fade">
+      <span class="kicker">Famílias no programa</span>
+      <h2>O que muda quando o acompanhamento não tem lacunas.</h2>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card fade" style="padding:clamp(24px,3vw,36px);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:20px;">
+          <span class="dot dot-green"></span>
+          <span class="label">Programa — Baixa Estatura</span>
+        </div>
+        <p class="testimonial-quote">"Em 8 meses de programa, pela primeira vez o médico sabia exatamente o que aconteceu nos 3 meses entre as consultas. Isso mudou o tratamento."</p>
+        <div style="border-top:1px solid var(--border); padding-top:16px;">
+          <p class="testimonial-meta">M. R. — São Paulo</p>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:4px;">[Substituir por depoimento real]</p>
+        </div>
+      </div>
+
+      <div class="card fade fade-d1" style="padding:clamp(24px,3vw,36px);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:20px;">
+          <span class="dot dot-blue"></span>
+          <span class="label">Programa — Obesidade Infantil</span>
+        </div>
+        <p class="testimonial-quote">"Antes eu pesquisava no Google toda semana sem saber o que procurar. Agora recebo um relatório mensal. Sei exatamente como meu filho está."</p>
+        <div style="border-top:1px solid var(--border); padding-top:16px;">
+          <p class="testimonial-meta">A. C. — Belo Horizonte</p>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:4px;">[Substituir por depoimento real]</p>
+        </div>
+      </div>
+
+      <div class="card fade fade-d2" style="padding:clamp(24px,3vw,36px);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:20px;">
+          <span class="dot dot-lilac"></span>
+          <span class="label">Programa — Puberdade Precoce</span>
+        </div>
+        <p class="testimonial-quote">"Ela tem 7 anos. Eu precisava de alguém me dizendo o que observar cada semana — não só a cada 4 meses. O programa foi exatamente isso."</p>
+        <div style="border-top:1px solid var(--border); padding-top:16px;">
+          <p class="testimonial-meta">L. F. — Curitiba</p>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:4px;">[Substituir por depoimento real]</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 7 — STACK DE VALOR
+══════════════════════════════════════ -->
+<section class="bg-blue section-py">
+  <div class="container">
+
+    <div class="grid-12-5">
+
+      <div class="fade">
+        <span class="kicker" style="margin-bottom:16px; display:block;">O que está incluído</span>
+        <h2 style="margin-bottom:32px;">Tudo em<br>um único programa.</h2>
+
+        <div style="display:flex; flex-direction:column; gap:0;">
+          <div class="value-row"><span>Consultas com endocrinologista pediátrico</span><span class="value-tag">R$ 500–1.200/cada</span></div>
+          <div class="value-row"><span>Plataforma PediEndoCare™</span><span class="value-tag">R$ 200–600/mês</span></div>
+          <div class="value-row"><span>IA de monitoramento entre consultas</span><span class="value-tag" style="color:var(--blue-500);">Exclusivo</span></div>
+          <div class="value-row"><span>Relatório mensal de evolução</span><span class="value-tag">R$ 150–300/mês</span></div>
+          <div class="value-row"><span>Alertas de desvio de curva</span><span class="value-tag" style="color:var(--blue-500);">Exclusivo</span></div>
+          <div class="value-row"><span>Organização de exames e prontuário digital</span><span class="value-tag">R$ 80–200/mês</span></div>
+          <div class="value-row"><span>Educação familiar continuada</span><span class="value-tag">R$ 100–250/mês</span></div>
+        </div>
+      </div>
+
+      <div class="fade fade-d1" style="display:flex; flex-direction:column; gap:20px;">
+
+        <div class="card" style="padding:28px; background:linear-gradient(145deg,var(--blue-100),var(--lilac-100));">
+          <p class="kicker" style="margin-bottom:12px;">Ancoragem de valor</p>
+          <p style="font-family:var(--font-display); font-size:20px; color:var(--text-h); line-height:1.4; font-style:italic;">
+            "Você já investe R$ 3.000/mês em escola particular. O Programa custa R$ 1.200–2.900/mês — e acompanha a saúde do seu filho 365 dias por ano."
+          </p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div class="check-item"><div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div><span>Parcelamento em até 12–24× no cartão</span></div>
+          <div class="check-item"><div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div><span>Garantia de 90 dias ou reembolso integral</span></div>
+          <div class="check-item"><div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div><span>Atendimento presencial + online</span></div>
+          <div class="check-item"><div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div><span>Dados protegidos por LGPD</span></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 8 — FAQ
+══════════════════════════════════════ -->
+<section class="bg-white section-py" id="faq">
+  <div class="container" style="max-width:760px;">
+
+    <div class="section-header fade">
+      <span class="kicker">Perguntas frequentes</span>
+      <h2>O que as famílias sempre perguntam.</h2>
+    </div>
+
+    <div class="fade">
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          A IA substitui o médico?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p class="faq-body">Não. A IA no PediEndoCare™ tem papel exclusivamente operacional: coleta dados, organiza registros, envia lembretes e gera relatórios. Ela não diagnostica e não prescreve — isso é responsabilidade exclusiva do endocrinologista pediátrico. Você fala com o mesmo médico do início ao fim do programa.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Meu plano de saúde já cobre endocrinologia. Por que precisaria do programa?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p class="faq-body">O plano cobre o acesso às consultas — em média 4 por ano, de 20–30 minutos cada. O PediEndoCare™ cobre o que o plano não cobre: os outros 350 dias. São coisas complementares. A maioria das famílias mantém o plano para as consultas e usa o programa para o acompanhamento contínuo entre elas.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          R$ 15–35 mil é muito caro para a nossa realidade.
+          <span class="faq-icon">+</span>
+        </summary>
+        <p class="faq-body">Parcelamos em até 12–24×. Em 12 parcelas, o Programa equivale a R$ 1.000–2.900/mês. Compare com o custo real do modelo convencional: consultas extras, exames repetidos, deslocamentos, segundas opiniões — famílias relatam gastar R$ 8–30k/ano de forma dispersa, sem organização. O programa unifica e elimina esse gasto paralelo.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Não tenho tempo para participar de um programa intenso.
+          <span class="faq-icon">+</span>
+        </summary>
+        <p class="faq-body">O programa foi desenhado para famílias com agenda cheia. O tempo real de engajamento semanal é de 10–15 minutos: a IA guia o que registrar, quando e como — são poucas perguntas e a foto da curva do mês. O médico faz o resto.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Posso esperar meu filho melhorar antes de investir?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p class="faq-body">Em condições como deficiência de GH e puberdade precoce, esperar tem custo real: janelas terapêuticas fecham. A triagem gratuita avalia se há urgência ou se realmente é possível aguardar com segurança — sem nenhum compromisso de compra.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          O atendimento é presencial ou online?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p class="faq-body">Os dois. As consultas podem ser presenciais ou por telemedicina — o que for mais prático para a sua família. O acompanhamento da IA entre consultas é 100% digital (app ou web). Famílias de qualquer cidade do Brasil podem participar do programa.</p>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 9 — GARANTIA
+══════════════════════════════════════ -->
+<section class="bg-gradient section-py">
+  <div class="container" style="max-width:680px; text-align:center;">
+
+    <div class="fade">
+      <div class="guarantee-ring">
+        <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--blue-400);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+      </div>
+      <span class="kicker" style="margin-bottom:12px; display:block;">Garantia</span>
+      <h2 style="margin-bottom:20px;">Garantia de 90 dias</h2>
+      <p style="font-size:17px; line-height:1.65; margin-bottom:20px;">
+        Se em 90 dias você não sentir diferença real na organização, no suporte e na clareza sobre a evolução do seu filho — devolvemos 100% do valor investido até aquele momento. Sem burocracia.
+      </p>
+      <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted);">Garantia de processo, não de desfecho clínico. Resultados biológicos dependem de fatores fora do controle do programa.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BLOCO 10 — CTA / TRIAGEM
+══════════════════════════════════════ -->
+<section class="cta-section section-py" id="triagem">
+  <div class="container">
+    <div class="grid-12-5">
+
+      <div class="fade">
+        <span class="kicker" style="color:var(--blue-200); margin-bottom:16px; display:block;">Começar</span>
+        <h2 style="color:white; margin-bottom:20px;">
+          O primeiro passo<br>
+          é <em style="color:var(--blue-200);">gratuito.</em>
+        </h2>
+        <p style="color:rgba(255,255,255,0.65); font-size:17px; line-height:1.65; margin-bottom:32px;">
+          A triagem inicial identifica a especialidade certa para o seu filho, avalia se há urgência terapêutica e apresenta o programa adequado — em 5 minutos, sem compromisso.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="check-item" style="color:rgba(255,255,255,0.7);">
+            <div class="check-icon" style="background:rgba(74,155,199,0.2);"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--blue-200);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div>
+            <span>Sem compromisso de compra</span>
+          </div>
+          <div class="check-item" style="color:rgba(255,255,255,0.7);">
+            <div class="check-icon" style="background:rgba(74,155,199,0.2);"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--blue-200);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div>
+            <span>Resposta em até 24 horas</span>
+          </div>
+          <div class="check-item" style="color:rgba(255,255,255,0.7);">
+            <div class="check-icon" style="background:rgba(74,155,199,0.2);"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--blue-200);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div>
+            <span>Dados protegidos por LGPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade fade-d1">
+        <div class="triagem-card">
+          <p class="kicker" style="color:var(--blue-200); margin-bottom:24px;">Triagem inicial — gratuita</p>
+
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div>
+              <label class="input-label">Nome dos responsáveis</label>
+              <input type="text" placeholder="Seu nome completo" class="input-field" />
+            </div>
+            <div>
+              <label class="input-label">Condição de interesse</label>
+              <select class="input-field">
+                <option value="">Selecione a condição do seu filho</option>
+                <option>Obesidade Infantil</option>
+                <option>Baixa Estatura</option>
+                <option>Puberdade Precoce</option>
+                <option>Não sei ainda — quero orientação</option>
+              </select>
+            </div>
+            <div>
+              <label class="input-label">WhatsApp</label>
+              <input type="tel" placeholder="(11) 99999-9999" class="input-field" />
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:24px; border-radius:var(--r-sm);">
+            Iniciar triagem gratuita
+          </button>
+
+          <p style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.3); text-align:center; margin-top:14px;">Sem spam. LGPD compliant.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <p style="font-family:var(--font-display); font-size:22px; color:var(--text-h); margin-bottom:10px;">PediEndoCare™</p>
+        <p style="font-size:14px; color:var(--text-muted); max-width:320px; line-height:1.6;">Programa premium de acompanhamento longitudinal em endocrinologia pediátrica, potencializado por IA.</p>
+      </div>
+
+      <div>
+        <p class="kicker" style="margin-bottom:16px; display:block;">Especialidades</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-size:14px; color:var(--text-body);">Obesidade Infantil</li>
+          <li style="font-size:14px; color:var(--text-body);">Baixa Estatura</li>
+          <li style="font-size:14px; color:var(--text-body);">Puberdade Precoce</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="kicker" style="margin-bottom:16px; display:block;">Legal</p>
+        <p style="font-size:12px; color:var(--text-muted); line-height:1.65;">A IA operacionaliza o acompanhamento entre consultas — não diagnostica nem prescreve. Todas as decisões clínicas são tomadas pelo endocrinologista pediátrico. Dados protegidos por LGPD. Publicidade em conformidade com Resolução CFM 1974/2011.</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted);">© 2026 PediEndoCare™ — Todos os direitos reservados.</p>
+      <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted);">Estruturado pela <span style="color:var(--blue-400);">Accelera 360</span> — Business Accelerator</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Scroll-triggered fade
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('on');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
+  );
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
