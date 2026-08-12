@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="R Freitas Seguros — 20 anos protegendo famílias e empresas em Fortaleza-CE. Seguro Auto, Vida, Empresarial, Saúde, Condomínio e muito mais.">
+<meta property="og:title" content="R FREITAS Corretora de Seguros — Proteção para Vida, Patrimônio e Negócio">
+<meta property="og:description" content="Corretora multi-ramo com 20 anos em Fortaleza-CE. Proteção para sua família, patrimônio e empresa em um só lugar.">
+<meta property="og:type" content="website">
+<title>R FREITAS Corretora de Seguros — Fortaleza-CE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --bg:         #0A0A0A;
+  --bg-1:       #141414;
+  --bg-2:       #1C1C1C;
+  --bg-deep:    #060606;
+  --ink:        #F0F0F0;
+  --ink-2:      #A8A8A8;
+  --ink-3:      #585858;
+  --rule:       rgba(255,255,255,.07);
+  --gold:       #C9A447;
+  --gold-h:     #A8863A;
+  --gold-lt:    #E4C876;
+  --green:      #25D366;
+  --green-h:    #1CB855;
+  --fd:         "Barlow Condensed", "Arial Narrow", sans-serif;
+  --fb:         "Inter", system-ui, sans-serif;
+  --fm:         "JetBrains Mono", ui-monospace, monospace;
+  --r:          2px;
+  --r2:         4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--bg); color: var(--ink-2); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* grain */
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); }
+
+/* type */
+h1,h2,h3 { font-family: var(--fd); color: var(--ink); line-height: 1.0; text-transform: uppercase; letter-spacing: .04em; }
+h1 { font-size: clamp(2.6rem,6vw,4.2rem); font-weight: 800; }
+h2 { font-size: clamp(2rem,4vw,3rem); font-weight: 700; }
+h3 { font-size: clamp(1.4rem,2.5vw,1.8rem); font-weight: 700; }
+p { color: var(--ink-2); }
+.kicker { font-family: var(--fm); font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .6rem; }
+
+/* layout */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.sec { padding: 80px 0; }
+.sec-alt { background: var(--bg-1); }
+.sec-deep { background: var(--bg-deep); }
+.hr { height: 1px; background: var(--rule); }
+
+/* ── NAV ── */
+.nav { background: var(--bg-deep); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,164,71,.14); }
+.nav-in { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+.logo-p { font-family: var(--fd); font-size: 1.45rem; font-weight: 800; letter-spacing: .22em; color: #E8E8E8; line-height: 1; }
+.logo-p em { font-style: normal; color: var(--gold-lt); }
+.logo-s { font-family: var(--fm); font-size: 8px; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-3); margin-top: 3px; }
+.nav-links { display: flex; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a { font-family: var(--fm); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); text-decoration: none; padding: 8px 10px; white-space: nowrap; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { background: var(--green) !important; color: #fff !important; padding: 8px 14px !important; border-radius: var(--r); font-weight: 700; letter-spacing: .06em; font-family: var(--fm); font-size: 10px; text-transform: uppercase; }
+.nav-cta:hover { background: var(--green-h) !important; }
+
+/* ── HERO ── */
+.hero { background: var(--bg-deep); padding: 88px 0 80px; position: relative; overflow: hidden; border-bottom: 1px solid rgba(201,164,71,.1); }
+.hero::after { content: ''; position: absolute; right: -120px; top: -120px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle,rgba(201,164,71,.06) 0%,transparent 70%); pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: center; }
+.hero .kicker { color: rgba(255,255,255,.3) !important; }
+.hero h1 { color: var(--ink); margin-bottom: 1.2rem; }
+.hero h1 em { font-style: normal; color: var(--gold-lt); }
+.hero-sub { color: rgba(255,255,255,.55); font-size: 1.05rem; margin-bottom: 2rem; max-width: 520px; line-height: 1.7; }
+.hero-proof { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 2rem; }
+.proof-i { font-family: var(--fm); font-size: 10px; color: rgba(255,255,255,.3); letter-spacing: .1em; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
+.proof-i::before { content: '◆'; color: var(--gold); font-size: 7px; }
+
+/* hero contact card */
+.hcard { background: rgba(201,164,71,.04); border: 1px solid rgba(201,164,71,.18); border-radius: var(--r2); padding: 28px 24px; }
+.hcard-title { font-family: var(--fd); color: var(--ink); font-size: 1rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+.hcard-info { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.hcard-info a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .88rem; display: flex; align-items: center; gap: 8px; transition: color .2s; }
+.hcard-info a:hover { color: var(--gold); }
+.hcard-icon { width: 28px; height: 28px; background: rgba(201,164,71,.08); border: 1px solid rgba(201,164,71,.14); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+
+/* ── BUTTONS ── */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--fb); font-size: .9rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; border-radius: var(--r); padding: 14px 24px; cursor: pointer; border: none; transition: background .2s, transform .15s, box-shadow .2s; white-space: nowrap; text-transform: uppercase; }
+.btn-g { background: var(--green); color: #fff; }
+.btn-g:hover { background: var(--green-h); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(37,211,102,.3); }
+.btn-o { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(201,164,71,.3); }
+.btn-o:hover { background: rgba(201,164,71,.06); border-color: var(--gold); color: var(--gold); }
+.btn-lg { padding: 16px 36px; font-size: 1rem; }
+.btn-full { width: 100%; justify-content: center; }
+.wa-ico { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+
+/* ── PRODUTO PILLS NAV ── */
+.pills-nav { background: var(--bg-deep); padding: 28px 0; border-bottom: 1px solid var(--rule); }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.pill { font-family: var(--fm); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); text-decoration: none; padding: 7px 14px; border: 1px solid rgba(255,255,255,.06); transition: all .2s; }
+.pill:hover { border-color: rgba(201,164,71,.35); color: var(--gold); background: rgba(201,164,71,.04); }
+
+/* ── SECTION HEADER ── */
+.sh { margin-bottom: 52px; }
+.sh.center { text-align: center; }
+.sh h2 { margin-bottom: .8rem; }
+.sh p { font-size: 1rem; color: var(--ink-3); max-width: 620px; line-height: 1.7; }
+.sh.center p { margin: 0 auto; }
+
+/* ── DORES ── */
+.dores-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.dor { background: var(--bg-1); padding: 32px 28px; position: relative; }
+.dor::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--gold); opacity: .45; }
+.dor-n { font-family: var(--fm); font-size: 10px; color: var(--ink-3); letter-spacing: .14em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+.dor h3 { font-size: 1.15rem; margin-bottom: 12px; }
+.dor p { font-size: .9rem; color: var(--ink-3); line-height: 1.65; }
+.dor-impact { margin-top: 16px; font-family: var(--fm); font-size: 10px; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; }
+
+/* ── MECANISMO ── */
+.mec-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.mec-steps { display: flex; flex-direction: column; }
+.mstep { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.mstep:last-child { border-bottom: none; }
+.mstep-l { font-family: var(--fd); font-size: 2.6rem; font-weight: 800; color: var(--gold); line-height: 1; flex-shrink: 0; width: 44px; }
+.mstep-b h4 { font-family: var(--fd); font-size: 1.05rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; }
+.mstep-b p { font-size: .88rem; color: var(--ink-3); line-height: 1.65; }
+.mec-box { background: var(--bg-1); border: 1px solid rgba(201,164,71,.18); border-radius: var(--r2); padding: 40px 36px; position: relative; overflow: hidden; }
+.mec-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,transparent,var(--gold),transparent); }
+.mec-box .kicker { color: rgba(201,164,71,.6) !important; }
+.mec-box h3 { font-size: 1.5rem; margin-bottom: 16px; }
+.mec-box p { color: var(--ink-3); font-size: .92rem; margin-bottom: 28px; line-height: 1.7; }
+
+/* ── PRODUTO SECTION ── */
+.prod-sec { padding: 72px 0; border-bottom: 1px solid var(--rule); }
+.prod-sec:last-child { border-bottom: none; }
+.prod-in { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: start; }
+.prod-in.rev { direction: rtl; }
+.prod-in.rev > * { direction: ltr; }
+.prod-tag { display: inline-flex; align-items: center; font-family: var(--fm); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,164,71,.22); padding: 5px 12px; margin-bottom: 14px; }
+.prod-icp { font-family: var(--fm); font-size: 11px; color: var(--ink-3); letter-spacing: .06em; margin-bottom: 1.2rem; text-transform: uppercase; display: block; }
+.prod-sec h2 { margin-bottom: .7rem; }
+p.lead { color: var(--ink-2); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.7; }
+.gatilho { background: rgba(201,164,71,.04); border-left: 2px solid rgba(201,164,71,.28); padding: 14px 16px; font-size: .88rem; color: var(--ink-3); margin-bottom: 20px; line-height: 1.65; }
+.gatilho strong { color: var(--ink-2); }
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.bullets li { display: flex; gap: 12px; align-items: flex-start; font-size: .92rem; color: var(--ink-2); line-height: 1.6; }
+.chk { width: 18px; height: 18px; background: rgba(201,164,71,.1); border: 1px solid rgba(201,164,71,.22); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+.chk::after { content: '✓'; color: var(--gold); font-size: 10px; font-weight: 700; }
+
+/* cta card lateral */
+.cta-card { background: var(--bg-1); border: 1px solid rgba(201,164,71,.14); border-radius: var(--r2); padding: 28px 24px; box-shadow: 0 4px 32px rgba(0,0,0,.8); position: sticky; top: 80px; }
+.cta-card-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; filter: grayscale(1) brightness(1.4); }
+.cta-card h4 { font-family: var(--fd); font-size: 1.1rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+.cta-card p { font-size: .86rem; color: var(--ink-3); margin-bottom: 18px; line-height: 1.65; }
+
+/* ── NUMEROS ── */
+.nums-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1px; background: var(--rule); }
+.num-card { background: var(--bg-1); padding: 36px 32px; }
+.num { font-family: var(--fd); font-size: 3.2rem; font-weight: 800; color: var(--gold); display: block; margin-bottom: 8px; letter-spacing: .02em; }
+.num-card p { font-size: .95rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 16px; }
+.num-meta { font-family: var(--fm); font-size: 10px; color: var(--ink-3); letter-spacing: .1em; text-transform: uppercase; }
+
+/* ── FAQ ── */
+.faq { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item:first-child { border-top: 1px solid var(--rule); }
+.faq-q { font-family: var(--fb); font-weight: 500; font-size: .95rem; color: var(--ink); padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; list-style: none; user-select: none; }
+.faq-q::after { content: '+'; font-family: var(--fm); font-size: 1.2rem; color: var(--gold); flex-shrink: 0; transition: transform .2s; }
+details[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a { padding: 0 0 20px; color: var(--ink-3); font-size: .92rem; max-width: 720px; line-height: 1.7; }
+
+/* ── GARANTIA ── */
+.garantia { background: var(--bg-1); border: 1px solid rgba(201,164,71,.14); border-radius: var(--r2); padding: 40px 36px; display: flex; gap: 32px; align-items: flex-start; position: relative; overflow: hidden; max-width: 860px; margin: 0 auto; }
+.garantia::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); }
+.garantia-icon { font-size: 2.8rem; flex-shrink: 0; filter: grayscale(1) brightness(1.4); }
+.garantia h3 { margin-bottom: 10px; }
+.garantia p { font-size: .95rem; color: var(--ink-3); line-height: 1.7; }
+
+/* ── CTA FINAL ── */
+.cta-final { background: var(--bg-deep); padding: 96px 0; text-align: center; position: relative; overflow: hidden; }
+.cta-final::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg,transparent,rgba(201,164,71,.4),transparent); }
+.cta-final h2 { margin-bottom: 1rem; }
+.cta-final p { color: var(--ink-3); max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; }
+.cta-final .ps { margin-top: 1.5rem; font-family: var(--fm); font-size: 11px; color: var(--ink-3); letter-spacing: .08em; text-transform: uppercase; }
+
+/* ── FOOTER ── */
+.footer { background: var(--bg-deep); color: var(--ink-3); padding: 48px 0 32px; border-top: 1px solid rgba(201,164,71,.08); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-logo-p { font-family: var(--fd); font-size: 1.4rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #D8D8D8; line-height: 1; }
+.footer-logo-s { font-family: var(--fm); font-size: 8px; letter-spacing: .26em; text-transform: uppercase; color: var(--ink-3); margin-top: 4px; display: block; }
+.footer-tag { font-size: .85rem; color: var(--ink-3); margin: 10px 0 18px; }
+.fcol h5 { font-family: var(--fm); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; opacity: .65; }
+.fcol a, .fcol p { display: block; color: var(--ink-3); text-decoration: none; margin-bottom: 8px; font-size: .86rem; transition: color .2s; }
+.fcol a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-copy { font-size: .78rem; color: var(--ink-3); opacity: .45; font-family: var(--fm); letter-spacing: .04em; text-transform: uppercase; }
+.a360 { font-family: var(--fm); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); opacity: .4; }
+
+/* ── FADE-UP ── */
+.fu { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.fu.vis { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hcard { display: none; }
+  .mec-wrap { grid-template-columns: 1fr; }
+  .prod-in { grid-template-columns: 1fr; }
+  .prod-in.rev { direction: ltr; }
+  .cta-card { position: static; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .garantia { flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .sec { padding: 56px 0; }
+  .hero { padding: 60px 0 56px; }
+  .nav-links { display: none; }
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <nav class="wrap nav-in">
+    <a href="#topo" class="logo">
+      <span class="logo-p">R FR<em>E</em>ITAS</span>
+      <span class="logo-s">Corretora de Seguros</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#auto">Auto</a></li>
+      <li><a href="#empresarial">Empresarial</a></li>
+      <li><a href="#vida">Vida</a></li>
+      <li><a href="#condominio">Condomínio</a></li>
+      <li><a href="#equipamentos">Equipamentos</a></li>
+      <li><a href="#garantia-seg">Garantia</a></li>
+      <li><a href="#residencial">Residencial</a></li>
+      <li><a href="#saude">Saúde</a></li>
+      <li><a href="#consorcio">Consórcio</a></li>
+      <li><a href="#rc">RC</a></li>
+      <li><a href="#viagem">Viagem</a></li>
+      <li><a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="nav-links a nav-cta">Simular agora</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Nº 01 / Fortaleza-CE · 20 anos de experiência</span>
+      <h1>O seguro certo existe.<br><em>Vamos encontrá-lo juntos.</em></h1>
+      <p class="hero-sub">Família, patrimônio ou empresa — Ricardo Freitas mapeia seus riscos reais e garante que você saiba exatamente o que está coberto antes de assinar qualquer apólice.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-lg">
+          <svg class="wa-ico" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          Fazer simulação gratuita
+        </a>
+        <a href="#produtos" class="btn btn-o">Ver todos os seguros</a>
+      </div>
+      <div class="hero-proof">
+        <span class="proof-i">20 anos no mercado</span>
+        <span class="proof-i">Corretor habilitado SUSEP</span>
+        <span class="proof-i">11 produtos disponíveis</span>
+        <span class="proof-i">Fortaleza · CE</span>
+      </div>
+    </div>
+    <div class="hcard">
+      <p class="hcard-title">Fale com Ricardo</p>
+      <div class="hcard-info">
+        <a href="tel:+5585987715347">
+          <span class="hcard-icon">📱</span>
+          +55 (85) 98771-5347
+        </a>
+        <a href="tel:+558530639474">
+          <span class="hcard-icon">☎</span>
+          (85) 3063-9474
+        </a>
+        <a href="mailto:rfseguros87@gmail.com">
+          <span class="hcard-icon">✉</span>
+          rfseguros87@gmail.com
+        </a>
+        <a href="https://www.instagram.com/rfreitasseguros" target="_blank">
+          <span class="hcard-icon">📸</span>
+          @rfreitasseguros
+        </a>
+      </div>
+      <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">
+        Simular agora
+      </a>
+      <p style="text-align:center;margin-top:10px;font-size:.78rem;color:var(--ink-3)">Sinistro 24h: (85) 98136-0582</p>
+    </div>
+  </div>
+</section>
+
+<!-- PILLS NAV -->
+<div class="pills-nav" id="produtos">
+  <div class="wrap">
+    <div class="pills">
+      <a href="#auto" class="pill">Seguro Auto</a>
+      <a href="#empresarial" class="pill">Seg. Empresarial</a>
+      <a href="#vida" class="pill">Seguro de Vida</a>
+      <a href="#condominio" class="pill">Condomínio</a>
+      <a href="#equipamentos" class="pill">Equipamentos</a>
+      <a href="#garantia-seg" class="pill">Seg. Garantia</a>
+      <a href="#residencial" class="pill">Residencial</a>
+      <a href="#saude" class="pill">Plano de Saúde</a>
+      <a href="#consorcio" class="pill">Consórcio</a>
+      <a href="#rc" class="pill">Resp. Civil</a>
+      <a href="#viagem" class="pill">Seg. Viagem</a>
+    </div>
+  </div>
+</div>
+
+<!-- DORES -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="sh fu">
+      <span class="kicker">Nº 02 / O problema</span>
+      <h2>O seguro errado é pior<br>do que não ter seguro nenhum.</h2>
+      <p>A maioria dos sinistros negados não é fraude — é apólice mal contratada. Exclusões que ninguém explicou, LMI abaixo do patrimônio real, cobertura que não alcança o risco do seu perfil.</p>
+    </div>
+    <div class="dores-grid">
+      <div class="dor fu">
+        <span class="dor-n">Dor 01 / 03</span>
+        <h3>A seguradora negou o sinistro.</h3>
+        <p>Você pagou anos de prêmio e, quando precisou, ouviu "não está coberto". Quase sempre, o problema foi uma exclusão que ninguém mostrou antes de assinar.</p>
+        <p class="dor-impact">Risco: até R$ 500.000 sem cobertura em 1 evento</p>
+      </div>
+      <div class="dor fu">
+        <span class="dor-n">Dor 02 / 03</span>
+        <h3>Você nem sabe o que está exposto.</h3>
+        <p>Família sem seguro de vida. Empresa sem RC. Carro coberto apenas para incêndio, não roubo. A maioria das pessoas descobre os gaps quando o dano já está feito.</p>
+        <p class="dor-impact">Exposição real: R$ 40k–R$ 200k dependendo do perfil</p>
+      </div>
+      <div class="dor fu">
+        <span class="dor-n">Dor 03 / 03</span>
+        <h3>Seguro de banco não é a mesma coisa.</h3>
+        <p>Banco vende seguro como produto adicional — padronizado para a maioria, não para você. O prêmio costuma ser 20–40% mais alto do que em corretoras independentes.</p>
+        <p class="dor-impact">Sobrecusto típico: R$ 800–R$ 3.600/ano pagos a mais</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECANISMO -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sh fu">
+      <span class="kicker">Nº 03 / A solução</span>
+      <h2>Método C.E.R.T.A. —<br>a corretagem que não te abandona no sinistro.</h2>
+    </div>
+    <div class="mec-wrap">
+      <div class="mec-steps fu">
+        <div class="mstep">
+          <span class="mstep-l">C</span>
+          <div class="mstep-b">
+            <h4>Corretagem consultiva</h4>
+            <p>Nenhuma apólice é indicada sem entender o seu perfil. Você descreve sua vida ou negócio — Ricardo mapeia o risco real.</p>
+          </div>
+        </div>
+        <div class="mstep">
+          <span class="mstep-l">E</span>
+          <div class="mstep-b">
+            <h4>Escuta ativa do risco</h4>
+            <p>O que você realmente expõe vai muito além do que a tabela padrão pergunta. A entrevista de risco vem antes da cotação.</p>
+          </div>
+        </div>
+        <div class="mstep">
+          <span class="mstep-l">R</span>
+          <div class="mstep-b">
+            <h4>Recomendação multi-seguradora</h4>
+            <p>Acesso a múltiplas seguradoras. Você recebe a melhor cobertura para o seu perfil — não a que paga mais comissão.</p>
+          </div>
+        </div>
+        <div class="mstep">
+          <span class="mstep-l">T</span>
+          <div class="mstep-b">
+            <h4>Transparência de exclusões</h4>
+            <p>Antes de assinar, Ricardo lê com você o que não está coberto. Sem surpresas na hora que mais importa.</p>
+          </div>
+        </div>
+        <div class="mstep">
+          <span class="mstep-l">A</span>
+          <div class="mstep-b">
+            <h4>Assessoria pós-contratação</h4>
+            <p>Renovação proativa, suporte no sinistro, revisão de cobertura quando sua vida muda. O corretor que não some depois de fechar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mec-box fu">
+        <span class="kicker">ProtecaoCerta™</span>
+        <h3>"Você descreve o risco. A gente garante que a cobertura existe quando você precisar."</h3>
+        <p>20 anos formando esse método. Cada etapa existe porque em algum momento Ricardo viu um cliente ficar na mão — e decidiu que não aconteceria de novo.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g">
+          Quero mapear meu risco
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- PRODUTOS -->
+
+<!-- 01 AUTO -->
+<section class="prod-sec sec-alt" id="auto">
+  <div class="wrap">
+    <div class="prod-in">
+      <div class="fu">
+        <span class="prod-tag">Seg. Auto</span>
+        <span class="prod-icp">Para: motorista urbano · carro como bem de valor ou ferramenta de trabalho</span>
+        <h2>Seu carro está protegido de verdade — ou só no papel?</h2>
+        <p class="lead">Fortaleza está entre as 5 capitais com maior índice de roubo de veículos no Brasil. O seguro mais barato é o que mais recusa sinistro.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Colega roubado, IPVA/licenciamento em mãos, carro novo financiado.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Cotação em 5+ seguradoras em 24h — você escolhe a cobertura certa, não a mais barata</li>
+          <li><span class="chk"></span>Análise de exclusões antes de assinar — sem surpresas na hora do sinistro</li>
+          <li><span class="chk"></span>Cobertura de terceiros, roubo/furto, colisão e assistência 24h real</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">🚗</span>
+        <h4>Cotação grátis em 24h</h4>
+        <p>Compare 5+ seguradoras. Entenda o que cada uma cobre antes de decidir.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro Auto</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 02 EMPRESARIAL -->
+<section class="prod-sec" id="empresarial">
+  <div class="wrap">
+    <div class="prod-in rev">
+      <div class="fu">
+        <span class="prod-tag">Seg. Empresarial</span>
+        <span class="prod-icp">Para: dono de PE com patrimônio físico exposto — comércio, serviços, indústria</span>
+        <h2>Um incêndio ou roubo pode fechar sua empresa. Você está preparado?</h2>
+        <p class="lead">Perda média por incêndio comercial sem cobertura adequada: R$ 150.000–R$ 500.000. Mais o tempo parado, que nenhuma reserva de caixa aguenta.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Mudança de sede, renovação anual, sinistro em empresa vizinha, exigência de contrato.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Mapeamento dos riscos reais do seu negócio — não uma apólice genérica de prateleira</li>
+          <li><span class="chk"></span>LMI adequado ao faturamento real da sua empresa — não ao valor padrão de tabela</li>
+          <li><span class="chk"></span>Cobertura de patrimônio, equipamentos, estoque, RC e interrupção de negócios</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">🏢</span>
+        <h4>Diagnóstico empresarial gratuito</h4>
+        <p>Ricardo mapeia os riscos do seu negócio e propõe cobertura adequada ao seu setor e porte.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro Empresarial</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 03 VIDA -->
+<section class="prod-sec sec-alt" id="vida">
+  <div class="wrap">
+    <div class="prod-in">
+      <div class="fu">
+        <span class="prod-tag">Seg. de Vida</span>
+        <span class="prod-icp">Para: provedor de família com dependentes, 30–55 anos, renda familiar R$ 5k–R$ 20k</span>
+        <h2>O que acontece com sua família se você faltar amanhã?</h2>
+        <p class="lead">70% dos brasileiros não têm seguro de vida além do FGTS. A família de um provedor com renda de R$ 5.000/mês perde R$ 60.000 por ano — e o FGTS não cobre nem 6 meses.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Nascimento de filho, financiamento imobiliário, morte de conhecido próximo.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Diagnóstico financeiro familiar — calculamos o capital segurado certo para o seu perfil real</li>
+          <li><span class="chk"></span>Cobertura por morte, invalidez permanente e doenças graves</li>
+          <li><span class="chk"></span>A partir de R$ 80/mês para proteger quem você mais ama</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">❤️</span>
+        <h4>Calcule sua proteção ideal</h4>
+        <p>Quanto sua família precisaria se você faltasse? Ricardo calcula o capital certo gratuitamente.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro de Vida</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 04 CONDOMÍNIO -->
+<section class="prod-sec" id="condominio">
+  <div class="wrap">
+    <div class="prod-in rev">
+      <div class="fu">
+        <span class="prod-tag">Seg. Condomínio</span>
+        <span class="prod-icp">Para: síndico morador ou profissional, condomínio residencial ou comercial em Fortaleza</span>
+        <h2>Seguro condomínio é obrigatório por lei. O seu cobre o que precisa?</h2>
+        <p class="lead">Lei 4.591/64, art. 13 — todo condomínio é obrigado a ter seguro. Mas 60% dos condomínios brasileiros têm cobertura inadequada. O síndico responde pessoalmente pelo gap.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Nova eleição de síndico, assembleia anual, sinistro em condomínio vizinho.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Atende a obrigatoriedade legal (Lei 4.591/64) e protege o síndico de RC pessoal</li>
+          <li><span class="chk"></span>Cobertura personalizada: estrutura, elevadores, áreas comuns, incêndio, danos elétricos</li>
+          <li><span class="chk"></span>Assessoria completa para assembleia e documentação — sem burocracia para o síndico</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">🏛️</span>
+        <h4>Verificar cobertura do condomínio</h4>
+        <p>Ricardo analisa a apólice atual e indica o que precisa ser ajustado.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro Condomínio</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 05 EQUIPAMENTOS -->
+<section class="prod-sec sec-alt" id="equipamentos">
+  <div class="wrap">
+    <div class="prod-in">
+      <div class="fu">
+        <span class="prod-tag">Equip. Portáteis</span>
+        <span class="prod-icp">Para: freelancer, técnico, profissional liberal com notebook/celular como ferramenta de renda</span>
+        <h2>Seu notebook quebrou? Seu celular foi roubado? Sua renda parou.</h2>
+        <p class="lead">Notebook de trabalho: R$ 4k–R$ 12k. Celular premium: R$ 2,5k–R$ 8k. Mais os dias parado sem conseguir trabalhar. Para quem usa o device como ferramenta, não é bem de consumo — é a renda.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Compra de device novo, furto de colega, início de home office ou trabalho remoto.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Cobertura para furto qualificado, dano acidental e queda — dentro e fora de casa</li>
+          <li><span class="chk"></span>Notebooks, celulares, tablets, câmeras e dispositivos de alto valor</li>
+          <li><span class="chk"></span>Assistência rápida para reposição — minimize o tempo sem trabalhar</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">💻</span>
+        <h4>Proteger meus equipamentos</h4>
+        <p>Cobertura real de uso profissional — não a apólice residencial básica que não cobre fora de casa.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seg. Equipamentos</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 06 GARANTIA -->
+<section class="prod-sec" id="garantia-seg">
+  <div class="wrap">
+    <div class="prod-in rev">
+      <div class="fu">
+        <span class="prod-tag">Seg. Garantia</span>
+        <span class="prod-icp">Para: construtor, empreiteiro ou prestador de serviço que participa de licitações no Ceará</span>
+        <h2>Não perca um contrato por falta de seguro-garantia.</h2>
+        <p class="lead">Contratos públicos no Ceará exigem garantia de 5% a 10% do valor do contrato. Ser desclassificado por falta de apólice significa perder um contrato de R$ 500k+ por algo que se resolve em 48h.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Edital publicado, exigência de contratante privado, prazo de habilitação se aproximando.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Emissão em até 48h após documentação — você não perde o prazo do edital</li>
+          <li><span class="chk"></span>Conhecimento específico das exigências de editais públicos e privados do Ceará</li>
+          <li><span class="chk"></span>Garantia de execução, adiantamento de pagamento e manutenção</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">📋</span>
+        <h4>Emissão em até 48h</h4>
+        <p>Ricardo identifica o que o edital precisa e emite dentro do prazo.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro Garantia</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 07 RESIDENCIAL -->
+<section class="prod-sec sec-alt" id="residencial">
+  <div class="wrap">
+    <div class="prod-in">
+      <div class="fu">
+        <span class="prod-tag">Seg. Residencial</span>
+        <span class="prod-icp">Para: proprietário ou locatário de imóvel, classe C/B, renda R$ 3k–R$ 15k</span>
+        <h2>Sua casa é o maior patrimônio. Proteja contra incêndio, roubo e enchente.</h2>
+        <p class="lead">Apenas 7% dos imóveis no Nordeste têm seguro residencial. Um incêndio, uma enchente ou um roubo de conteúdo pode destruir anos de conquista em um único evento.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Compra/financiamento de imóvel, enchente na vizinhança, contrato de aluguel.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Cobertura da estrutura + conteúdo (móveis, eletrodomésticos, eletrônicos)</li>
+          <li><span class="chk"></span>Assistência 24h real: encanador, eletricista e chaveiro quando você mais precisar</li>
+          <li><span class="chk"></span>Proteção a partir de R$ 20/mês — menos do que você gasta por semana no mercado</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">🏠</span>
+        <h4>Cotar seguro residencial</h4>
+        <p>Cobertura certa para estrutura e conteúdo — sem pagar por coberturas que não precisa.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro Residencial</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 08 SAÚDE -->
+<section class="prod-sec" id="saude">
+  <div class="wrap">
+    <div class="prod-in rev">
+      <div class="fu">
+        <span class="prod-tag">Plano de Saúde</span>
+        <span class="prod-icp">Para: família de classe C/B sem plano de empresa, renda R$ 5k–R$ 20k, 3–5 dependentes</span>
+        <h2>Uma internação particular em Fortaleza custa R$ 2.500/dia. Sua família está preparada?</h2>
+        <p class="lead">Uma doença grave sem plano de saúde consome em dias o que levou anos para juntar. O Nordeste tem a menor penetração de plano de saúde do Brasil — a maioria das famílias está completamente exposta.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Demissão (perde plano da empresa), filho doente, reajuste brutal no plano atual.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Curadoria de planos por rede assistencial, número de dependentes e orçamento real</li>
+          <li><span class="chk"></span>Comparamos múltiplas operadoras para o melhor custo-benefício para o seu perfil</li>
+          <li><span class="chk"></span>Suporte na portabilidade, reajustes e contestação de negativas</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">🏥</span>
+        <h4>Comparar planos de saúde</h4>
+        <p>Ricardo compara operadoras e indica o melhor plano para sua família e seu bolso.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Plano de Saúde</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 09 CONSÓRCIO -->
+<section class="prod-sec sec-alt" id="consorcio">
+  <div class="wrap">
+    <div class="prod-in">
+      <div class="fu">
+        <span class="prod-tag">Consórcios</span>
+        <span class="prod-icp">Para: trabalhador formal ou autônomo que quer comprar imóvel ou carro sem juros abusivos</span>
+        <h2>Compre seu imóvel ou carro sem pagar 30% a.a. de juros.</h2>
+        <p class="lead">Financiamento bancário cobra CET de 18–30% a.a. — você paga o bem e meio no final. Consórcio: apenas 3–5% de taxa total. Quem planeja com tempo, paga muito menos pelo mesmo bem.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Casamento, filho novo, renda estabilizando, plano de comprar imóvel nos próximos 3–5 anos.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Sem juros: você paga apenas taxa de administração de 3–5% total vs. 18–30% a.a. do financiamento</li>
+          <li><span class="chk"></span>Curadoria de administradoras com melhor histórico de contemplação</li>
+          <li><span class="chk"></span>Planejamento que se encaixa no seu orçamento mensal sem aperto</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">🏗️</span>
+        <h4>Simular consórcio</h4>
+        <p>Entenda quanto você realmente paga vs. um financiamento — com números reais.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Consórcio</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 10 RC -->
+<section class="prod-sec" id="rc">
+  <div class="wrap">
+    <div class="prod-in rev">
+      <div class="fu">
+        <span class="prod-tag">Resp. Civil</span>
+        <span class="prod-icp">Para: médico, engenheiro, contador, TI, empresa com risco de processo judicial</span>
+        <h2>Um processo judicial pode consumir anos de lucro.</h2>
+        <p class="lead">Ações de RC contra prestadores de serviço cresceram 22% em 5 anos no Brasil. Basta um cliente insatisfeito, um acidente operacional ou um contrato mal interpretado para uma execução que desestrutura tudo.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Contrato de prestação de serviço, expansão do negócio, exigência de cliente corporativo.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Apólice de RC adequada ao seu setor — não uma cobertura genérica</li>
+          <li><span class="chk"></span>Cobertura de danos materiais, corporais e morais a clientes e terceiros</li>
+          <li><span class="chk"></span>LMI compatível com o porte dos contratos que você assina</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">⚖️</span>
+        <h4>Análise de RC</h4>
+        <p>Ricardo avalia seu setor e propõe a apólice certa para o porte dos seus contratos.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Resp. Civil</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hr"></div>
+
+<!-- 11 VIAGEM -->
+<section class="prod-sec sec-alt" id="viagem">
+  <div class="wrap">
+    <div class="prod-in">
+      <div class="fu">
+        <span class="prod-tag">Seg. Viagem</span>
+        <span class="prod-icp">Para: viajante nacional ou internacional, turista ou a negócios, viagem já confirmada</span>
+        <h2>Emergência médica no exterior pode custar R$ 100.000. Seguro viagem custa R$ 15/dia.</h2>
+        <p class="lead">Visto Schengen exige seguro com cobertura mínima de €30.000. Mas uma hospitalização de 5 dias nos EUA pode custar US$ 50.000 — o cartão de crédito não cobre isso.</p>
+        <div class="gatilho"><strong>Gatilho:</strong> Passagem aérea comprada, pedido de visto Schengen, primeira viagem internacional.</div>
+        <ul class="bullets">
+          <li><span class="chk"></span>Cobertura de emergência médica, hospitalização e repatriação — sem teto absurdo baixo</li>
+          <li><span class="chk"></span>Obrigatório para visto Schengen — processamos a apólice em minutos</li>
+          <li><span class="chk"></span>Cobre cancelamento de voo, extravio de bagagem e assistência jurídica no exterior</li>
+        </ul>
+      </div>
+      <div class="cta-card fu">
+        <span class="cta-card-icon">✈️</span>
+        <h4>Contratar seguro viagem</h4>
+        <p>Destino, data, número de viajantes — Ricardo emite a apólice na hora.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-full">Simular Seguro Viagem</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="sec sec-deep">
+  <div class="wrap">
+    <div class="sh center fu" style="margin-bottom:48px;">
+      <span class="kicker">Nº 04 / Por que a R Freitas</span>
+      <h2>20 anos de mercado. Uma reputação que não se compra.</h2>
+    </div>
+    <div class="nums-grid">
+      <div class="num-card fu">
+        <span class="num">20</span>
+        <p>Anos de experiência no mercado de seguros — Ricardo começou como estagiário aos 19 e conhece todos os lados da cadeia.</p>
+        <span class="num-meta">Anos de mercado</span>
+      </div>
+      <div class="num-card fu">
+        <span class="num">11</span>
+        <p>Ramos de seguro disponíveis em um único lugar — sem precisar procurar múltiplos corretores para proteger vida, patrimônio e empresa.</p>
+        <span class="num-meta">Produtos disponíveis</span>
+      </div>
+      <div class="num-card fu">
+        <span class="num">1</span>
+        <p>Princípio inabalável: você sabe exatamente o que está coberto antes de assinar. A surpresa no sinistro é o maior fracasso de um corretor.</p>
+        <span class="num-meta">Método C.E.R.T.A.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="sh fu">
+      <span class="kicker">Nº 05 / Perguntas frequentes</span>
+      <h2>As dúvidas que quase todo mundo tem.</h2>
+    </div>
+    <div class="faq fu" style="max-width:760px;">
+      <details class="faq-item">
+        <summary class="faq-q">Seguro é caro e nunca precisei usar. Por que contratar?</summary>
+        <p class="faq-a">Seguro não é para eventos prováveis — é para o improvável que, quando acontece, muda tudo. Um incêndio, uma internação, um roubo. Quem nunca usou está pagando pela tranquilidade de saber que está coberto. A pergunta certa é: quanto você teria guardado para cobrir o pior cenário sem seguro?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Já tenho seguro no banco. Não é suficiente?</summary>
+        <p class="faq-a">Banco vende seguro como produto adicional — padronizado para a maioria, não para o seu perfil. O prêmio costuma ser 20–40% mais alto do que em corretoras independentes. Manda a apólice para Ricardo analisar. Se o seu seguro for o melhor do mercado para o seu perfil, ele vai te dizer isso.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">A seguradora negou meu sinistro antes. Como confiar?</summary>
+        <p class="faq-a">Quase sempre, a negativa foi por exclusão não informada antes de assinar — não fraude. O método C.E.R.T.A. existe exatamente para isso: antes de assinar qualquer apólice, Ricardo lê com você o que não está coberto. Sem surpresa no sinistro.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Não entendo nada de seguro. Isso é um problema?</summary>
+        <p class="faq-a">Não. Você não precisa entender seguros — você precisa de alguém que entende e está do seu lado. Ricardo traduz tudo em linguagem simples: você descreve o que quer proteger, ele cuida do técnico e apresenta as opções de forma clara.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Qual o custo da consultoria?</summary>
+        <p class="faq-a">Zero. A remuneração do corretor vem de comissão das seguradoras — você não paga nada pela consultoria, cotação ou assessoria. O corretor independente tem incentivo para recomendar a cobertura certa, não a que paga mais comissão.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="garantia fu">
+      <span class="garantia-icon">🛡️</span>
+      <div>
+        <span class="kicker">Compromisso R Freitas</span>
+        <h3>Se a seguradora negar um sinistro por exclusão que não foi informada, Ricardo contesta junto à SUSEP sem custo.</h3>
+        <p>Esse compromisso existe porque a transparência de exclusões é parte do método. Se falhamos em informar, corrigimos. Sem custo adicional para você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap fu">
+    <span class="kicker" style="justify-content:center;display:flex;">Nº 06 / Próximo passo</span>
+    <h2>O melhor seguro para você está aqui.<br>Vamos encontrá-lo agora.</h2>
+    <p>Simulação gratuita, sem compromisso. Você descreve o que quer proteger — Ricardo mapeia seus riscos e apresenta as melhores opções.</p>
+    <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" class="btn btn-g btn-lg">
+      Fazer minha simulação gratuita
+    </a>
+    <p class="ps">Consultoria 100% gratuita · Remuneração via comissão da seguradora · Você paga zero pela análise</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div>
+          <span class="footer-logo-p">R FREITAS</span>
+          <span class="footer-logo-s">Corretora de Seguros</span>
+        </div>
+        <p class="footer-tag">O melhor seguro para você está aqui.</p>
+        <a href="https://dvia.com.br/dvaia/simulador/view?code=9f64a54a" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 18px;border-radius:2px;font-size:.82rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;">
+          Simular agora
+        </a>
+      </div>
+      <div class="fcol">
+        <h5>Contato</h5>
+        <a href="tel:+5585987715347">(85) 98771-5347</a>
+        <a href="tel:+558530639474">(85) 3063-9474</a>
+        <a href="mailto:rfseguros87@gmail.com">rfseguros87@gmail.com</a>
+        <a href="https://www.instagram.com/rfreitasseguros" target="_blank">@rfreitasseguros</a>
+        <p>Sinistro 24h: (85) 98136-0582</p>
+      </div>
+      <div class="fcol">
+        <h5>Endereço</h5>
+        <p>Av. Mozart Pinheiro de Lucena, 696</p>
+        <p>Conj. Polar — Vila Velha</p>
+        <p>Fortaleza — CE · CEP 60347-440</p>
+        <h5 style="margin-top:20px;">Seguros disponíveis</h5>
+        <p>Auto · Empresarial · Vida</p>
+        <p>Condomínio · Equipamentos</p>
+        <p>Garantia · Residencial · Saúde</p>
+        <p>Consórcio · RC · Viagem</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 R Freitas Seguros · Corretor habilitado SUSEP · Fortaleza-CE</span>
+      <span class="a360">Powered by Accelera 360</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.fu');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
