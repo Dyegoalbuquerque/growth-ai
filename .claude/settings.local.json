@@ -19,7 +19,22 @@
       "Bash(Sort-Object LastWriteTime)",
       "Bash(Select-String -Path \"C:\\\\Workspace\\\\auto-growth-ai\\\\ofertas\\\\lojas-seminovos-usados\\\\01-oferta.md\" -Pattern \"Vehicle matching|Posicionamento|Garantia de resultado\")",
       "Bash(Select-Object LineNumber, Line)",
-      "Skill(gos-handoff)"
+      "Skill(gos-handoff)",
+      "WebFetch(domain:rfreitasseguros.wordpress.com)",
+      "Skill(gos-mapear-nicho)",
+      "Skill(gos-lp-builder)",
+      "Skill(gos-critic-playbook)",
+      "PowerShell(git *)",
+      "PowerShell(python --version)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Skill(gos-content-pilot)",
+      "Bash(cp \"C:/Workspace/marketing-midias/lojas-seminovos-usados/strategy.md\" \"C:/Workspace/growth-ai/ofertas/lojas-seminovos-usados/midias-sociais/strategy.md\")",
+      "Bash(cp \"C:/Workspace/marketing-midias/lojas-seminovos-usados/post-01-lead-perdido.md\" \"C:/Workspace/growth-ai/ofertas/lojas-seminovos-usados/midias-sociais/post-01-lead-perdido.md\")",
+      "Bash(cp \"C:/Workspace/marketing-midias/lojas-seminovos-usados/post-02-carro-parado.md\" \"C:/Workspace/growth-ai/ofertas/lojas-seminovos-usados/midias-sociais/post-02-carro-parado.md\")",
+      "Bash(cp \"C:/Workspace/marketing-midias/lojas-seminovos-usados/post-03-followup-renave.md\" \"C:/Workspace/growth-ai/ofertas/lojas-seminovos-usados/midias-sociais/post-03-followup-renave.md\")",
+      "Bash(cp \"C:/Workspace/marketing-midias/lojas-seminovos-usados/hashtags-e-calendario.md\" \"C:/Workspace/growth-ai/ofertas/lojas-seminovos-usados/midias-sociais/hashtags-e-calendario.md\")"
     ]
   }
 }
